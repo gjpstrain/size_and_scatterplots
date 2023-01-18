@@ -1,0 +1,27 @@
+---
+lead_author: "Gabriel Strain"
+authors: "Gabriel Strain, Andrew J. Stewart, Paul Warren, Caroline Jay"
+output:
+  bookdown::pdf_book: # for automatic figure-numbering (https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html)
+    keep_tex: yes
+    template: template.tex
+    citation_package: natbib
+    fig_crop: no
+title: "Point Size, Contrast, and Correlation Perception in Scatterplots"
+index_terms: "index terms here"
+author_footer1: "Gabriel Strain, Andrew J. Stewart, and Caroline Jay are with the Department of Computer Science, Faculty of Science and Engineering, The University of Manchester, UK. Email: gabriel.strain, andrew.j.stewart, caroline.jay\\@manchester.ac.uk."
+author_footer2: "Paul Warren is with the Division of Psychology, Communication, and Human Neuroscience, School of Health Sciences, Faculty of Biology, Medicine, and Health, The University of Manchester, UK. Email: paul.warren\\@manchester.ac.uk."
+shorttitle: "Point Size, Contrast, and Correlation Perception in Scatterplots"
+vgtcpapertype: "vgtcpapertype here"
+ACM_classification_code: "code here"
+ACM_class_title: "ACM class title here"
+editor_options: 
+  markdown: 
+    wrap: 72
+bibliography: bibliography.bib
+intro_figure_caption: "caption here"
+abstract: |
+  Place abstract here.
+introduction: |
+  Place intro here.
+---
