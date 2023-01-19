@@ -1,7 +1,7 @@
 ---
-title: "exp_spatially_dependent_item_gen"
+title: "exp_size_only_item_generation"
 author: "Gabriel Strain"
-date: '2022-05-16'
+date: '2023-01-19'
 output: html_document
 ---
 
