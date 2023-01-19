@@ -4,7 +4,7 @@ authors: "Gabriel Strain, Andrew J. Stewart, Paul Warren, Caroline Jay"
 output:
   bookdown::pdf_book: # for automatic figure-numbering (https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html)
     keep_tex: yes
-    template: template.tex
+    template: IEEE_Vis_template.tex
     citation_package: natbib
     fig_crop: no
 title: "Point Size, Contrast, and Correlation Perception in Scatterplots"
@@ -18,10 +18,275 @@ ACM_class_title: "ACM class title here"
 editor_options: 
   markdown: 
     wrap: 72
-bibliography: bibliography.bib
+bibliography: size_contrast_scatterplots.bib
 intro_figure_caption: "caption here"
 abstract: |
   Place abstract here.
 introduction: |
   Place intro here.
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# Knitting this document requires tinytex (install.packages("tinytex"))
+# For formatting to be correct, additional tinytex packages are required
+# Run tinytex:::install_yihui_pkgs() before knitting
+```
+
+```{r, include=FALSE}
+set.seed(1234) # seed for all random number generation
+
+# Loading packages
+library(rticles)
+library(tidyverse)
+library(MASS)
+library(emmeans)
+library(scales)
+library(buildmer)
+library(lme4)
+library(kableExtra)
+library(afex)
+library(papaja)
+library(broom.mixed)
+library(insight)
+library(qwraps2)
+library(lmerTest)
+library(tinylabels)
+
+
+# Comment out the following line if additional tinytex packages are already installed
+#tinytex:::install_yihui_pkgs()
+```
+
+```{r eval-models, include=FALSE}
+# in this script, models are cached. If eval_models <- FALSE, script will load
+# cached models. Set eval_models <- TRUE to rebuild models from scratch
+eval_models <- FALSE
+
+if (eval_models == FALSE){
+  lazyload_cache_dir('size_contrast_scatterplots/latex')
+}
+```
+
+```{r load-data, include=FALSE}
+# load in data files
+contrast1_anon <- read_csv("data/")
+contrast2_anon <- read_csv("data/")
+```
+
+```{r wrangle, include = FALSE}
+# function for wrangling data
+wrangle <- function(anon_file) {
+  
+  literacy <- anon_file %>%
+    filter(!is.na(q1_slider.response)) %>%
+    rowwise() %>%
+    mutate(literacy = sum(c(q1_slider.response, 
+                            q2_slider.response, 
+                            q3_slider.response, 
+                            q4_slider.response, 
+                            q5_slider.response))) %>%
+    dplyr::select(participant,
+           literacy)
+  
+# extract demographic information
+# link slider response numbers to gender categories
+  
+demographics <- anon_file %>%
+  filter(!is.na(gender_slider.response)) %>%
+  mutate(gender_slider.response = recode(gender_slider.response,
+                                         `1` = "F",
+                                         `2` = "M",
+                                         `3` = "NB")) %>%
+  dplyr::select(matches(c("participant",
+                          "age_textbox.text",
+                          "gender_slider.response")))
+
+# split plots_with_labels column into item and contrast condition columns 
+
+anon_file <- anon_file %>%
+  mutate(images = str_replace(images, pattern = "A", replacement = "-A")) %>%
+  mutate(images = str_replace(images, pattern = "B", replacement = "-B")) %>%
+  mutate(images = str_replace(images, pattern = "C", replacement = "-C")) %>%
+  mutate(images = str_replace(images, pattern = "D", replacement = "-D")) %>%
+  separate(images, c("item", "size"), sep = "-") %>%
+  mutate(contrast = str_replace(contrast, pattern = ".png", replacement = "")) %>%
+  mutate(item = str_replace(item, pattern = "all_plots/", replacement = ""))
+
+# select relevant columns
+# select only experimental items
+# add literacy data
+# change data types where appropriate
+# output this file with suffix 'tidy'
+
+anon_file %>%
+  dplyr::select(c("participant",
+                  "item",
+                  "contrast",
+                  "slider.response",
+                  "my_rs",
+                  "total_residuals",
+                  "unique_item_no",
+                  "session")) %>%
+  filter(unique_item_no < 181) %>%
+  inner_join(literacy, by = "participant") %>%
+  inner_join(demographics, by = "participant") %>%
+  mutate(across(matches(c("item", "contrast")), as_factor)) %>%
+  dplyr::select(-c("__participant")) %>%
+  mutate(difference = my_rs - slider.response) %>%
+  assign(paste0(unique(anon_file$expName), "_tidy"),
+           value = ., envir = .GlobalEnv)
+}
+
+# use wrangle function on anonmyised data files 
+
+walk(list(contrast1_anon,
+          contrast2_anon),
+     wrangle)
+
+# Experiments were incorrectly named, so rename them
+
+# remove incorrectly named and anon dfs from environment
+
+rm()
+
+# check for missing age values
+
+sum(is.na(E1$age_textbox.text))
+sum(is.na(E2$age_textbox.text))
+
+# print sessions with missing age values
+
+E1 %>%
+  filter(is.na(age_textbox.text)) %>%
+  distinct(session)
+
+# no missing values in E1, some in E2.
+# fill in missing age values from prolific_data.csv
+# we can't include this as it contains personally
+# identifiable Prolific IDs
+#missing_age_a <- prolific_data %>%
+#  filter(session == "_") %>%
+#  pull(age_textbox.text)
+#missing_age_b <- prolific_data %>%
+#  filter(session == "_") %>%
+#  pull(age_textbox.text)
+#E2_spatially_dependent_tidy <- E2_spatially_dependent_tidy %>%
+#  mutate(age_textbox.text = case_when(
+#    session == "_" ~ missing_age_a,
+#    session == "_" ~ missing_age_b,
+#    TRUE ~ as.numeric(as.character(age_textbox.text))
+#  ))
+```
+
+```{r comparison-function, include=FALSE}
+# this function takes a model and creates a nested model with the fixed effects 
+# term removed for anova comparison
+comparison <- function(model) {
+  
+  parens <- function(x) paste0("(",x,")")
+  onlyBars <- function(form) reformulate(sapply(findbars(form),
+                                              function(x)  parens(deparse(x))),
+                                       response=".")
+  onlyBars(formula(model))
+  cmpr_model <- update(model,onlyBars(formula(model)))
+  
+  return(cmpr_model)
+  
+}
+```
+
+```{r anova-results-function, include=FALSE}
+# this function takes two nested models, runs an anova, and the outputs the 
+# Chi-square statistic, the degrees of freedom, and the p value to the global environment
+anova_results <- function(model, cmpr_model) {
+  
+  model_name <- deparse(substitute(model))
+  
+  if (class(model) == "buildmer") model <- model@model
+  if (class(cmpr_model) == "buildmer") cmpr_model <- cmpr_model@model
+  
+  anova_output <- anova(model, cmpr_model)
+  
+  assign(paste0(model_name, ".Chisq"),
+         anova_output$Chisq[2],
+         envir = .GlobalEnv)
+  assign(paste0(model_name, ".df"),
+         anova_output$Df[2],
+         envir = .GlobalEnv)
+  assign(paste0(model_name, ".p"),
+         anova_output$`Pr(>Chisq)`[2],
+         envir = .GlobalEnv)
+  
+}
+```
+
+```{r contrasts-extract, echo=FALSE}
+# this function extracts test statistics and p values from model summaries
+contrasts_extract <- function(model) {
+  
+  model_name <- deparse(substitute(model))
+  
+  if (class(model) == "buildmer") model <- model@model
+  
+  EMMs <- emmeans(model, pairwise ~ contrast)
+  
+  params <- as.data.frame(EMMs[2]) %>%
+                            rename_with(str_replace,
+                                        pattern = "contrasts.", replacement = "",
+                                        matches("contrasts")) %>%
+                            rename_with(str_to_title, !starts_with("p")) %>%
+                            dplyr::select(c("Contrast", "Z.ratio", "p.value"))
+  
+  return(params)
+  
+}
+```
+
+```{r sum-stats-extract, echo = FALSE}
+# generates summary statistics (mean and standard deviation)
+sum_stats <- function(df) {
+  
+  stats <- df %>%
+    filter(!is.na(difference)) %>%
+    group_by(contrast) %>%
+    summarise(mean = mean(difference),
+              sd = sd(difference)) %>%
+    rename_with(str_to_title) %>%
+    rename_with(str_to_upper, starts_with("S"))
+  
+  return(stats)
+  
+}
+```
+ 
+```{r bar-plot-function, include = FALSE}
+# this function creates the bar plot to show mean errors
+# they will need to be labelled more specifically later
+bar_plot_function <- function(df) {
+  
+  max_error <- max(df %>%
+    group_by(size) %>%
+    summarise(mean = mean(difference, na.rm = TRUE)) %>%
+    dplyr::select(-c("size"))) 
+  
+  df %>%
+    filter(!is.na(difference)) %>%
+    filter(!is.na(size)) %>%
+    mutate(contrast = fct_relevel(contrast, "A", "B", "C", "D")) %>%
+    ggplot(aes(x = size, y = difference, fill = size)) +
+        scale_fill_brewer(type = "div", palette = "RdYlGn") +
+    geom_bar(stat = "summary", fun.y = "mean") +
+    stat_summary(fun.data = mean_se, geom= "errorbar", width = .3,
+               position = position_dodge(-.9)) +
+    theme_minimal() +
+    labs(x = "Size Condition",
+         y = "Mean Error") +
+    theme(axis.text.x = element_text(colour = "black", size = 14),
+          legend.position = "none",
+          axis.title = element_text(colour = "black", size = 13)) +
+    scale_y_continuous(breaks = scales::pretty_breaks(n = 8)) +
+    coord_cartesian(ylim = c(0, max_error)) 
+  
+}
+```
