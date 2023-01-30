@@ -146,11 +146,11 @@ max(c$value)
 # Slope generation function
 
 ```{r}
-# A: Non-Linear Decay, a = 0.25
-# B: Linear Decay
-# C: Non-Linear Decay, Inverted
-# D: Full Contrast
-# This function generates the slope values needed to create plots with the various decay parameters.
+# A: Non-Linear Size Decay, a = 0.25
+# B: Linear Size Decay
+# C: Non-Linear Size Decay, Inverted
+# D: Full Size?
+# This function generates the slope values needed to create plots with the various size decay parameters.
 # Maximum residual with this seed is 3.2, so for linear slope, we divide all residuals by 3.2
 
 slope_function <- function(my_desired_r) {
@@ -190,11 +190,12 @@ return(slopes)
 # Plot generation function
 
 ```{r}
-plot_function <- function(slopes, my_desired_r, letter, contrast) {
+plot_function <- function(slopes, my_desired_r, letter, size_value) {
   
   p <- ggplot(slopes, aes(x = V1, y = V2)) +
-  scale_alpha_identity() +
-  geom_point(aes(alpha = contrast), shape = 16) +
+  scale_size_identity() +
+  #geom_point(aes(size =  5-(5*-size_value)), shape = 16) +
+  geom_point(aes(size =  4*(size_value+0.2)), shape = 16) +  
   labs(x = "", y = "") +
   theme_classic() +
   theme(axis.text = element_blank()) +
@@ -206,8 +207,8 @@ ggsave(p,filename=paste0(counter, letter,".png"),
        bg = "white",
        path = "all_plots",
        units = "px",
-       width = 1200,
-       height = 1200,
+       width = 1000,
+       height = 1000,
 )
 }
 ```
@@ -220,7 +221,7 @@ ggsave(p,filename=paste0(counter, letter,".png"),
 # Running this chunk will use the function we defined above on each r value, 
 # then saves the plot with the proper labeling
 
-contrastlevels <- list()
+sizelevels <- list()
 
 
 abcd <- c('A','B','C','D')
@@ -230,12 +231,12 @@ for (i in abcd) {
   for (value in my_rs) {
     slopes <- slope_function(value)
     
-contrastlevels[['A']] <- (1-(slopes$slope_0.25))
-contrastlevels[['B']] <- (1-(slopes$slope_linear))
-contrastlevels[['C']] <- (1-(slopes$slope_inverted))
-contrastlevels[['D']] <- 1
+sizelevels[['A']] <- (1-(slopes$slope_0.25))
+sizelevels[['B']] <- (1-(slopes$slope_linear))
+sizelevels[['C']] <- (1-(slopes$slope_inverted))
+sizelevels[['D']] <- 1
 
-    plot_function(slopes, value,i,contrastlevels[[i]])
+    plot_function(slopes, value,i,sizelevels[[i]])
     if (counter > 0) {
       counter = counter + 1
     }
@@ -348,7 +349,7 @@ attention_checks <- cbind(unique_item_no, my_rs, total_residuals, plots_with_lab
 exp_spatially_dependent_final <- rbind(data_with_sizes, attention_checks) %>%
   cbind(masks_with_labels)
 
-write.csv(exp_spatially_dependent_final, "exp_spatially_dependent_full_data.csv", row.names = FALSE)
+write.csv(exp_spatially_dependent_final, "exp_size_only_full_data.csv", row.names = FALSE)
 ```
 
 # Practice trials
