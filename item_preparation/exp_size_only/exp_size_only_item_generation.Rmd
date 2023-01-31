@@ -411,8 +411,8 @@ ggsave(test_plot,filename=paste0(counter,"P",".png"),
        bg = "white",
        path = "practice_plots",
        units = "px",
-       width = 1200,
-       height = 1200,
+       width = 1000,
+       height = 1000,
 )
 
 return()
