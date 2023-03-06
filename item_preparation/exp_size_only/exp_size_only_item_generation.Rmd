@@ -234,7 +234,7 @@ for (i in abcd) {
 sizelevels[['A']] <- (1-(slopes$slope_0.25))
 sizelevels[['B']] <- (1-(slopes$slope_linear))
 sizelevels[['C']] <- (1-(slopes$slope_inverted))
-sizelevels[['D']] <- 1
+sizelevels[['D']] <- 0.05
 
     plot_function(slopes, value,i,sizelevels[[i]])
     if (counter > 0) {
@@ -515,13 +515,20 @@ for (value in sample_sizes) {
 ```{r}
 vis_threshold_images <- mixedsort(list.files(path = "vis_threshold_plots"))
 
-size_h_p <- rep(c(0.8), times = 2)
+size_h_p <- rep(c(0.86), times = 2)
 
-size_w_p <- rep(c(0.8), times = 2)
+size_w_p <- rep(c(0.86), times = 2)
 
-practice_data <- cbind(vis_threshold_images, size_h_p, size_w_p)
+VT_labels <- rep(c("vis_threshold_plots/"), each = 6)
 
-write.csv(practice_data, "vis_threshold_plots.csv", row.names = FALSE)
+VT_with_labels <- paste(VT_labels, vis_threshold_images, sep = "")
+
+VT_data <- cbind(VT_with_labels, size_h_p, size_w_p)
+
+write.csv(VT_data, "vis_threshold_plots.csv", row.names = FALSE)
 ```
+
+
+
 
 
