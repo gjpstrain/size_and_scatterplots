@@ -395,7 +395,8 @@ practice_plot_generation_function <- function(my_desired_r) {
   data_with_resid <- round(cbind(corr_data, my_residuals), 2)
 
 test_plot <- ggplot(data_with_resid, aes(x = V1, y = V2)) +
-  geom_point()  +
+  scale_size_identity() +
+  geom_point(aes(size = 1), shape = 16)  +
   labs(x = "", y = "") +
   theme_classic() +
   theme(axis.text = element_blank()) +
@@ -478,7 +479,8 @@ vis_threshold_plot_function <- function(my_sample_size) {
   data_with_resid <- round(cbind(corr_data, my_residuals), 2)
 
 threshold_plot <- ggplot(data_with_resid, aes(x = V1, y = V2)) +
-  geom_point()  +
+  scale_size_identity() +
+  geom_point(aes(size =  1), shape = 16) + 
   labs(x = "", y = "") +
   theme_classic() +
   theme(axis.text = element_blank()) +
