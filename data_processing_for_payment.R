@@ -1,6 +1,6 @@
 library(tidyverse)
 
-raw <- read_csv("data_/all_data.csv")
+raw <- read_csv("data/all_data.csv")
 
 just_columns <- raw %>%
   select(c("participant", "unique_item_no", "slider.response")) %>%

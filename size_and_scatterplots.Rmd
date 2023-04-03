@@ -1,0 +1,372 @@
+---
+author_1: "Gabriel Strain"
+author_2: "Andrew J. Stewart"
+author_3: "Paul Warren"
+author_4: "Caroline Jay"
+author_1_email: "Gabriel.Strain@manchester.ac.uk"
+author_2_email: "Andrew.J.Stewart@manchester.ac.uk"
+author_3_email: "Paul.Warren@manchester.ac.uk"
+author_4_email: "Caroline.Jay@manchester.ac.uk"
+affiliation: "The University of Manchester"
+acknowledgements: "lah di dah"
+output:
+  bookdown::pdf_book: # for automatic figure-numbering (https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html)
+    keep_tex: yes
+    template: template.tex
+    citation_package: natbib
+    fig_crop: no
+title: "Point Size and Correlation Perception in Scatterplots"
+editor_options: 
+  markdown: 
+    wrap: 72
+bibliography: size_contrast_scatterplots.bib
+abstract: |
+  Place abstract here.
+introduction: |
+  Place intro here.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::knit_hooks$set(crop = knitr::hook_pdfcrop)
+# Knitting this document requires tinytex (install.packages("tinytex"))
+# For formatting to be correct, additional tinytex packages are required
+# Run tinytex:::install_yihui_pkgs() before knitting
+```
+
+```{r, include=FALSE}
+set.seed(1234) # seed for all random number generation
+
+# Loading packages
+library(rticles)
+library(tidyverse)
+library(MASS)
+library(emmeans)
+library(scales)
+library(buildmer)
+library(lme4)
+library(kableExtra)
+library(afex)
+library(papaja)
+library(broom.mixed)
+library(insight)
+library(qwraps2)
+library(lmerTest)
+library(tinylabels)
+library(ggdist)
+library(ggpubr)
+library(pwr)
+library(geomtextpath)
+
+# Comment out the following line if additional tinytex packages are already installed
+#tinytex:::install_yihui_pkgs()
+```
+
+```{r eval-models, include=FALSE}
+# in this script, models are cached. If eval_models <- FALSE, script will load
+# cached models. Set eval_models <- TRUE to rebuild models from scratch
+eval_models <- TRUE
+
+if (eval_models == FALSE){
+  lazyload_cache_dir('size_contrast_scatterplots/latex')
+}
+```
+
+```{r load-data, include=FALSE}
+# load in data files
+size_anon <- read_csv("data/final_data.csv")
+```
+
+```{r wrangle, include = FALSE}
+# function for wrangling data
+wrangle <- function(anon_file) {
+  
+  literacy <- anon_file %>%
+    filter(!is.na(q1_slider.response)) %>%
+    rowwise() %>%
+    mutate(literacy = sum(c(q1_slider.response, 
+                            q2_slider.response, 
+                            q3_slider.response, 
+                            q4_slider.response, 
+                            q5_slider.response))) %>%
+    dplyr::select(participant,
+           literacy)
+  
+# extract and process monitor and dot pitch information
+# we assume standard 16:9 aspect ratio for monitors
+  
+  monitor_information <- anon_file %>%
+    filter(!is.na(height)) %>%
+    filter(!is.na(res_width)) %>%
+    mutate(res_height = res_width*0.5625,
+           width = height*0.5625,
+           dot_pitch = ((sqrt(height^2 + width^2))/(sqrt(res_height^2 + res_width^2))) * 25.4) %>%
+        dplyr::select(c("dot_pitch", "participant"))
+    
+  
+# extract demographic information
+# link slider response numbers to gender categories
+  
+  demographics <- anon_file %>%
+    filter(!is.na(gender_slider.response)) %>%
+    mutate(gender_slider.response = recode(gender_slider.response,
+                                         `1` = "F",
+                                         `2` = "M",
+                                         `3` = "NB")) %>%
+  dplyr::select(matches(c("participant",
+                          "age_textbox.text",
+                          "gender_slider.response")))
+
+# split plots_with_labels column into item and contrast condition columns 
+
+anon_file <- anon_file %>%
+  mutate(images = str_replace(images, pattern = "A", replacement = "-A")) %>%
+  mutate(images = str_replace(images, pattern = "B", replacement = "-B")) %>%
+  mutate(images = str_replace(images, pattern = "C", replacement = "-C")) %>%
+  mutate(images = str_replace(images, pattern = "D", replacement = "-D")) %>%
+  separate(images, c("item", "size"), sep = "-") %>%
+  mutate(size = str_replace(size, pattern = ".png", replacement = "")) %>%
+  mutate(item = str_replace(item, pattern = "all_plots/", replacement = ""))
+
+# select relevant columns
+# select only experimental items
+# add literacy data
+# change data types where appropriate
+# output this file with suffix 'tidy'
+
+anon_file %>%
+  dplyr::select(c("participant",
+                  "item",
+                  "size",
+                  "slider.response",
+                  "my_rs",
+                  "total_residuals",
+                  "unique_item_no",
+                  "session")) %>%
+  filter(unique_item_no < 181) %>%
+  inner_join(literacy, by = "participant") %>%
+  inner_join(demographics, by = "participant") %>%
+  inner_join(monitor_information, by = "participant") %>%
+  mutate(across(matches(c("item", "size")), as_factor)) %>%
+  dplyr::select(-c("__participant")) %>%
+  mutate(difference = my_rs - slider.response) %>%
+  assign(paste0(unique(anon_file$expName), "_tidy"),
+           value = ., envir = .GlobalEnv)
+}
+
+# use wrangle function on anonmyised data files 
+
+wrangle(size_anon)
+
+# remove anon df from environment
+
+rm(size_anon)
+
+# check for missing age values
+
+sum(is.na(exp_size_only_tidy$age_textbox.text))
+```
+
+```{r comparison-function, include=FALSE}
+# this function takes a model and creates a nested model with the fixed effects 
+# term removed for anova comparison
+comparison <- function(model) {
+  
+  parens <- function(x) paste0("(",x,")")
+  onlyBars <- function(form) reformulate(sapply(findbars(form),
+                                              function(x)  parens(deparse(x))),
+                                       response=".")
+  onlyBars(formula(model))
+  cmpr_model <- update(model,onlyBars(formula(model)))
+  
+  return(cmpr_model)
+  
+}
+```
+
+```{r anova-results-function, include=FALSE}
+# this function takes two nested models, runs an anova, and the outputs the 
+# Chi-square statistic, the degrees of freedom, and the p value to the global environment
+anova_results <- function(model, cmpr_model) {
+  
+  model_name <- deparse(substitute(model))
+  
+  if (class(model) == "buildmer") model <- model@model
+  if (class(cmpr_model) == "buildmer") cmpr_model <- cmpr_model@model
+  
+  anova_output <- anova(model, cmpr_model)
+  
+  assign(paste0(model_name, ".Chisq"),
+         anova_output$Chisq[2],
+         envir = .GlobalEnv)
+  assign(paste0(model_name, ".df"),
+         anova_output$Df[2],
+         envir = .GlobalEnv)
+  assign(paste0(model_name, ".p"),
+         anova_output$`Pr(>Chisq)`[2],
+         envir = .GlobalEnv)
+  
+}
+```
+
+```{r contrasts-extract, echo=FALSE}
+# this function extracts test statistics and p values from model summaries
+contrasts_extract <- function(model) {
+  
+  model_name <- deparse(substitute(model))
+  
+  if (class(model) == "buildmer") model <- model@model
+  
+  EMMs <- emmeans(model, pairwise ~ size)
+  
+  params <- as.data.frame(EMMs[2]) %>%
+                            rename_with(str_replace,
+                                        pattern = "contrasts.", replacement = "",
+                                        matches("contrasts")) %>%
+                            rename_with(str_to_title, !starts_with("p")) %>%
+                            dplyr::select(c("Contrast", "Z.ratio", "p.value"))
+  
+  return(params)
+  
+}
+```
+
+```{r sum-stats-extract, echo = FALSE}
+# generates summary statistics (mean and standard deviation)
+sum_stats <- function(df) {
+  
+  stats <- df %>%
+    filter(!is.na(difference)) %>%
+    group_by(size) %>%
+    summarise(mean = mean(difference),
+              sd = sd(difference)) %>%
+    rename_with(str_to_title) %>%
+    rename_with(str_to_upper, starts_with("S"))
+  
+  return(stats)
+  
+}
+```
+
+
+```{r effect-size-function, include = FALSE}
+get_effects_sizes <- function(model, d) {
+  
+  effect_sizes <- lme.dscore(model, data = d, type = "lme4")
+  
+  effects_df <- as.data.frame(effect_sizes[3])
+  
+  return(effects_df)
+}
+```
+
+```{r dot-plot-function, include = FALSE}
+dot_plot_function <- function(df) {
+
+data <- df %>%
+  group_by(size) %>%
+  filter(!is.na(difference)) %>%
+  filter(!is.na(size)) %>%
+  summarise(
+    mean = mean(difference),
+    lci = t.test(difference, conf.level = 0.95)$conf.int[1],
+    hci = t.test(difference, conf.level = 0.95)$conf.int[2],
+  )
+
+  data %>%
+    mutate(size = fct_relevel(size, "A", "B", "C", "D")) %>%
+    ggplot(aes(x = size, y = mean)) +
+    geom_point() +
+    #coord_cartesian(ylim = c(0, max_error))
+    geom_errorbar(aes(ymin=lci, ymax=hci), colour="black", width=0.025, linewidth =1) +
+    theme_ggdist() +
+    labs(x = "Point Size Condition",
+         y = "Mean Error") +
+    theme(axis.text = element_text(size = 13),
+          axis.title = element_text(size = 16))
+}
+```
+
+```{r plot-sd-sd, include = FALSE}
+plot_sd_sd_function <- function(df){
+  df %>% 
+  summarise(ppt_sd = sd(difference)) %>% 
+  drop_na() %>% 
+  group_by(size) %>% 
+  summarise(mean_sd = mean(ppt_sd), sd_sd = sd(ppt_sd)) %>% 
+  ggplot(aes(x = size, y = mean_sd)) +
+  geom_point(size = 2) + 
+  geom_errorbar(aes(ymin = mean_sd - sd_sd, ymax = mean_sd + sd_sd), width = 0.05, linewidth = 1) + 
+  theme_ggdist() +
+  ylim(0, .3) +
+  labs(x = "Point Size Condition",
+       y = "Mean Standard Deviation") +
+        theme(axis.text = element_text(size = 13),
+              axis.title = element_text(size = 16))
+}
+```
+
+```{r error-bar-plot, include = FALSE}
+plot_error_bars_function <- function(df, measure, l){
+  df %>% 
+  drop_na() %>% 
+  group_by(size, my_rs) %>% 
+  summarise(sd = sd(get(measure)), mean = mean(get(measure))) %>% 
+  ggplot(aes(x = my_rs, y = mean)) +
+  geom_point(size = 0.2) + 
+  geom_errorbar(mapping = aes(ymin = mean + sd, ymax = mean - sd),width = 0.01, size = 0.3) +
+  theme_ggdist() +
+  scale_y_continuous(breaks = seq(0,1, 0.2)) +
+  theme(strip.text = element_text(size = 6, margin = margin(1,0,1,0, "mm")), aspect.ratio = 1) +
+  facet_wrap(size ~., ncol = 4, labeller = labeller(size = l)) +
+    labs(x = "Objective r",
+         y = "Mean r estimation") +
+    xlim(0.2,1)
+}
+
+```
+
+```{r labeller, include = FALSE}
+labels_size <- c(A = "Non-Linear Decay", B = "Linear Decay", C = "Inverted Decay", D = "Standard Size")
+```
+
+
+# Let's go
+
+```{r changes-with-r-size, warning=FALSE, echo=FALSE, message=FALSE, fig.align='center', fig.show='hold', fig.cap="\\label{changes-plot}", crop = TRUE}
+plot_error_bars_function(exp_size_only_tidy, "difference", labels_size) +
+    labs(y = "Mean r estimation error") +
+    theme(title = element_text(size = 8)) +
+    geom_hline(yintercept = 0, linetype = 2)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
