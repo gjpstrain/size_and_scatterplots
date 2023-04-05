@@ -140,17 +140,102 @@
 
 \maketitle
 
-\hypertarget{lets-go}{%
-\section{Let's go}\label{lets-go}}
+\hypertarget{related-work}{%
+\section{Related Work}\label{related-work}}
+
+\hypertarget{correlation-perception}{%
+\subsection{Correlation Perception}\label{correlation-perception}}
+
+see Strain et al for a brief review of the history of correlation perception
+testing with scatterplots
+
+\hypertarget{point-size}{%
+\subsection{Point Size}\label{point-size}}
+
+Hong et al paper will be useful here
+
+\hypertarget{dot-pitch-and-crowdsourced-experiments}{%
+\subsection{Dot Pitch and Crowdsourced Experiments}\label{dot-pitch-and-crowdsourced-experiments}}
+
+\hypertarget{methodology}{%
+\section{Methodology}\label{methodology}}
+
+\hypertarget{stimuli}{%
+\subsection{Stimuli}\label{stimuli}}
+
+The data used to generated the scatterplots in the current study was identical to that
+in \cite{strain_2023}. They were generated based on 45 uniformly distributed \emph{r} values
+between 0.2 and 0.99. Scatterplot points were generated based on bivariate normal
+distributions with standard deviations of 1 in each direction. Each scatterplot
+had a 1:1 aspect ratio, was generated as a 1200 x 1200 pixel .png image, and was
+scaled up or down according to the participant's monitor. See section \ref{dot-pitch-and-crowdsourced-experiments}
+for a more detailed discussion of precise point sizes and dot pitch in crowd-sourced
+experiments.
+
+As in our previous study \cite{strain_2023}, we used equation 1 to map residuals
+to point sizes. We used a scaling factor of 4 and a constant of 0.2 to achieve a
+minimum point size of 12/13 pixels, which is consistent with the point size on
+a 1920 x 1080 monitor for both experiments in \cite{strain_2023}. Again, see section \ref{dot-pitch-and-crowdsourced-experiments}
+for a discussion of dot pitch. Scripts detailing scatterplot and mask generation
+can be found in the item preparation folder in the repository linked below.
+
+\begin{equation}
+  point-size = 1 - b^R
+\end{equation}
+
+\hypertarget{dot-pitch-and-crowdsourced-experiments-1}{%
+\subsection{Dot Pitch and Crowdsourced Experiments}\label{dot-pitch-and-crowdsourced-experiments-1}}
+
+\hypertarget{open-research-statement}{%
+\subsection{Open Research Statement}\label{open-research-statement}}
+
+The experiment was conducted according to the principles of open and reproducible research.
+All data and analysis code are available at \url{https://github.com/gjpstrain/size_contrast_and_scatterplots}.
+This repository contains instructions for building a docker image to fully
+reproduce the computational environment used, allowing for full replications
+of stimulus generation, analyses, and the paper itself. The experiment was
+pre-registered with the OSF (\url{https://osf.io/k4gd8}).
+
+\hypertarget{participants}{%
+\subsection{Participants}\label{participants}}
+
+\hypertarget{design}{%
+\subsection{Design}\label{design}}
+
+The experiment used a fully repeated measures, within-participants design, with each
+participant seeing and responding to each of the 180 scatterplots in randomised order.
+There were four scatterplots for each of the 45 \emph{r} values corresponding to the
+four levels of the size condition, examples of which can be see in figure \ref{plot-examples}.
 
 \begin{figure}
+\centering
+\includegraphics{size_and_scatterplots_files/figure-latex/examples-1.pdf}
+\caption{\label{fig:examples}Four levels of the point size condition, demonstrated with an \textit{r} value of 0.6}
+\end{figure}
 
-{\centering \includegraphics{size_and_scatterplots_files/figure-latex/changes-with-r-size-1} 
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+include short discussion of modelling paradigm and justification for it
+
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
+\begin{figure*}
+
+\includegraphics{size_and_scatterplots_files/figure-latex/changes-with-r-size-1} \hfill{}
+
+\caption{hello}\label{fig:changes-with-r-size}
+\end{figure*}
+
+\begin{figure*}
+
+{\centering \includegraphics{size_and_scatterplots_files/figure-latex/dot-plot-1} 
 
 }
 
-\caption{\label{changes-plot}}\label{fig:changes-with-r-size}
-\end{figure}
+\caption{hello}\label{fig:dot-plot}
+\end{figure*}
 
 %% if specified like this the section will be committed in review mode
 \acknowledgments{lah di dah}
