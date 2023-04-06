@@ -79,6 +79,10 @@ size_anon <- read_csv("data/final_data.csv")
 
 ```{r wrangle, include = FALSE}
 # function for wrangling data
+
+# first do literacy
+
+
 wrangle <- function(anon_file) {
   
   literacy <- anon_file %>%
@@ -91,6 +95,21 @@ wrangle <- function(anon_file) {
                             q5_slider.response))) %>%
     dplyr::select(participant,
            literacy)
+  
+# extract and process visual threshold testing
+  
+  visual_thresholds <- anon_file %>%
+    filter(!is.na(VT_with_labels)) %>%
+    dplyr::select(c("VT_with_labels", "participant", "VT_textbox2.text")) %>%
+    mutate(VT_answer = str_replace(VT_with_labels, pattern = "vis_threshold_plots/", replacement = "")) %>%
+    mutate(VT_answer = str_replace(VT_answer, pattern = "_VT.png", replacement = "")) %>%
+    mutate(correct_VT = case_when(
+      VT_answer == VT_textbox2.text ~ "y",
+      VT_answer != VT_textbox2.text ~ "n",
+      is.na(VT_answer) ~ "n", TRUE ~ as.character(VT_answer))) %>%
+    group_by(participant) %>% 
+    summarise(VT_no_correct = sum(correct_VT == "y")) %>%
+    dplyr::select("VT_no_correct", "participant")
   
 # extract and process monitor and dot pitch information
 # we assume standard 16:9 aspect ratio for monitors
@@ -147,6 +166,7 @@ anon_file %>%
   inner_join(literacy, by = "participant") %>%
   inner_join(demographics, by = "participant") %>%
   inner_join(monitor_information, by = "participant") %>%
+  inner_join(visual_thresholds, by = "participant") %>%
   mutate(across(matches(c("item", "size")), as_factor)) %>%
   dplyr::select(-c("__participant")) %>%
   mutate(difference = my_rs - slider.response) %>%
@@ -161,10 +181,6 @@ wrangle(size_anon)
 # remove anon df from environment
 
 rm(size_anon)
-
-# check for missing age values
-
-sum(is.na(exp_size_only_tidy$age_textbox.text))
 ```
 
 ```{r comparison-function, include=FALSE}
@@ -426,7 +442,7 @@ previous studies were prevented from participating.
 ## Stimuli
 
 The data used to generated the scatterplots in the current study was identical to that
-in \cite{strain_2023}. They were generated based on 45 uniformly distributed *r* values
+in \cite{strain_2023}. Scatterplots were generated based on 45 uniformly distributed *r* values
 between 0.2 and 0.99. Scatterplot points were generated based on bivariate normal 
 distributions with standard deviations of 1 in each direction. Each scatterplot
 had a 1:1 aspect ratio, was generated as a 1200 x 1200 pixel .png image, and was
@@ -447,36 +463,68 @@ can be found in the item preparation folder in the repository linked below.
 
 ## Dot Pitch and Crowdsourced Experiments
 
+```{r dot-pitch, include = FALSE}
+mean_dot_pitch <- mean(exp_size_only_tidy$dot_pitch)
+
+sd_dot_pitch <- sd(exp_size_only_tidy$dot_pitch)
+```
+
 In our previous study \cite{strain_2023}, we had no way of obtaining dot pitch
 or participant to monitor distance due to the online, crowdsourced nature of the 
 experiments. Since then we have adopted a method for obtaining the height of a 
 participant's monitor in inches \cite{screenscale}. Combining this with the
 monitor resolution fetched from Psychopy and assuming a widescreen 16:9 aspect ratio
 allows us to infer dot pitch and therefore the physical size of the points in our
-experiment. Mean dot pitch was 
+experiment. Mean dot pitch was `r printnum(mean_dot_pitch)`mm, ($SD = `r printnum(sd_dot_pitch)`$),
+corresponding to a physical size on the screen of `r printnum(mean_dot_pitch*13)`mm.
+While dot pitch is not necessary information for the present study, as we are only
+interested in the relative differences in correlation estimates between point size
+conditions, the fact that we can collect it at all is indicative of the gap
+being narrowed with regards to psychophysical testing between in-person and online
+experiments. Given that the latter are cheaper, easier, and immeasurably quicker,
+anything that can be done be done to narrow this gap in capability is a boon.
 
-```{r}
-mean(exp_size_only_tidy$dot_pitch)
+Put something about narrowing the gap wrt psychophysical testing between online
+and in-person experiments.
 
-sd(exp_size_only_tidy$dot_pitch)
+See section \ref{results} for analyses including dot pitch as a predictor.
+
+## Visual Threshold Testing
+
+```{r threshold-values, include=FALSE}
+vis_df <- exp_size_only_tidy %>%
+  group_by(VT_no_correct) %>%
+  count()
 ```
 
-
-
+It is key that our manipulation does not functionally removing data from the scatterplot,
+thus, in order to test that all our points were visible across a range of viewing
+contexts and on a range of apparatus, we included visual threshold testing prior
+to the experimental items in the study. Participants were shown six scatterplots
+with a number of points, and were asked to enter in a textbox how many points
+were being displayed. The points were the same size as the smallest points used
+in the experimental materials. `r printnum(vis_df$n[1]/270, digits = 0)`% of 
+participants were correct on `r printnum(vis_df$VT_no_correct[1])` out of 6 visual
+threshold questions, while `r printnum(vis_df$n[2]/270, digits = 0)`% were correct
+on `r printnum(vis_df$VT_no_correct[2])` out of 6. It should be noted that those 
+participants scoring 5/6 did not answer incorrectly, rather did not answer
+at all for this particular questions, which is more suggestive of either
+a mis-click or an initial misunderstanding of the task they were asked to complete.
+Regardless, we consider these results to be indicative of a sufficient level of 
+point visibility for the current experiment.
 
 ## Design
 
 The experiment used a fully repeated measures, within-participants design, with each
 participant seeing and responding to each of the 180 scatterplots in a randomised order.
 There were four scatterplots for each of the 45 *r* values corresponding to the
-four levels of the size condition, examples of which can be see in figure \ref{plot-examples}.
+four levels of the size condition, examples of which can be see in figure \ref{fig:examples}.
 Everything needed to run the experiment, including code, materials, instructions, and scripts, is
 hosted at https://gitlab.pavlovia.org/Strain/exp_size_only.
 
 ```{r examples, warning=FALSE, echo=FALSE, message=FALSE, fig.asp=1, fig.show='hold', fig.cap="Four levels of the point size condition, demonstrated with an \\textit{r} value of 0.6"}
 example_plots()
 ```
-
 
 # Results
 

@@ -136,7 +136,7 @@
 %% ``\begin{document}'' command. It prepares and prints the title block.
 
 %% the only exception to this rule is the \firstsection command
-\firstsection{Place intro here.}
+\firstsection{Place intro here. Don't forget to put hypotheses}
 
 \maketitle
 
@@ -159,6 +159,27 @@ Hong et al paper will be useful here
 
 \hypertarget{methodology}{%
 \section{Methodology}\label{methodology}}
+
+\hypertarget{open-research-statement}{%
+\subsection{Open Research Statement}\label{open-research-statement}}
+
+The experiment was conducted according to the principles of open and reproducible research.
+All data and analysis code are available at \url{https://github.com/gjpstrain/size_contrast_and_scatterplots}.
+This repository contains instructions for building a docker image to fully
+reproduce the computational environment used, allowing for full replications
+of stimulus generation, analyses, and the paper itself. The experiment was
+pre-registered with the OSF (\url{https://osf.io/k4gd8}).
+
+\hypertarget{participants}{%
+\subsection{Participants}\label{participants}}
+
+150 participants were recruited using the Prolific.co platform. Normal to
+corrected-to-normal vision and English fluency were required for participation. As in
+\cite{strain_2023}, and in accordance with previously published guidelines \cite{peer_2021},
+participants were required to have completed at least 100 studies on Prolific, and were
+required to have a Prolific score of at least 100, indicating acceptance on at least
+100/101 previously completed studies. Participants who took part in any of our
+previous studies were prevented from participating.
 
 \hypertarget{stimuli}{%
 \subsection{Stimuli}\label{stimuli}}
@@ -186,26 +207,38 @@ can be found in the item preparation folder in the repository linked below.
 \hypertarget{dot-pitch-and-crowdsourced-experiments-1}{%
 \subsection{Dot Pitch and Crowdsourced Experiments}\label{dot-pitch-and-crowdsourced-experiments-1}}
 
-\hypertarget{open-research-statement}{%
-\subsection{Open Research Statement}\label{open-research-statement}}
+In our previous study \cite{strain_2023}, we had no way of obtaining dot pitch
+or participant to monitor distance due to the online, crowdsourced nature of the
+experiments. Since then we have adopted a method for obtaining the height of a
+participant's monitor in inches \cite{screenscale}. Combining this with the
+monitor resolution fetched from Psychopy and assuming a widescreen 16:9 aspect ratio
+allows us to infer dot pitch and therefore the physical size of the points in our
+experiment. Mean dot pitch was 0.33 (\(SD = 0.06\)).
+See section \ref{results} for analyses including dot pitch as a predictor.
 
-The experiment was conducted according to the principles of open and reproducible research.
-All data and analysis code are available at \url{https://github.com/gjpstrain/size_contrast_and_scatterplots}.
-This repository contains instructions for building a docker image to fully
-reproduce the computational environment used, allowing for full replications
-of stimulus generation, analyses, and the paper itself. The experiment was
-pre-registered with the OSF (\url{https://osf.io/k4gd8}).
+\hypertarget{visual-threshold-testing}{%
+\subsection{Visual Threshold Testing}\label{visual-threshold-testing}}
 
-\hypertarget{participants}{%
-\subsection{Participants}\label{participants}}
+It is key that our manipulation does not functionally removing data from the scatterplot,
+thus, in order to test that all our points were visible across a range of viewing
+contexts and on a range of apparatus, we included visual threshold testing prior
+to the experimental items in the study. Participants were shown six scatterplots
+with a number of points, and were asked to enter in a textbox how many points
+were being displayed. The points were the same size as the smallest points used
+in the experimental materials. 5\% of
+participants were correct on 5 out of 6 visual
+threshold questions, while 95\% were correct
+on 6 out of 6.
 
 \hypertarget{design}{%
 \subsection{Design}\label{design}}
 
 The experiment used a fully repeated measures, within-participants design, with each
-participant seeing and responding to each of the 180 scatterplots in randomised order.
+participant seeing and responding to each of the 180 scatterplots in a randomised order.
 There were four scatterplots for each of the 45 \emph{r} values corresponding to the
-four levels of the size condition, examples of which can be see in figure \ref{plot-examples}.
+four levels of the size condition, examples of which can be see in figure \ref{fig:examples}.
+Everything needed to run the experiment, including code, materials, instructions, and scripts, is
+hosted at \url{https://gitlab.pavlovia.org/Strain/exp_size_only}.
 
 \begin{figure}
 \centering
