@@ -1,0 +1,7 @@
+  @Manual{emmeans,
+    title = {emmeans: Estimated Marginal Means, aka Least-Squares Means},
+    author = {Russell V. Lenth},
+    year = {2023},
+    note = {R package version 1.8.5},
+    url = {https://CRAN.R-project.org/package=emmeans},
+  }

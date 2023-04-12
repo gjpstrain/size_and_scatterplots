@@ -57,9 +57,14 @@ library(ggdist)
 library(ggpubr)
 library(pwr)
 library(geomtextpath)
+library(conflicted)
+
+# tell R to use dplyr::select() instead of MASS::select()
+
+conflicts_prefer(dplyr::select(), dplyr::filter())
 
 # Comment out the following line if additional tinytex packages are already installed
-#tinytex:::install_yihui_pkgs()
+# tinytex:::install_yihui_pkgs()
 ```
 
 ```{r eval-models, include=FALSE}
@@ -93,14 +98,14 @@ wrangle <- function(anon_file) {
                             q3_slider.response, 
                             q4_slider.response, 
                             q5_slider.response))) %>%
-    dplyr::select(participant,
+    select(participant,
            literacy)
   
 # extract and process visual threshold testing
   
   visual_thresholds <- anon_file %>%
     filter(!is.na(VT_with_labels)) %>%
-    dplyr::select(c("VT_with_labels", "participant", "VT_textbox2.text")) %>%
+    select(c("VT_with_labels", "participant", "VT_textbox2.text")) %>%
     mutate(VT_answer = str_replace(VT_with_labels, pattern = "vis_threshold_plots/", replacement = "")) %>%
     mutate(VT_answer = str_replace(VT_answer, pattern = "_VT.png", replacement = "")) %>%
     mutate(correct_VT = case_when(
@@ -109,7 +114,7 @@ wrangle <- function(anon_file) {
       is.na(VT_answer) ~ "n", TRUE ~ as.character(VT_answer))) %>%
     group_by(participant) %>% 
     summarise(VT_no_correct = sum(correct_VT == "y")) %>%
-    dplyr::select("VT_no_correct", "participant")
+    select("VT_no_correct", "participant")
   
 # extract and process monitor and dot pitch information
 # we assume standard 16:9 aspect ratio for monitors
@@ -120,7 +125,7 @@ wrangle <- function(anon_file) {
     mutate(res_height = res_width*0.5625,
            width = height*0.5625,
            dot_pitch = ((sqrt(height^2 + width^2))/(sqrt(res_height^2 + res_width^2))) * 25.4) %>%
-        dplyr::select(c("dot_pitch", "participant", "res_width"))
+        select(c("dot_pitch", "participant", "res_width"))
     
   
 # extract demographic information
@@ -132,7 +137,7 @@ wrangle <- function(anon_file) {
                                          `1` = "F",
                                          `2` = "M",
                                          `3` = "NB")) %>%
-  dplyr::select(matches(c("participant",
+  select(matches(c("participant",
                           "age_textbox.text",
                           "gender_slider.response")))
 
@@ -154,7 +159,7 @@ anon_file <- anon_file %>%
 # output this file with suffix 'tidy'
 
 anon_file %>%
-  dplyr::select(c("participant",
+  select(c("participant",
                   "item",
                   "size",
                   "slider.response",
@@ -168,8 +173,9 @@ anon_file %>%
   inner_join(monitor_information, by = "participant") %>%
   inner_join(visual_thresholds, by = "participant") %>%
   mutate(across(matches(c("item", "size")), as_factor)) %>%
-  dplyr::select(-c("__participant")) %>%
+  select(-c("__participant")) %>%
   mutate(difference = my_rs - slider.response) %>%
+  mutate(contrast = fct_relevel(size, c('A', 'B', 'C', 'D'))) %>% 
   assign(paste0(unique(anon_file$expName), "_tidy"),
            value = ., envir = .GlobalEnv)
 }
@@ -264,7 +270,7 @@ contrasts_extract <- function(model) {
                                         pattern = "contrasts.", replacement = "",
                                         matches("contrasts")) %>%
                             rename_with(str_to_title, !starts_with("p")) %>%
-                            dplyr::select(c("Contrast", "Z.ratio", "p.value"))
+                            select(c("Contrast", "Z.ratio", "p.value"))
   
   return(params)
   
@@ -554,7 +560,7 @@ four levels of the size condition, examples of which can be see in figure \ref{f
 Everything needed to run the experiment, including code, materials, instructions, and scripts, is
 hosted at https://gitlab.pavlovia.org/Strain/exp_size_only.
 
-```{r examples, warning=FALSE, echo=FALSE, message=FALSE, fig.asp=1, fig.show='hold', fig.cap="Four levels of the point size condition, demonstrated with an \\textit{r} value of 0.6"}
+```{r examples, warning=FALSE, echo=FALSE, message=FALSE, fig.asp=1, fig.show='hold', fig.cap="Four levels of the point size condition, demonstrated with an \\textit{r} value of 0.6", out.width="100%"}
 example_plots()
 ```
 
@@ -576,7 +582,71 @@ participants to set the slider to 1 or 0 and ignore the scatterplot.
 
 # Results
 
+All analyses were conducted using R (version 4.2.3 \cite{r_core}). Models were
+built using the **buildmer** (version 2.8 \cite{voeten_buildmer_2022}) and **lme4**
+(version 1.1-32 \cite{bates_lme4_2015}) packages, with size manipulation being set
+as the predictor for participants' errors in correlation estimates
 
+```{r dot-plot, warning=FALSE, echo=FALSE, message=FALSE, fig.show='hold', fig.cap="Mean error in correlation estimates across the four size manipulation conditions, with 95\\% confidence intervals shown.", out.width="100%"}
+dot_plot_function(exp_size_only_tidy) +
+  scale_x_discrete(labels = c("Non-linear\nSize Decay",
+                              "Linear Size\nDecay",
+                              "Inverted Non-linear\nSize Decay",
+                              "Standard\nSize")) +
+  ylim(0,0.2)
+```
+
+```{r model, cache=eval_models, cache.comments=FALSE, eval=eval_models, message=FALSE, warning=FALSE, include=FALSE, cache.path="size_and_scatterplots/latex/"}
+size_model <- buildmer(difference ~ size +
+                         (1 + size | participant) +
+                         (1 + size | item),
+                       data = exp_size_only_tidy)
+```
+
+```{r model-comparison,cache=eval_models, cache.comments=FALSE, eval=eval_models, message=FALSE, warning=FALSE, include=FALSE, cache.path="size_and_scatterplots/latex"}
+model_comparison <- comparison(size_model)
+```
+
+```{r anova, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE}
+anova_results(size_model, model_comparison)
+```
+
+```{r effects-sizes, eval=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
+effects_df <- get_effects_sizes(model, exp_size_only_tidy)
+```
+
+Mean errors in correlation estimates for the four size manipulation conditions
+can be seen in figure \ref{fig:dot-plot}. A likelihood ratio test revealed that the
+model including size manipulation as a predictor explained significantly more
+variance than a null model ($\chi^2$(`r in_paren(size_model.df)`) = `r printnum(size_model.Chisq)`,
+*p* `r printp(size_model.p, add_equals = TRUE)`). This model has random intercepts for
+items and participants. The effect here is driven by participants' errors being lower 
+for scatterplots with the non-linear size decay manipulation than for all other conditions,
+for error being lower for scatterplots with linear size decay than for plots with
+inverted non-linear decay or standard size, and for errors being higher for scatterplots
+with standard size than for plots with inverted non-linear decay. 
+
+Testing for contrasts between the four levels of the size manipulation condition 
+were performed with the **emmeans** package (version 1.8.5 \cite{emmeans}), and
+are displayed in Table \ref{tab:contrasts-table}
+
+```{r contrasts-table, echo=FALSE, warning=FALSE, message=FALSE}
+# outputs summary statistics
+
+contrasts <- contrasts_extract(size_model) %>%
+  mutate(p.value = scales::pvalue(p.value)) %>%
+  mutate(Contrast = recode(Contrast,
+                           "D - C" = "Standard Size : Inverted Non-linear Decay",
+                           "C - A" = "Inverted Non-linear Decay : Non-linear Decay",
+                           "A - B" = "Non-linear Decay: Linear Decay",
+                           "D - A" = "Standard Size : Non-linear Decay",
+                           "D - B" = "Standard Size : Linear Decay",
+                           "C - B" = "Inverted Non-linear Decay : Linear Decay"))
+
+k <- knitr::kable(contrasts, booktabs = TRUE, digits = c(0,2,3), caption = "contrasts table", escape = FALSE)
+
+kable_styling(k, latex_options = "scale_down")
+```
 
 # Discussion
 
@@ -586,16 +656,6 @@ plot_error_bars_function(exp_size_only_tidy, "difference", labels_size) +
     theme(title = element_text(size = 8)) +
     geom_hline(yintercept = 0, linetype = 2)
 ```
-
-```{r dot-plot, warning=FALSE, echo=FALSE, message=FALSE, fig.align='center', fig.show='hold', fig.cap="hello", crop = TRUE, fig.env="figure*"}
-dot_plot_function(exp_size_only_tidy) +
-  scale_x_discrete(labels = c("Non-Linear\nSize Decay",
-                              "Linear Size\nDecay",
-                              "Inverted\nNon-Linear\nSize Decay",
-                              "Standard Size")) +
-  ylim(0,0.2)
-```
-
 
 
 
