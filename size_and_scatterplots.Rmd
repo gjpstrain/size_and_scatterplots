@@ -27,7 +27,7 @@ introduction: |
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 knitr::knit_hooks$set(crop = knitr::hook_pdfcrop)
 # Knitting this document requires tinytex (install.packages("tinytex"))
 # For formatting to be correct, additional tinytex packages are required
@@ -58,6 +58,7 @@ library(ggpubr)
 library(pwr)
 library(geomtextpath)
 library(conflicted)
+library(EMAtools)
 
 # tell R to use dplyr::select() instead of MASS::select()
 
@@ -70,7 +71,7 @@ conflicts_prefer(dplyr::select(), dplyr::filter())
 ```{r eval-models, include=FALSE}
 # in this script, models are cached. If eval_models <- FALSE, script will load
 # cached models. Set eval_models <- TRUE to rebuild models from scratch
-eval_models <- TRUE
+eval_models <- FALSE
 
 if (eval_models == FALSE){
   lazyload_cache_dir('size_contrast_scatterplots/latex')
@@ -560,7 +561,7 @@ four levels of the size condition, examples of which can be see in figure \ref{f
 Everything needed to run the experiment, including code, materials, instructions, and scripts, is
 hosted at https://gitlab.pavlovia.org/Strain/exp_size_only.
 
-```{r examples, warning=FALSE, echo=FALSE, message=FALSE, fig.asp=1, fig.show='hold', fig.cap="Four levels of the point size condition, demonstrated with an \\textit{r} value of 0.6", out.width="100%"}
+```{r examples, echo=FALSE, fig.asp=1, fig.show='hold', fig.cap="Four levels of the point size condition, demonstrated with an \\textit{r} value of 0.6", out.width="100%"}
 example_plots()
 ```
 
@@ -587,7 +588,7 @@ built using the **buildmer** (version 2.8 \cite{voeten_buildmer_2022}) and **lme
 (version 1.1-32 \cite{bates_lme4_2015}) packages, with size manipulation being set
 as the predictor for participants' errors in correlation estimates
 
-```{r dot-plot, warning=FALSE, echo=FALSE, message=FALSE, fig.show='hold', fig.cap="Mean error in correlation estimates across the four size manipulation conditions, with 95\\% confidence intervals shown.", out.width="100%"}
+```{r dot-plot, echo=FALSE, fig.show='hold', fig.cap="Mean error in correlation estimates across the four size manipulation conditions, with 95\\% confidence intervals shown.", out.width="100%"}
 dot_plot_function(exp_size_only_tidy) +
   scale_x_discrete(labels = c("Non-linear\nSize Decay",
                               "Linear Size\nDecay",
@@ -596,23 +597,23 @@ dot_plot_function(exp_size_only_tidy) +
   ylim(0,0.2)
 ```
 
-```{r model, cache=eval_models, cache.comments=FALSE, eval=eval_models, message=FALSE, warning=FALSE, include=FALSE, cache.path="size_and_scatterplots/latex/"}
+```{r model, cache=eval_models, cache.comments=FALSE, eval=eval_models, include=FALSE, cache.path="size_and_scatterplots/latex/"}
 size_model <- buildmer(difference ~ size +
                          (1 + size | participant) +
                          (1 + size | item),
                        data = exp_size_only_tidy)
 ```
 
-```{r model-comparison,cache=eval_models, cache.comments=FALSE, eval=eval_models, message=FALSE, warning=FALSE, include=FALSE, cache.path="size_and_scatterplots/latex"}
+```{r model-comparison,cache=eval_models, cache.comments=FALSE, eval=eval_models, include=FALSE, cache.path="size_and_scatterplots/latex"}
 model_comparison <- comparison(size_model)
 ```
 
-```{r anova, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE}
+```{r anova, eval=TRUE, echo=FALSE}
 anova_results(size_model, model_comparison)
 ```
 
-```{r effects-sizes, eval=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
-effects_df <- get_effects_sizes(model, exp_size_only_tidy)
+```{r effects-sizes, eval=FALSE, echo=FALSE}
+effects_df <- get_effects_sizes(size_model, exp_size_only_tidy)
 ```
 
 Mean errors in correlation estimates for the four size manipulation conditions
@@ -628,9 +629,12 @@ with standard size than for plots with inverted non-linear decay.
 
 Testing for contrasts between the four levels of the size manipulation condition 
 were performed with the **emmeans** package (version 1.8.5 \cite{emmeans}), and
-are displayed in Table \ref{tab:contrasts-table}
+are displayed in Table \ref{tab:contrasts-table}. Means and 95% confidence intervals
+of correlation estimates are shown in Figure \ref{dot-plot}. The **EMAtools** package
+was used to calculate effects sizes in Cohen's d, the results of which can be seen in 
+Table \ref{tab:effects-df}
 
-```{r contrasts-table, echo=FALSE, warning=FALSE, message=FALSE}
+```{r contrasts-table, echo=FALSE}
 # outputs summary statistics
 
 contrasts <- contrasts_extract(size_model) %>%
@@ -648,9 +652,15 @@ k <- knitr::kable(contrasts, booktabs = TRUE, digits = c(0,2,3), caption = "cont
 kable_styling(k, latex_options = "scale_down")
 ```
 
+```{r effects-df, }
+
+```
+
+
+
 # Discussion
 
-```{r changes-with-r-size, warning=FALSE, echo=FALSE, message=FALSE, fig.align='left', fig.show='hold', fig.cap="hello", crop = TRUE, fig.env="figure*"}
+```{r changes-with-r-size, echo=FALSE, fig.align='left', fig.show='hold', fig.cap="hello", crop = TRUE, fig.env="figure*"}
 plot_error_bars_function(exp_size_only_tidy, "difference", labels_size) +
     labs(y = "Mean r estimation error") +
     theme(title = element_text(size = 8)) +
