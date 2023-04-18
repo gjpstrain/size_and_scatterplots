@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.18)  18 APR 2023 14:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.18)  18 APR 2023 17:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -442,25 +442,22 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-LaTeX Warning: Citation `cleveland_1982' on page 1 undefined on input line 157.
-
-
 LaTeX Warning: Citation `lauer_1989' on page 1 undefined on input line 157.
 
 
 LaTeX Warning: Citation `collyer_1990' on page 1 undefined on input line 157.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 201.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 219.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 201.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 219.
 
-Underfull \hbox (badness 2418) in paragraph at lines 200--206
+Underfull \hbox (badness 2418) in paragraph at lines 218--224
 \T1/ptm/m/n/9 (+20) The ex-per-i-ment was con-ducted ac-cord-ing to the prin-ci-ples
  []
 
 
-Underfull \hbox (badness 1668) in paragraph at lines 200--206
+Underfull \hbox (badness 1668) in paragraph at lines 218--224
 \T1/ptm/m/n/9 (+20) of open and re-pro-ducible re-search. All data and anal-y-sis
  []
 
@@ -468,37 +465,36 @@ Underfull \hbox (badness 1668) in paragraph at lines 200--206
 
 
 ]
-<size_and_scatterplots_files/figure-latex/examples-1.pdf, id=125, 457.71pt x 456.70625pt>
+<size_and_scatterplots_files/figure-latex/examples-1.pdf, id=116, 457.71pt x 456.70625pt>
 File: size_and_scatterplots_files/figure-latex/examples-1.pdf Graphic file (type pdf)
 <use size_and_scatterplots_files/figure-latex/examples-1.pdf>
-Package pdftex.def Info: size_and_scatterplots_files/figure-latex/examples-1.pdf  used on input line 298.
+Package pdftex.def Info: size_and_scatterplots_files/figure-latex/examples-1.pdf  used on input line 316.
 (pdftex.def)             Requested size: 240.94499pt x 240.4155pt.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 298.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 316.
 
-LaTeX Warning: Reference `training' on page 2 undefined on input line 311.
-
-
-LaTeX Warning: Citation `r_core' on page 2 undefined on input line 321.
+LaTeX Warning: Reference `training' on page 2 undefined on input line 329.
 
 
-LaTeX Warning: Citation `voeten_buildmer_2022' on page 2 undefined on input line 322.
+LaTeX Warning: Citation `r_core' on page 2 undefined on input line 339.
 
-<size_and_scatterplots_files/figure-latex/dot-plot-1.pdf, id=130, 459.7175pt x 312.16624pt>
+
+LaTeX Warning: Citation `voeten_buildmer_2022' on page 2 undefined on input line 340.
+
+<size_and_scatterplots_files/figure-latex/dot-plot-1.pdf, id=121, 459.7175pt x 312.16624pt>
 File: size_and_scatterplots_files/figure-latex/dot-plot-1.pdf Graphic file (type pdf)
 <use size_and_scatterplots_files/figure-latex/dot-plot-1.pdf>
-Package pdftex.def Info: size_and_scatterplots_files/figure-latex/dot-plot-1.pdf  used on input line 327.
+Package pdftex.def Info: size_and_scatterplots_files/figure-latex/dot-plot-1.pdf  used on input line 345.
 (pdftex.def)             Requested size: 240.94499pt x 163.61346pt.
-[2 <./size_and_scatterplots_files/figure-latex/examples-1.pdf> <./size_and_scatterplots_files/figure-latex/dot-plot-1.pdf>]
 
-LaTeX Warning: Citation `emmeans' on page 3 undefined on input line 342.
+LaTeX Warning: Citation `emmeans' on page 2 undefined on input line 360.
 
-<size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf, id=165, 460.72125pt x 142.5325pt>
+<size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf, id=125, 460.72125pt x 142.5325pt>
 File: size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf Graphic file (type pdf)
 <use size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf>
-Package pdftex.def Info: size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf  used on input line 388.
+Package pdftex.def Info: size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf  used on input line 406.
 (pdftex.def)             Requested size: 460.72012pt x 142.53214pt.
-(./size_and_scatterplots.bbl
+[2 <./size_and_scatterplots_files/figure-latex/examples-1.pdf>] (./size_and_scatterplots.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 28--40
 []\T1/ptm/m/n/8 (+20) P. Bobko and R. Kar-ren.  The Per-cep-tion of Pear-
  []
@@ -524,30 +520,30 @@ Underfull \hbox (badness 7925) in paragraph at lines 28--40
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--122
+Underfull \hbox (badness 10000) in paragraph at lines 129--132
 []\T1/ptm/m/n/8 (+20) W. L. Morys-Carter.  Screen-Scale, May 2021.
  []
 
-) [3] [4 <./size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf>] (./size_and_scatterplots.aux)
+) [3 <./size_and_scatterplots_files/figure-latex/dot-plot-1.pdf>] [4 <./size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf>] (./size_and_scatterplots.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `size_and_scatterplots.out' has not changed.
-(rerunfilecheck)             Checksum: 0A2BA9427459145B0BEE37DD14A81988;2120.
+(rerunfilecheck)             Checksum: E58EE3AD5B213B9520A46554A0167EBA;1682.
  ) 
 Here is how much of TeX's memory you used:
- 12694 strings out of 477957
- 204845 string characters out of 5836259
- 1883660 words of memory out of 5000000
- 32328 multiletter control sequences out of 15000+600000
- 595424 words of font info for 314 fonts, out of 8000000 for 9000
+ 12705 strings out of 477957
+ 204939 string characters out of 5836259
+ 1882660 words of memory out of 5000000
+ 32325 multiletter control sequences out of 15000+600000
+ 596203 words of font info for 324 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 76i,13n,76p,1018b,454s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 76i,13n,76p,1018b,469s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on size_and_scatterplots.pdf (4 pages, 185882 bytes).
+Output written on size_and_scatterplots.pdf (4 pages, 187522 bytes).
 PDF statistics:
- 251 PDF objects out of 1000 (max. 8388607)
- 211 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
- 96896 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 245 PDF objects out of 1000 (max. 8388607)
+ 205 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 96880 words of extra memory for PDF output out of 106986 (max. 10000000)
 

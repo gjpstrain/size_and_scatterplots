@@ -141,11 +141,11 @@
 %% ``\begin{document}'' command. It prepares and prints the title block.
 
 %% the only exception to this rule is the \firstsection command
-\firstsection{Place intro here. Don't forget to put hypotheses}
+\firstsection{}
 
 \maketitle
 
-Scatterplots, utilised in scientific communication for a wide variety of tasks,
+Scatterplots, utilised in scientific communication for a variety of tasks,
 are some of the most widely used and widely studied data visualizations. Viewers
 mostly interpret them in similar ways \cite{kay_heer_2015}, and they are simple
 enough to be easily studied while providing important insights into visualization
@@ -153,7 +153,7 @@ design, human-computer interaction, and human perception. In a previous study \c
 we showed that a novel point contrast manipulation, in which the contrast of a certain
 scatterplot point was reduced as the size of the point's residual increased, could be
 used to partially correct for a systematic underestimation bias present in the
-literature \cite{strahan_1978, bobko_1979, cleveland_1982, lane_1985, lauer_1989, 
+literature \cite{strahan_1978, bobko_1979, cleveland_1984, lane_1985, lauer_1989, 
 collyer_1990, meyer_1992}. We suggested that this was due to the narrowing
 of the perceived probability distribution of a particular plot brought
 on by the lower contrast (and therefore higher uncertainty) in those outer
@@ -168,20 +168,38 @@ we might use the size of a point. There is evidence in the literature that large
 are more salient \cite{healey_2012}, can bias judgements of point position
 \cite{hong_2021}, and can result in faster reaction times \cite{grice_1983} to
 peripherally presented stimuli. In addition, smaller stimuli are associated with
-greater levels of spatial uncertainty \cite{alais_2004}, and if increased positional
-uncertainty is driving the reduction in error we saw in our previous work \cite{strain_2023},
+greater levels of spatial uncertainty \cite{alais_2004}, and if this
+is driving the reduction in error we saw in our previous work \cite{strain_2023},
 we would expect a similar effect when point size is used instead of point contrast.
+We therefore hypothesize that correlation estimation will be most accurate when
+viewers are presented with the non-linear size decay condition, and will be
+least accurate when presented with the non-linear inverted size decay condition.
 
-put ethics here
-
-\hypertarget{related-work}{%
-\section{Related Work}\label{related-work}}
+We present a single experiment study in which we demonstrate that the use of
+a non-linear size decay function relating to the residuals of points on scatterplots
+can be employed to correct for a systematic underestimation of correlation by
+viewers in scatterplots. We find no evidence for an effect of graph literacy (put
+something about training here). The effect we observe here is much stronger, both
+with regards to effect size and in terms of the observed reduction in error, than the
+effect we observed in our previous study \cite{strain_2023}. We suggest that this
+function can be used to facilitate more accurate correlation
+perception in scatterplots, and provide exciting future avenues for the continuation
+and refinement of these techniques. Ethical approval was granted by the University
+of Manchester's Computer Science Departmental Panel (Ref: 2022-14660-24397)
 
 \hypertarget{correlation-perception}{%
 \subsection{Correlation Perception}\label{correlation-perception}}
 
-see Strain et al for a brief review of the history of correlation perception
-testing with scatterplots
+Scatterplots have been widely studied, especially as mediums for the communication
+of correlation (see \cite{strain_2023} for a detailed review of this history). Much
+previous work has found evidence for a pronounced underestimation in judgements
+of correlation in positively correlated plots, especially between 0.2 \textless{} \emph{r} \textless{} 0.6. The
+nature of this investigation has varied, ranging from direct estimation techniques,
+to discriminative judgement, bisection, and staircase tasks. As in our previous work,
+we choose to use the direct estimation paradigm owing to its simplicity, and its suitability
+to online experimentation. The use of this paradigm renders the judgements we collect
+comparative by nature, although such work does allow us to inform design guidelines as
+well as perception.
 
 \hypertarget{point-size}{%
 \subsection{Point Size}\label{point-size}}
@@ -312,7 +330,7 @@ Participants were given instructions, and then shown examples of \emph{r} = 0.2,
 a discussion of the potential effects of this training. Two practice trials were
 given before the experiment began. Participants worked through a series of 180 trials
 in which they were asked to use a slider to estimate the correlation shown in
-the scatterplot. Interspersed were six attention check trials which asked
+the scatterplot. Visual masks preceded each plot. Interspersed were six attention check trials which asked
 participants to set the slider to 1 or 0 and ignore the scatterplot.
 
 \hypertarget{results}{%
