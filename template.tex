@@ -32,8 +32,8 @@
   \pdfcompresslevel=9                  % PDF Compression
   \pdfoptionpdfminorversion=7          % create PDF 1.7
   \ExecuteOptions{pdftex}
-  \usepackage{graphicx} % allow us to embed graphics files
-  %%\usepackage[T1]{fontenc}	
+  \usepackage{graphicx}                % allow us to embed graphics files
+  \usepackage[T1]{fontenc}	
   \DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg} % for pdflatex we expect .pdf, .png, or .jpg files
 \else%                                 % else we use pure latex
   \ExecuteOptions{dvips}
@@ -46,12 +46,11 @@
 
 \usepackage{microtype}                 % use micro-typography (slightly more compact, better to read)
 \PassOptionsToPackage{warn}{textcomp}  % to address font issues with \textrightarrow
-\usepackage{textcomp}               % use better special symbols
-\usepackage{mathptmx}
-\usepackage{bookmark}                  % use matching math font
+\usepackage{textcomp}                  % use better special symbols
+\usepackage{mathptmx}                  % use matching math font
 \usepackage{times}                     % we use Times as the main font
 \renewcommand*\ttdefault{txtt}         % a nicer typewriter font
-\usepackage[numbers]{natbib}                      % needed to automatically sort the references
+\usepackage{cite}                      % needed to automatically sort the references
 \usepackage{tabu}                      % only used for the table example
 \usepackage{booktabs}                  % only used for the table example
 %% We encourage the use of mathptmx for consistent usage of times font
@@ -148,10 +147,10 @@ $body$
 \acknowledgments{$acknowledgements$}
 
 %\bibliographystyle{abbrv}
-\bibliographystyle{bib_styles/abbrv-doi}
+\bibliographystyle{abbrv-doi}
 %\bibliographystyle{abbrv-doi-narrow}
 %\bibliographystyle{abbrv-doi-hyperref}
 %\bibliographystyle{abbrv-doi-hyperref-narrow}
 
-\bibliography{bibliography}
+\bibliography{$bibliography$}
 \end{document}

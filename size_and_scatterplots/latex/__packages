@@ -1,3 +1,10 @@
+base
+methods
+datasets
+utils
+grDevices
+graphics
+stats
 rticles
 tidyverse
 ggplot2
@@ -28,4 +35,3 @@ ggpubr
 pwr
 geomtextpath
 conflicted
-EMAtools
