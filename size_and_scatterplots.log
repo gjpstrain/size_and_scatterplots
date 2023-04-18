@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.12)  13 APR 2023 13:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.18)  18 APR 2023 14:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -53,8 +53,6 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen143
 \Gin@req@width=\dimen144
-) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
 (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
@@ -309,28 +307,28 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 )
 
 Package hyperref Warning: Option `pdftex' has already been used,
-(hyperref)                setting the option has no effect on input line 70.
+(hyperref)                setting the option has no effect on input line 73.
 
 
 Package hyperref Warning: Option `pagebackref' has already been used,
-(hyperref)                setting the option has no effect on input line 70.
+(hyperref)                setting the option has no effect on input line 73.
 
-Package hyperref Info: Option `pageanchor' set `true' on input line 70.
-Package hyperref Info: Option `plainpages' set `false' on input line 70.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 70.
+Package hyperref Info: Option `pageanchor' set `true' on input line 73.
+Package hyperref Info: Option `plainpages' set `false' on input line 73.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 73.
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 70.
+(hyperref)                setting the option has no effect on input line 73.
 
-Package hyperref Info: Option `bookmarksnumbered' set `false' on input line 70.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 70.
-Package hyperref Info: Option `breaklinks' set `true' on input line 70.
-Package hyperref Info: Option `colorlinks' set `false' on input line 70.
-Package hyperref Info: Option `nesting' set `true' on input line 70.
-Package hyperref Info: Option `linktocpage' set `true' on input line 70.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 134.
-(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/t1ptm.fd
-File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+Package hyperref Info: Option `bookmarksnumbered' set `false' on input line 73.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 73.
+Package hyperref Info: Option `breaklinks' set `true' on input line 73.
+Package hyperref Info: Option `colorlinks' set `false' on input line 73.
+Package hyperref Info: Option `nesting' set `true' on input line 73.
+Package hyperref Info: Option `linktocpage' set `true' on input line 73.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 137.
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-03-30 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count284
@@ -338,43 +336,43 @@ File: l3backend-pdftex.def 2023-03-30 L3 backend support: PDF output (pdfTeX)
 ) (./size_and_scatterplots.aux)
 \openout1 = `size_and_scatterplots.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
 (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
 (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Info: Redefining \microtypecontext on input line 134.
-Package microtype Info: Applying patch `item' on input line 134.
-Package microtype Info: Applying patch `toc' on input line 134.
-Package microtype Info: Applying patch `eqnum' on input line 134.
-Package microtype Info: Applying patch `footnote' on input line 134.
-Package microtype Info: Applying patch `verbatim' on input line 134.
+LaTeX Info: Redefining \microtypecontext on input line 137.
+Package microtype Info: Applying patch `item' on input line 137.
+Package microtype Info: Applying patch `toc' on input line 137.
+Package microtype Info: Applying patch `eqnum' on input line 137.
+Package microtype Info: Applying patch `footnote' on input line 137.
+Package microtype Info: Applying patch `verbatim' on input line 137.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 134.
+LaTeX Info: Redefining \showhyphens on input line 137.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -382,20 +380,20 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 \big@size=\dimen176
-Package hyperref Info: Link coloring OFF on input line 134.
+Package hyperref Info: Link coloring OFF on input line 137.
 (./size_and_scatterplots.out) (./size_and_scatterplots.out)
 \@outlinefile=\write3
 \openout3 = `size_and_scatterplots.out'.
 
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 143.
-(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/t1phv.fd
-File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 146.
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
 Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `phv' (encoding: T1).
+(microtype)             `phv' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 143.
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 146.
 (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
@@ -403,142 +401,119 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 143.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 146.
 (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 143.
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 146.
 (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 143.
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 146.
 (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 143.
-(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 143.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 146.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 143.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 146.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 143.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 143.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 146.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 146.
 (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 143.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 146.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 143.
-LaTeX Font Info:    Trying to load font information for T1+txtt on input line 143.
-(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/txfonts/t1txtt.fd
-File: t1txtt.fd 2000/12/15 v3.1
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 146.
+LaTeX Font Info:    Trying to load font information for OT1+txtt on input line 146.
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/txfonts/ot1txtt.fd
+File: ot1txtt.fd 2000/12/15 v3.1
 )
 Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `txtt' (encoding: T1).
+(microtype)             `txtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 170.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 199.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 170.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 199.
 
-Underfull \hbox (badness 2418) in paragraph at lines 169--175
-\T1/ptm/m/n/9 (+20) The ex-per-i-ment was con-ducted ac-cord-ing to the prin-ci-ples
+Underfull \hbox (badness 2418) in paragraph at lines 198--204
+\OT1/ptm/m/n/9 (+20) The ex-per-i-ment was con-ducted ac-cord-ing to the prin-ci-ples
  []
 
 
-Underfull \hbox (badness 1668) in paragraph at lines 169--175
-\T1/ptm/m/n/9 (+20) of open and re-pro-ducible re-search. All data and anal-y-sis
+Underfull \hbox (badness 1668) in paragraph at lines 198--204
+\OT1/ptm/m/n/9 (+20) of open and re-pro-ducible re-search. All data and anal-y-sis
  []
-
-
-LaTeX Warning: Citation `strain_2023' on page 1 undefined on input line 181.
-
-
-LaTeX Warning: Citation `peer_2021' on page 1 undefined on input line 181.
-
-
-LaTeX Warning: Citation `strain_2023' on page 1 undefined on input line 200.
-
-
-LaTeX Warning: Citation `strain_2023' on page 1 undefined on input line 208.
-
-
-LaTeX Warning: Citation `strain_2023' on page 1 undefined on input line 211.
-
-
-LaTeX Warning: Citation `strain_2023' on page 1 undefined on input line 222.
-
-
-LaTeX Warning: Citation `screenscale' on page 1 undefined on input line 225.
 
 [1{c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
 ]
-<size_and_scatterplots_files/figure-latex/examples-1.pdf, id=102, 469.755pt x 469.755pt>
+<size_and_scatterplots_files/figure-latex/examples-1.pdf, id=117, 457.71pt x 456.70625pt>
 File: size_and_scatterplots_files/figure-latex/examples-1.pdf Graphic file (type pdf)
 <use size_and_scatterplots_files/figure-latex/examples-1.pdf>
-Package pdftex.def Info: size_and_scatterplots_files/figure-latex/examples-1.pdf  used on input line 268.
-(pdftex.def)             Requested size: 240.94499pt x 240.94095pt.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 268.
+Package pdftex.def Info: size_and_scatterplots_files/figure-latex/examples-1.pdf  used on input line 296.
+(pdftex.def)             Requested size: 240.94499pt x 240.4155pt.
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 296.
 
-LaTeX Warning: Citation `garcia_2016' on page 2 undefined on input line 277.
-
-
-LaTeX Warning: Citation `strain_2023' on page 2 undefined on input line 281.
+LaTeX Warning: Reference `training' on page 2 undefined on input line 309.
 
 
-LaTeX Warning: Reference `training' on page 2 undefined on input line 281.
+LaTeX Warning: Citation `r_core' on page 2 undefined on input line 319.
 
 
-LaTeX Warning: Citation `r_core' on page 2 undefined on input line 291.
+LaTeX Warning: Citation `voeten_buildmer_2022' on page 2 undefined on input line 320.
 
-
-LaTeX Warning: Citation `voeten_buildmer_2022' on page 2 undefined on input line 292.
-
-
-LaTeX Warning: Citation `bates_lme4_2015' on page 2 undefined on input line 293.
-
-<size_and_scatterplots_files/figure-latex/dot-plot-1.pdf, id=104, 469.755pt x 325.215pt>
+<size_and_scatterplots_files/figure-latex/dot-plot-1.pdf, id=122, 459.7175pt x 312.16624pt>
 File: size_and_scatterplots_files/figure-latex/dot-plot-1.pdf Graphic file (type pdf)
 <use size_and_scatterplots_files/figure-latex/dot-plot-1.pdf>
-Package pdftex.def Info: size_and_scatterplots_files/figure-latex/dot-plot-1.pdf  used on input line 297.
-(pdftex.def)             Requested size: 240.94499pt x 166.80527pt.
+Package pdftex.def Info: size_and_scatterplots_files/figure-latex/dot-plot-1.pdf  used on input line 325.
+(pdftex.def)             Requested size: 240.94499pt x 163.61346pt.
+LaTeX Font Info:    Trying to load font information for OML+ptm on input line 332.
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/omlptm.fd
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <9> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 332.
+[2 <./size_and_scatterplots_files/figure-latex/examples-1.pdf> <./size_and_scatterplots_files/figure-latex/dot-plot-1.pdf>]
 
-LaTeX Warning: Citation `emmeans' on page 2 undefined on input line 312.
+LaTeX Warning: Citation `emmeans' on page 3 undefined on input line 340.
 
-<size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf, id=107, 462.72874pt x 143.53625pt>
+<size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf, id=157, 460.72125pt x 142.5325pt>
 File: size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf Graphic file (type pdf)
 <use size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf>
-Package pdftex.def Info: size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf  used on input line 340.
-(pdftex.def)             Requested size: 462.72762pt x 143.53589pt.
-No file size_and_scatterplots.bbl.
-[2 <./size_and_scatterplots_files/figure-latex/examples-1.pdf> <./size_and_scatterplots_files/figure-latex/dot-plot-1.pdf>] [3 <./size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf>] (./size_and_scatterplots.aux)
+Package pdftex.def Info: size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf  used on input line 386.
+(pdftex.def)             Requested size: 460.72012pt x 142.53214pt.
+(./size_and_scatterplots.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
+[]\OT1/ptm/m/n/8 (+20) W. L. Morys-Carter.  Screen-Scale, May 2021.
+ []
+
+) [3] [4 <./size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf>] (./size_and_scatterplots.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `size_and_scatterplots.out' has not changed.
-(rerunfilecheck)             Checksum: 18B24414960148C64BD290EBEDC341FF;2214.
+(rerunfilecheck)             Checksum: 0A2BA9427459145B0BEE37DD14A81988;2120.
  ) 
 Here is how much of TeX's memory you used:
- 12612 strings out of 477957
- 203912 string characters out of 5836259
- 1882660 words of memory out of 5000000
- 32315 multiletter control sequences out of 15000+600000
- 589437 words of font info for 279 fonts, out of 8000000 for 9000
+ 12475 strings out of 477957
+ 201634 string characters out of 5836259
+ 1883660 words of memory out of 5000000
+ 32131 multiletter control sequences out of 15000+600000
+ 572524 words of font info for 305 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 76i,13n,76p,1018b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on size_and_scatterplots.pdf (3 pages, 169183 bytes).
+ 76i,13n,76p,1018b,454s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/txfonts/txtt.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on size_and_scatterplots.pdf (4 pages, 191593 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 169 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
- 90760 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 247 PDF objects out of 1000 (max. 8388607)
+ 205 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 92800 words of extra memory for PDF output out of 106986 (max. 10000000)
 
