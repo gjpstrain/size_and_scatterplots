@@ -1,105 +1,639 @@
-@misc{Grinstein:2002:IVV,
-  author = {Georges Grinstein and Daniel Keim and Matthew Ward},
-  title = {Information Visualization, Visual Data Mining, and Its Application to Drug Design},
-  howpublished = {IEEE Visualization Course \#1 Notes},
-  month = {October},
-  year = {2002},
-	url = {http://vis.computer.org/vis2002/program/tutorials/tutorial_01_abstract.html}
-}
 
-@Article{Isenberg:2017:VMC,
-  author = {Petra Isenberg and Florian Heimerl and Steffen Koch and Tobias Isenberg and Panpan Xu and Chad Stolper and Michael Sedlmair and Jian Chen and Torsten M{\"o}ller and John Stasko},
-	title = {{vispubdata.org: A Metadata Collection about {IEEE} Visualization ({VIS}) Publications}},
+@article{yang_2019,
+	title = {Correlation {Judgment} and {Visualization} {Features}: {A} {Comparative} {Study}},
+	volume = {25},
+	issn = {1941-0506},
+	shorttitle = {Correlation {Judgment} and {Visualization} {Features}},
+	doi = {10.1109/TVCG.2018.2810918},
+	abstract = {Recent visualization research efforts have incorporated experimental techniques and perceptual models from the vision science community. Perceptual laws such as Weber's law, for example, have been used to model the perception of correlation in scatterplots. While this thread of research has progressively refined the modeling of the perception of correlation in scatterplots, it remains unclear as to why such perception can be modeled using relatively simple functions, e.g., linear and log-linear. In this paper, we investigate a longstanding hypothesis that people use visual features in a chart as a proxy for statistical measures like correlation. For a given scatterplot, we extract 49 candidate visual features and evaluate which best align with existing models and participant judgments. The results support the hypothesis that people attend to a small number of visual features when discriminating correlation in scatterplots. We discuss how this result may account for prior conflicting findings, and how visual features provide a baseline for future model-based approaches in visualization evaluation and design.},
+	number = {3},
 	journal = {IEEE Transactions on Visualization and Computer Graphics},
+	author = {Yang, F. and Harrison, L. T. and Rensink, R. A. and Franconeri, S. L. and Chang, R.},
+	month = mar,
+	year = {2019},
+	note = {Conference Name: IEEE Transactions on Visualization and Computer Graphics},
+	keywords = {candidate visual features, Computational modeling, Computer Graphics, Correlation, correlation judgment, Data models, data visualisation, Data visualization, evaluation/methodology, feature extraction, Feature extraction, Female, Humans, Information visualization, Judgment, model-based approaches, Models, Statistical, perception and psychophysics, perceptual laws, perceptual models, power law, Psychology, Psychophysics, scatterplots, vision science community, visual perception, Visual Perception, Visualization, visualization evaluation, visualization features, Weber's law},
+	pages = {1474--1488},
+	annote = {Notes on Paper
+Upon replication of Harrison et al.,'s work, authors find that the following 4 visual features are better predictors of participant's correlation judgements than the true correlation itself:
+
+the SD of all perpendicular distances to the regression line
+the area of the prediction ellipse
+the length of the minor perpendicular side of the confidence bounding box
+length of the minor axis of the prediction ellipse
+
+A power transformed model of JNDs produces a more precise model of how objective correlation is related to percieved correlation, when either correlation or visual features are being used},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\mbch4gs2\\Zotero\\storage\\UISL6ES3\\8305493.html:text/html;IEEE Xplore Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\BRQKUR29\\Yang et al. - 2019 - Correlation Judgment and Visualization Features A.pdf:application/pdf},
+}
+
+@article{rensink_2017,
+	title = {The nature of correlation perception in scatterplots},
+	volume = {24},
+	issn = {1069-9384},
+	url = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5486871/},
+	doi = {10.3758/s13423-016-1174-7},
+	abstract = {For scatterplots with gaussian distributions of dots, the perception of Pearson correlation r can be described by two simple laws: a linear one for discrimination, and a logarithmic one for perceived magnitude (Rensink \& Baldridge, ). The underlying perceptual mechanisms, however, remain poorly understood. To cast light on these, four different distributions of datapoints were examined. The first had 100 points with equal variance in both dimensions. Consistent with earlier results, just noticeable difference (JND) was a linear function of the distance away from r = 1, and the magnitude of perceived correlation a logarithmic function of this quantity. In addition, these laws were linked, with the intercept of the JND line being the inverse of the bias in perceived magnitude. Three other conditions were also examined: a dot cloud with 25 points, a horizontal compression of the cloud, and a cloud with a uniform distribution of dots. Performance was found to be similar in all conditions. The generality and form of these laws suggest that what underlies correlation perception is not a geometric structure such as the shape of the dot cloud, but the shape of the probability distribution of the dots, likely inferred via a form of ensemble coding. It is suggested that this reflects the ability of observers to perceive the information entropy in an image, with this quantity used as a proxy for Pearson correlation.},
+	number = {3},
+	urldate = {2021-10-20},
+	journal = {Psychonomic Bulletin \& Review},
+	author = {Rensink, Ronald A.},
 	year = {2017},
+	pmid = {27785683},
+	pmcid = {PMC5486871},
+	pages = {776--797},
+	file = {PubMed Central Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\5P2V5N7A\\Rensink - 2017 - The nature of correlation perception in scatterplo.pdf:application/pdf},
+}
+
+@article{kay_heer_2015,
+	title = {Beyond {Weber}'s {Law}: {A} {Second} {Look} at {Ranking} {Visualizations} of {Correlation}},
+	volume = {22},
+	shorttitle = {Beyond {Weber}'s {Law}},
+	doi = {10.1109/TVCG.2015.2467671},
+	abstract = {Models of human perception - including perceptual "laws" - can be valuable tools for deriving visualization design recommendations. However, it is important to assess the explanatory power of such models when using them to inform design. We present a secondary analysis of data previously used to rank the effectiveness of bivariate visualizations for assessing correlation (measured with Pearson's r) according to the well-known Weber-Fechner Law. Beginning with the model of Harrison et al. [1], we present a sequence of refinements including incorporation of individual differences, log transformation, censored regression, and adoption of Bayesian statistics. Our model incorporates all observations dropped from the original analysis, including data near ceilings caused by the data collection process and entire visualizations dropped due to large numbers of observations worse than chance. This model deviates from Weber's Law, but provides improved predictive accuracy and generalization. Using Bayesian credibility intervals, we derive a partial ranking that groups visualizations with similar performance, and we give precise estimates of the difference in performance between these groups. We find that compared to other visualizations, scatterplots are unique in combining low variance between individuals and high precision on both positively- and negatively- correlated data. We conclude with a discussion of the value of data sharing and replication, and share implications for modeling similar experimental data.},
+	journal = {IEEE transactions on visualization and computer graphics},
+	author = {Kay, Matthew and Heer, Jeffrey},
+	month = sep,
+	year = {2015},
+	annote = {Notes on Paper
+Harrison et al. modelled the relationship between r and the mean performance of a group of people on a staircase procedure JND task with plots
+- this omits any sense of individual variance
+- which diminishes any explanatory power
+- This process is an example of bias-variance tradeoff, which is a hot topic in machine learning. Group averages don't tell us about individual variance, potentially leading to a conceptually similar problem to Anscombe's Quartet
+"analysing group means obscures problems of model fit by discarding large portions of variance"
+Bayesian censored log-linear model offers posteriors for others to use as prior distributions
+Methods
+It doesn't make sense to try and fit a linear model to something like JNDs
+
+
+JNDs exhibit non-constant variance and skewed residuals, as variance is typically lower when r is higher (larger correlations are easier to see)
+
+
+Fitting a log-linear model solves these problems while maintaining a sense of interpretability i.e this viz yields x times the precision of another
+
+
+Censored regression: used when some of observed data points' values are not known, but are known to lie above or below a certain threshold
+
+
+Establish chance boundary by simulating participant guessing in staircase procedure
+
+
+},
+	file = {Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\8MHVBJN6\\Kay and Heer - 2015 - Beyond Weber's Law A Second Look at Ranking Visua.pdf:application/pdf},
+}
+
+@article{hong_2021,
+	title = {The {Weighted} {Average} {Illusion}: {Biases} in {Perceived} {Mean} {Position} in {Scatterplots}},
+	issn = {1077-2626, 1941-0506, 2160-9306},
+	shorttitle = {The {Weighted} {Average} {Illusion}},
+	url = {https://ieeexplore.ieee.org/document/9556578/},
+	doi = {10.1109/TVCG.2021.3114783},
+	abstract = {Scatterplots can encode a third dimension by using additional channels like size or color (e.g. bubble charts). We explore a potential misinterpretation of trivariate scatterplots, which we call the weighted average illusion, where locations of larger and darker points are given more weight toward x- and y-mean estimates. This systematic bias is sensitive to a designer’s choice of size or lightness ranges mapped onto the data. In this paper, we quantify this bias against varying size/lightness ranges and data correlations. We discuss possible explanations for its cause by measuring attention given to individual data points using a vision science technique called the centroid method. Our work illustrates how ensemble processing mechanisms and mental shortcuts can signiﬁcantly distort visual summaries of data, and can lead to misjudgments like the demonstrated weighted average illusion.},
+	language = {en},
+	urldate = {2021-11-01},
+	journal = {IEEE Transactions on Visualization and Computer Graphics},
+	author = {Hong, Matt-Heun and Witt, Jessica K. and Szafir, Danielle Albers},
+	year = {2021},
+	pages = {1--1},
+	file = {Hong et al. - 2021 - The Weighted Average Illusion Biases in Perceived.pdf:C\:\\Users\\mbch4gs2\\Zotero\\storage\\LXW2CEF9\\Hong et al. - 2021 - The Weighted Average Illusion Biases in Perceived.pdf:application/pdf},
+}
+
+@article{micallef_2021,
+	title = {Towards {Perceptual} {Optimization} of the {Visual} {Design} of {Scatterplots}},
 	volume = {23},
-	OPTnumber = {},
-	OPTmonth = {},
-	OPTpages = {},
-	doi = {https://doi.org/10.1109/TVCG.2016.2615308},
-  OPTgooglescholarid = {},
-	note = {To appear},
+	issn = {1941-0506},
+	doi = {10.1109/TVCG.2017.2674978},
+	abstract = {Designing a good scatterplot can be difficult for non-experts in visualization, because they need to decide on many parameters, such as marker size and opacity, aspect ratio, color, and rendering order. This paper contributes to research exploring the use of perceptual models and quality metrics to set such parameters automatically for enhanced visual quality of a scatterplot. A key consideration in this paper is the construction of a cost function to capture several relevant aspects of the human visual system, examining a scatterplot design for some data analysis task. We show how the cost function can be used in an optimizer to search for the optimal visual design for a user's dataset and task objectives (e.g., “reliable linear correlation estimation is more important than class separation”). The approach is extensible to different analysis tasks. To test its performance in a realistic setting, we pre-calibrated it for correlation estimation, class separation, and outlier detection. The optimizer was able to produce designs that achieved a level of speed and success comparable to that of those using human-designed presets (e.g., in R or MATLAB). Case studies demonstrate that the approach can adapt a design to the data, to reveal patterns without user intervention.},
+	number = {6},
+	journal = {IEEE Transactions on Visualization and Computer Graphics},
+	author = {Micallef, Luana and Palmas, Gregorio and Oulasvirta, Antti and Weinkauf, Tino},
+	month = jun,
+	year = {2017},
+	note = {Conference Name: IEEE Transactions on Visualization and Computer Graphics},
+	keywords = {Correlation, Data visualization, Visualization, Data analysis, Cost function, crowdsourcing, Measurement, optimization, perception, Scatterplot},
+	pages = {1588--1599},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\mbch4gs2\\Zotero\\storage\\MZ3BKNXJ\\7864468.html:text/html;IEEE Xplore Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\GGV8SLBS\\Micallef et al. - 2017 - Towards Perceptual Optimization of the Visual Desi.pdf:application/pdf},
 }
 
-@mastersthesis{Kindlmann:1999:SAG,
-  author = {Gordon Kindlmann},
-  title = {Semi-Automatic Generation of Transfer Functions for Direct Volume Rendering},
-  school = {Cornell University},
-	address = {USA},
-	url = {http://www.graphics.cornell.edu/pubs/1999/Kin99.html},
-  year = 1999,
+@article{garcia_2016,
+	title = {Measuring {Graph} {Literacy} without a {Test}: {A} {Brief} {Subjective} {Assessment}},
+	volume = {36},
+	issn = {0272-989X},
+	shorttitle = {Measuring {Graph} {Literacy} without a {Test}},
+	url = {https://doi.org/10.1177/0272989X16655334},
+	doi = {10.1177/0272989X16655334},
+	abstract = {Background. Visual aids tend to help diverse and vulnerable individuals understand risk communications, as long as these individuals have a basic understanding of graphs (i.e., graph literacy). Tests of objective graph literacy (OGL) can effectively identify individuals with limited skills, highlighting vulnerabilities and facilitating custom-tailored risk communication. However, the administration of these tests can be time-consuming and may evoke negative emotional reactions (e.g., anxiety). Objectives. To evaluate a brief and easy-to-use assessment of subjective graph literacy (SGL) (i.e., self-reported ability to process and use graphically presented information) and to estimate the robustness and validity of the SGL scale and compare it with the leading OGL scale in diverse samples from different cultures. Participants. Demographically diverse residents (n = 470) of the United States, young adults (n = 172) and patients (n = 175) from Spain, and surgeons (n = 175) from 48 countries. Design. A focus group and 4 studies for instrument development and initial validation (study 1), reliability and convergent and discriminant validity evaluation (study 2), and predictive validity estimation (studies 3 and 4). Measures. Psychometric properties of the scale. Results. In about 1 minute, the SGL scale provides a reliable, robust, and valid assessment of skills and risk communication preferences and evokes fewer negative emotional reactions than the OGL scale. Conclusions. The SGL scale can be suitable for use in clinical research and may be useful as a communication aid in clinical practice. Theoretical mechanisms involved in SGL, emerging applications, limitations, and open questions are discussed.},
+	language = {en},
+	number = {7},
+	urldate = {2021-04-30},
+	journal = {Medical Decision Making},
+	author = {Garcia-Retamero, Rocio and Cokely, Edward T. and Ghazal, Saima and Joeris, Alexander},
+	year = {2016},
+	note = {Publisher: SAGE Publications Inc STM},
+	keywords = {graph literacy, medical decision making, numeracy, risk communication, risk literacy, visual aids},
+	pages = {854--867},
+	file = {SAGE PDF Full Text:C\:\\Users\\mbch4gs2\\Zotero\\storage\\G3AA8J54\\Garcia-Retamero et al. - 2016 - Measuring Graph Literacy without a Test A Brief S.pdf:application/pdf},
 }
 
-@manual{Kitware:2003,
-  title = {The Visualization Toolkit User's Guide},
-  organization = {Kitware, Inc.},
-  year = {2003},
-  month = {January},
-	url = {http://www.kitware.com/publications/item/view/1269}
+@article{rensink_2010,
+	title = {The {Perception} of {Correlation} in {Scatterplots}},
+	volume = {29},
+	issn = {01677055},
+	url = {http://doi.wiley.com/10.1111/j.1467-8659.2009.01694.x},
+	doi = {10.1111/j.1467-8659.2009.01694.x},
+	abstract = {We present a rigorous way to evaluate the visual perception of correlation in scatterplots, based on classical psychophysical methods originally developed for simple properties such as brightness. Although scatterplots are graphically complex, the quantity they convey is relatively simple. As such, it may be possible to assess the perception of correlation in a similar way.},
+	language = {en},
+	number = {3},
+	urldate = {2021-02-02},
+	journal = {Computer Graphics Forum},
+	author = {Rensink, Ronald A. and Baldridge, Gideon},
+	month = aug,
+	year = {2010},
+	pages = {1203--1210},
+	annote = {Notes on Paper
+Used JNDs and found that perception of correlation in scatteplots can be described entirely by two related performance curves specified by two parameters
+authors make argument for minor variations of Weber and Fechner's laws, although papers published in the interviening years have made a strong case for this being an oversimplification},
+	file = {Rensink and Baldridge - 2010 - The Perception of Correlation in Scatterplots.pdf:C\:\\Users\\mbch4gs2\\Zotero\\storage\\TJJGGFI9\\Rensink and Baldridge - 2010 - The Perception of Correlation in Scatterplots.pdf:application/pdf},
 }
 
-@phdthesis{Levoy:1989:DSV,
-  author = {Marc Levoy},
-  title = {Display of Surfaces from Volume Data},
-  school = {University of North Carolina at Chapel Hill},
-	address = {USA},
-	url = {http://www.cs.unc.edu/techreports/89-022.pdf},
-  year = {1989},
+@article{sher_2017,
+	title = {An {Empirical} {Study} on the {Reliability} of {Perceiving} {Correlation} {Indices} using {Scatterplots}},
+	volume = {36},
+	copyright = {© 2017 The Author(s) Computer Graphics Forum © 2017 The Eurographics Association and John Wiley \& Sons Ltd. Published by John Wiley \& Sons Ltd.},
+	issn = {1467-8659},
+	url = {http://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13168},
+	doi = {https://doi.org/10.1111/cgf.13168},
+	abstract = {Scatterplots have been in use for about two centuries, primarily for observing the relationship between two variables and commonly for supporting correlation analysis. In this paper, we report an empirical study that examines how humans’ perception of correlation using scatterplots relates to the Pearson's product-moment correlation coefficient (PPMCC) – a commonly used statistical measure of correlation. In particular, we study human participants’ estimation of correlation under different conditions, e.g., different PPMCC values, different densities of data points, different levels of symmetry of data enclosures, and different patterns of data distribution. As the participants were instructed to estimate the PPMCC of each stimulus scatterplot, the difference between the estimated and actual PPMCC is referred to as an offset. The results of the study show that varying PPMCC values, symmetry of data enclosure, or data distribution does have an impact on the average offsets, while only large variations in density cause an impact that is statistically significant. This study indicates that humans’ perception of correlation using scatterplots does not correlate with computed PPMCC in a consistent manner. The magnitude of offsets may be affected not only by the difference between individuals, but also by geometric features of data enclosures. It suggests that visualizing scatterplots does not provide adequate support to the task of retrieving their corresponding PPMCC indicators, while the underlying model of humans’ perception of correlation using scatterplots ought to feature other variables in addition to PPMCC. The paper also includes a theoretical discussion on the cost-benefit of using scatterplots.},
+	language = {en},
+	number = {3},
+	urldate = {2021-02-02},
+	journal = {Computer Graphics Forum},
+	author = {Sher, Varshita and Bemis, Karen G. and Liccardi, Ilaria and Chen, Min},
+	year = {2017},
+	note = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.13168},
+	pages = {61--72},
+	annote = {Notes on Paper
+People aren't as reliable as we would've thought when it comes to estimating correlation from scatterplots
+
+
+H1 and H6 deal with over and underestimation of correlation
+
+
+Estimating r confers high cognitive load?
+
+
+“Best practice for correlation estimation would be to view both scatterplot and r value”
+
+
+Interesting, plot for data shape, PPMCC for value
+
+
+
+
+},
+	file = {Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\DTW4RP4J\\Sher et al. - 2017 - An Empirical Study on the Reliability of Perceivin.pdf:application/pdf;Snapshot:C\:\\Users\\mbch4gs2\\Zotero\\storage\\ZAIKNJ8P\\cgf.html:text/html},
 }
 
-@article{Lorensen:1987:MCA,
- author = {Lorensen, William E. and Cline, Harvey E.},
- title = {Marching Cubes: A High Resolution {3D} Surface Construction Algorithm},
- journal = {SIGGRAPH Computer Graphics},
- volume = {21},
- number = {4},
- month = aug,
- year = {1987},
- pages = {163--169},
- doi = {10.1145/37402.37422},
+@article{meyer_1997,
+	title = {Correlation estimates as perceptual judgments},
+	volume = {3},
+	issn = {1939-2192},
+	doi = {10.1037/1076-898X.3.1.3},
+	abstract = {Correlation estimates from scatterplots were studied as an example for an intuitive decision task. Three experiments showed that subjective correlation estimates are based on geometric properties of the displays. People with different levels of statistical training were found to assess correlations from scatterplots in close accordance with the power function rest = 1 – aXb, where X is the mean of the geometrical distances between the points and the regression line or a similar central axis. Changes of the slope of the displayed point cloud and the introduction of outliers affected estimates as predicted from the function. The study demonstrated that intuitive judgments in a complex domain are based on the perception of geometric features of the relevant information. By applying these findings, graphic designers can accurately predict how changes in a display will affect viewers' impressions. (PsycINFO Database Record (c) 2016 APA, all rights reserved)},
+	number = {1},
+	journal = {Journal of Experimental Psychology: Applied},
+	author = {Meyer, Joachim and Taieb, Meirav and Flascher, Ittai},
+	year = {1997},
+	note = {Place: US
+Publisher: American Psychological Association},
+	keywords = {Psychophysics, Visual Perception, Decision Making, Graphical Displays, Intuition, Perceptual Localization, Statistical Correlation, Statistical Estimation},
+	pages = {3--20},
+	file = {Meyer et al. - 1997 - Correlation estimates as perceptual judgments.pdf:C\:\\Users\\mbch4gs2\\Zotero\\storage\\LMY56GZV\\Meyer et al. - 1997 - Correlation estimates as perceptual judgments.pdf:application/pdf;Snapshot:C\:\\Users\\mbch4gs2\\Zotero\\storage\\99EDEJKQ\\1997-03016-001.html:text/html},
 }
 
-@article{Max:1995:OMF,
- author = {Max, Nelson},
- title = {Optical Models for Direct Volume Rendering},
- journal = {IEEE Transactions on Visualization and Computer Graphics},
- volume = {1},
- number = {2},
- month = jun,
- year = {1995},
- pages = {99--108},
- doi = {10.1109/2945.468400},
-} 
-
-@inproceedings{Nielson:1991:TAD,
-  author = {Gregory M. Nielson and Bernd Hamann},
-  title = {The Asymptotic Decider: Removing the Ambiguity in Marching Cubes},
-  year = {1991},
-  booktitle = {Proc.\ Visualization},
-  pages = {83--91},
-  doi={10.1109/VISUAL.1991.175782},
-	publisher = {IEEE Computer Society},
-	address = {Los Alamitos},
+@article{meyer_1992,
+	title = {Estimating {Correlations} from {Scatterplots}},
+	volume = {34},
+	issn = {0018-7208},
+	url = {https://doi.org/10.1177/001872089203400307},
+	doi = {10.1177/001872089203400307},
+	abstract = {Previous attempts to establish the function relating intuitive estimates of correlations from scatterplots to accepted statistical measures have led to unsatisfying results. In this study two experiments dealt with the effects of the statistical training of the viewer and various characteristics of the display on estimates. Statistical knowledge was related to higher estimates of correlations and the use of a wider range of values, but people with and without statistical knowledge were equally affected by the type of dispersion of the point cloud, the mere display of the regression line, and the slope of the regression line. Results indicate that estimates of correlations from scatterplots are partly based on perceptual processes that are influenced by visual properties of the display and are unrelated to the cognitive structures created by formal statistical training.},
+	number = {3},
+	urldate = {2022-06-09},
+	journal = {Human Factors},
+	author = {Meyer, Joachim and Shinar, David},
+	month = jun,
+	year = {1992},
+	note = {Publisher: SAGE Publications Inc},
+	pages = {335--349},
+	file = {SAGE PDF Full Text:C\:\\Users\\mbch4gs2\\Zotero\\storage\\LHY2G6W7\\Meyer and Shinar - 1992 - Estimating Correlations from Scatterplots.pdf:application/pdf},
 }
 
-@book{Ware:2004:IVP,
-  author = {Colin Ware},
-  title = {Information Visualization: Perception for Design},
-  edition = {2\textsuperscript{nd}},
-  year = 2004,
-  publisher = {Morgan Kaufmann Publishers Inc.},
-  address = {San Francisco},
-	doi = {https://doi.org/10.1016/B978-155860819-1/50001-7}
+@article{bobko_1979,
+	title = {The {Perception} of {Pearson} {Product} {Moment} {Correlations} from {Bivariate} {Scatterplots}},
+	volume = {32},
+	issn = {1744-6570},
+	url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1744-6570.1979.tb02137.x},
+	doi = {10.1111/j.1744-6570.1979.tb02137.x},
+	abstract = {Perceptions about the Pearson product moment correlation, r, from bivariate scatterplots were investigated through the use of a questionnaire. It was found that subjects who are relatively sophisticated in psychometric techniques tend to underestimate the magnitude of r, with most pronounced disparity in the range .2 {\textless} {\textbar}r{\textbar} \&lt .6. Additionally, estimates of r from specially designed scatterplots indicated that subjects (1) correctly estimated the effects of range restriction, (2) underestimated the effects of attenuating outliers, (3) incorrectly reduced estimates of r when the regression slope was relatively high or low, and (4) often failed to consider the effects of removing the middle third of the data. Several implications of these generally conservative estimations are discussed.},
+	language = {en},
+	number = {2},
+	urldate = {2022-06-14},
+	journal = {Personnel Psychology},
+	author = {Bobko, Philip and Karren, Ronald},
+	year = {1979},
+	note = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1744-6570.1979.tb02137.x},
+	pages = {313--325},
+	annote = {Presentation of plots in court cases etc
+},
+	file = {Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\JZ5EF6NA\\Bobko and Karren - 1979 - The Perception of Pearson Product Moment Correlati.pdf:application/pdf;Snapshot:C\:\\Users\\mbch4gs2\\Zotero\\storage\\QWHWXG3V\\j.1744-6570.1979.tb02137.html:text/html},
 }
 
-@ARTICLE{Wyvill:1986:DSS,
-  author = {Wyvill, Geoff and McPheeters, Craig and Wyvill, Brian},
-  title = {Data Structure for \emph{soft} Objects},
-  journal = {The Visual Computer},
-  year = {1986},
-  volume = {2},
-  pages = {227--234},
-  number = {4},
-  month = aug,
-  doi = {10.1007/BF01900346}
+@incollection{rensink_2014,
+	address = {New York, NY},
+	title = {On the {Prospects} for a {Science} of {Visualization}},
+	isbn = {978-1-4614-7484-5 978-1-4614-7485-2},
+	url = {http://link.springer.com/10.1007/978-1-4614-7485-2_6},
+	abstract = {This paper explores the extent to which a scientific framework for visualization might be possible. It presents several potential parts of a framework, illustrated by application to the visualization of correlation in scatterplots. The first is an extended-vision thesis, which posits that a viewer and visualization system can be usefully considered as a single system that perceives structure in a dataset, much like "basic" vision perceives structure in the world. This characterization is then used to suggest approaches to evaluation that take advantage of techniques used in vision science. Next, an optimal-reduction thesis is presented, which posits that an optimal visualization enables the given task to be reduced to the most suitable operations in the extended system. A systematic comparison of alternative designs is then proposed, guided by what is known about perceptual mechanisms. It is shown that these elements can be extended in various ways—some even overlapping with parts of vision science. As such, a science of some kind appears possible for at least some parts of visualization. It would remain distinct from design practice, but could nevertheless assist with the design of visualizations that better engage human perception and cognition.},
+	language = {en},
+	urldate = {2022-06-15},
+	booktitle = {Handbook of {Human} {Centric} {Visualization}},
+	publisher = {Springer New York},
+	author = {Rensink, Ronald A.},
+	editor = {Huang, Weidong},
+	year = {2014},
+	doi = {10.1007/978-1-4614-7485-2_6},
+	pages = {147--175},
+	annote = {Notes on Paper
+
+
+Extended-Vision Thesis: the viewer and the visualization system can be considered a single information-processing system that enables the viewer to perceive structure in the given dataset much as they would perceive structure in the world using "basic" vision.
+
+
+Should definitely think about using a bisection task in a future experiment to better validate the results of our estimations
+
+
+Need to check if equation holds for our results
+
+
+g(r) = ln(1-br)/ln(1-b)
+
+
+which value of b works?
+
+
+Rensink (2017): b = 0.88 was best fit
+
+
+
+
+},
+	file = {Rensink - 2014 - On the Prospects for a Science of Visualization.pdf:C\:\\Users\\mbch4gs2\\Zotero\\storage\\H3BGUW5H\\Rensink - 2014 - On the Prospects for a Science of Visualization.pdf:application/pdf},
+}
+
+@article{friendly_2005,
+	title = {The early origins and development of the scatterplot.},
+	doi = {10.1002/JHBS.20078},
+	abstract = {It is suggested that the origin of this method can be traced to its unique advantage: the possibility to discover regularity in empirical data by smoothing and other graphic annotations to enhance visual perception. Of all the graphic forms used today, the scatterplot is arguably the most versatile, polymorphic, and generally useful invention in the history of statistical graphics. Its use by Galton led to the discovery of correlation and regression, and ultimately to much of present multivariate statistics. So, it is perhaps surprising that there is no one widely credited with the invention of this idea. Even more surprising is that there are few contenders for this title, and this question seems not to have been raised before. This article traces some of the developments in the history of this graphical method, the origin of the term scatterplot, the role it has played in the history of science, and some of its modern descendants. We suggest that the origin of this method can be traced to its unique advantage: the possibility to discover regularity in empirical data by smoothing and other graphic annotations to enhance visual perception.},
+	journal = {Journal of the history of the behavioral sciences},
+	author = {Friendly, M. and Denis, Daniel J.},
+	year = {2005},
+	annote = {Notes on Paper
+
+
+Unique Advantage:
+
+
+“The possibility to discover regularity in empirical data by smoothing and other graphic annotations to enhance visual perception”
+
+
+
+
+Lovely examples of scatterplots being directly used in scientific discovery:
+
+
+Main sequence stars
+
+
+Discovery of atomic numbers
+
+
+Phillips Curve
+
+
+},
+}
+
+@article{lane_1985,
+	title = {Judging the {Relatedness} of {Variables}. {The} {Psychophysics} of {Covariation} {Detection}},
+	volume = {11},
+	doi = {10.1037/0096-1523.11.5.640},
+	abstract = {Conducted 3 experiments to demonstrate that because Pearson's correlation is composed of 3 distinct components (slope, error variance, and variance of 
+X), it is better to look at judgments as a function of these components rather than as a function of Pearson's correlation. These 3 components of Pearson's correlation and presentation format (graphical and tabular) were manipulated factorially. The 1st 2 experiments used naive Ss (79 undergraduates), and the 3rd experiment used expert Ss (25 professionals knowledgeable in statistics). Scatterplots with the same value of Pearson's correlation were judged to possess different degrees of relation if the correlations were based on different combinations of the 3 components. With Pearson's correlation held constant, the error variance was the most important component. Graphical formats led to higher judgments of relatedness than did tabular formats, with this effect being larger for naive than for expert Ss. It is also concluded that attempts to determine the psychophysical function between Pearson's correlation and judgments of relatedness are of questionable value. (10 ref) (PsycINFO Database Record (c) 2012 APA, all rights reserved)},
+	journal = {Journal of Experimental Psychology: Human Perception and Performance},
+	author = {Lane, David and Anderson, Craig and Kellam, Kathryn},
+	month = oct,
+	year = {1985},
+	pages = {640--649},
+	file = {Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\T9WVGCYU\\Lane et al. - 1985 - Judging the Relatedness of Variables. The Psychoph.pdf:application/pdf},
+}
+
+@article{strahan_1978,
+	title = {Underestimating {Correlation} from {Scatterplots}},
+	volume = {2},
+	issn = {0146-6216},
+	url = {https://doi.org/10.1177/014662167800200409},
+	doi = {10.1177/014662167800200409},
+	abstract = {Eighty subjects estimated the correlation coeffi cient, r, for each of 13 computer-printed scatter plots. Making judgments were 46 students in a graduate-level statistics course and 34 faculty and graduate students in a department of psychology. The actual correlation values ranged from .010 to .995, with 200 observations in each scatterplot and with the order of scatterplot presentation ran domized. As predicted, subjects underestimated the degree of actual correlation. Also as predicted, but with substantial moderation by a method-of-presen tation factor, this underestimation was most pro nounced in the middle of the correlational range?between the 0 and 1 extremes. Though per ception of correlation was shown not to be veridical (i.e., in terms of r), little support was given one al ternative view?its being in terms of r 2.},
+	number = {4},
+	urldate = {2022-06-29},
+	journal = {Applied Psychological Measurement},
+	author = {Strahan, Robert F. and Hansen, Chris J.},
+	month = oct,
+	year = {1978},
+	note = {Publisher: SAGE Publications Inc},
+	pages = {543--550},
+	file = {SAGE PDF Full Text:C\:\\Users\\mbch4gs2\\Zotero\\storage\\DQMPITM3\\Strahan and Hansen - 1978 - Underestimating Correlation from Scatterplots.pdf:application/pdf},
+}
+
+@article{peer_2021,
+	title = {Data quality of platforms and panels for online behavioral research},
+	issn = {1554-3528},
+	url = {https://doi.org/10.3758/s13428-021-01694-3},
+	doi = {10.3758/s13428-021-01694-3},
+	abstract = {We examine key aspects of data quality for online behavioral research between selected platforms (Amazon Mechanical Turk, CloudResearch, and Prolific) and panels (Qualtrics and Dynata). To identify the key aspects of data quality, we first engaged with the behavioral research community to discover which aspects are most critical to researchers and found that these include attention, comprehension, honesty, and reliability. We then explored differences in these data quality aspects in two studies (N {\textasciitilde} 4000), with or without data quality filters (approval ratings). We found considerable differences between the sites, especially in comprehension, attention, and dishonesty. In Study 1 (without filters), we found that only Prolific provided high data quality on all measures. In Study 2 (with filters), we found high data quality among CloudResearch and Prolific. MTurk showed alarmingly low data quality even with data quality filters. We also found that while reputation (approval rating) did not predict data quality, frequency and purpose of usage did, especially on MTurk: the lowest data quality came from MTurk participants who report using the site as their main source of income but spend few hours on it per week. We provide a framework for future investigation into the ever-changing nature of data quality in online research, and how the evolving set of platforms and panels performs on these key aspects.},
+	language = {en},
+	urldate = {2022-07-05},
+	journal = {Behavior Research Methods},
+	author = {Peer, Eyal and Rothschild, David and Gordon, Andrew and Evernden, Zak and Damer, Ekaterina},
+	month = sep,
+	year = {2021},
+	keywords = {Amazon mechanical turk, Attention, Comprehension, Data quality, Honesty, Online research, Prolific, Reliability},
+	file = {Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\YY2VD7W8\\Peer et al. - 2021 - Data quality of platforms and panels for online be.pdf:application/pdf},
+}
+
+@inproceedings{rensink_2012,
+	title = {Invariance of {Correlation} {Perception}},
+	volume = {12},
+	doi = {10.1167/12.9.433},
+	abstract = {Previous work has shown that the perception of correlation in scatterplots can be characterized by two simple laws: a linear Fechner-like law for precision and a logarithmic Weber-like law for accuracy (Rensink \& Baldridge, 2010). It also appears to be rapid, being largely complete within 100 ms of presentation (Rensink, 2011). This suggests that although correlation may be conveyed by a complex carrier, it nevertheless is−or at least, is based on−a relatively simple property.
+
+To investigate the nature of the process involved, two sets of experiments tested whether different kinds of visual design influence correlation perception. The first set involved scatterplots with various styles of dot (or symbol). Precision was determined via the just noticeable difference in correlation for two side-by-side scatterplots. Accuracy was determined by direct estimation, using reference scatterplots having fixed upper and lower values, and a test scatterplot adjusted to have its apparent correlation be midway between them. The second set used similar methodology but a different carrier, with the vertical position carrying the second data dimension being replaced by a simple feature such as size. Such ‘augmented stripplots’ then conveyed correlation via the relation between horizontal position and size. Twelve observers were tested in each condition.
+
+Results showed a surprising degree of invariance for scatterplot symbol: different sizes, colors, and even shapes had little effect on precision or accuracy. This suggests that only the centers of the symbols are relevant, ruling out the involvement of simple operations such as blurring. In addition, there was also an interesting degree of invariance for carrier: accuracy and precision in augmented stripplots obeyed linear-logarithmic laws similar to those for scatterplots. These invariances suggest that correlation perception may be a general process that is both rapid and sophisticated.},
+	author = {Rensink, Ronald},
+	month = may,
+	year = {2012},
+	pages = {433--433},
+	annote = {Notes on Paper
+Rensink tested 20 people per condition. Claims that accuracy and precision are invariant to a wide variety additional design parameters, including:
+
+
+Style
+
+
+Brightness (luminance), this disagrees with what we found in E2
+
+
+Size
+
+
+Colour
+
+
+Symmetric and Asymetric Shape
+
+
+},
+	file = {Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\8A6DIYR4\\Rensink - 2012 - Invariance of Correlation Perception.pdf:application/pdf},
+}
+
+@article{pierce_psychopy_2019,
+	title = {{PsychoPy2}: {Experiments} in behavior made easy},
+	volume = {51},
+	issn = {1554-3528},
+	shorttitle = {{PsychoPy2}},
+	doi = {10.3758/s13428-018-01193-y},
+	abstract = {PsychoPy is an application for the creation of experiments in behavioral science (psychology, neuroscience, linguistics, etc.) with precise spatial control and timing of stimuli. It now provides a choice of interface; users can write scripts in Python if they choose, while those who prefer to construct experiments graphically can use the new Builder interface. Here we describe the features that have been added over the last 10 years of its development. The most notable addition has been that Builder interface, allowing users to create studies with minimal or no programming, while also allowing the insertion of Python code for maximal flexibility. We also present some of the other new features, including further stimulus options, asynchronous time-stamped hardware polling, and better support for open science and reproducibility. Tens of thousands of users now launch PsychoPy every month, and more than 90 people have contributed to the code. We discuss the current state of the project, as well as plans for the future.},
+	language = {eng},
+	number = {1},
+	journal = {Behavior Research Methods},
+	author = {Peirce, Jonathan and Gray, Jeremy R. and Simpson, Sol and MacAskill, Michael and Höchenberger, Richard and Sogo, Hiroyuki and Kastman, Erik and Lindeløv, Jonas Kristoffer},
+	month = feb,
+	year = {2019},
+	pmid = {30734206},
+	pmcid = {PMC6420413},
+	keywords = {Humans, Psychology, User-Computer Interface, Behavioral Research, Experiment, Open science, Open-source, Reaction time, Reproducibility of Results, Software, Timing},
+	pages = {195--203},
+	file = {Full Text:C\:\\Users\\mbch4gs2\\Zotero\\storage\\93ITF788\\Peirce et al. - 2019 - PsychoPy2 Experiments in behavior made easy.pdf:application/pdf},
+}
+
+@article{barr_random_2013,
+	title = {Random effects structure for confirmatory hypothesis testing: {Keep} it maximal},
+	volume = {68},
+	issn = {0749-596X},
+	shorttitle = {Random effects structure for confirmatory hypothesis testing},
+	url = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3881361/},
+	doi = {10.1016/j.jml.2012.11.001},
+	abstract = {Linear mixed-effects models (LMEMs) have become increasingly prominent in psycholinguistics and related areas. However, many researchers do not seem to appreciate how random effects structures affect the generalizability of an analysis. Here, we argue that researchers using LMEMs for confirmatory hypothesis testing should minimally adhere to the standards that have been in place for many decades. Through theoretical arguments and Monte Carlo simulation, we show that LMEMs generalize best when they include the maximal random effects structure justified by the design. The generalization performance of LMEMs including data-driven random effects structures strongly depends upon modeling criteria and sample size, yielding reasonable results on moderately-sized samples when conservative criteria are used, but with little or no power advantage over maximal models. Finally, random-intercepts-only LMEMs used on within-subjects and/or within-items data from populations where subjects and/or items vary in their sensitivity to experimental manipulations always generalize worse than separate F1 and F2 tests, and in many cases, even worse than F1 alone. Maximal LMEMs should be the ‘gold standard’ for confirmatory hypothesis testing in psycholinguistics and beyond.},
+	number = {3},
+	urldate = {2022-08-23},
+	journal = {Journal of memory and language},
+	author = {Barr, Dale J. and Levy, Roger and Scheepers, Christoph and Tily, Harry J.},
+	month = apr,
+	year = {2013},
+	pmid = {24403724},
+	pmcid = {PMC3881361},
+	pages = {10.1016/j.jml.2012.11.001},
+	file = {PubMed Central Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\S7MDHRLZ\\Barr et al. - 2013 - Random effects structure for confirmatory hypothes.pdf:application/pdf},
+}
+
+@article{varshney_2013,
+	title = {Why do we perceive logarithmically?},
+	volume = {10},
+	issn = {1740-9713},
+	url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1740-9713.2013.00636.x},
+	doi = {10.1111/j.1740-9713.2013.00636.x},
+	abstract = {Why do small children place 3 halfway between 1 and 10? Why do two light bulbs not seem twice as bright as one? Why do we perceive so many things logarithmically? Lav R. Varshney and John Z. Sun can explain it, through evolution, the statistics of nature – and reducing error.},
+	language = {en},
+	number = {1},
+	urldate = {2022-09-02},
+	journal = {Significance},
+	author = {Varshney, Lav R. and Sun, John Z.},
+	year = {2013},
+	note = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1740-9713.2013.00636.x},
+	pages = {28--31},
+	file = {Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\4F3KIGIE\\Varshney and Sun - 2013 - Why do we perceive logarithmically.pdf:application/pdf;Snapshot:C\:\\Users\\mbch4gs2\\Zotero\\storage\\W3TTNKJ6\\j.1740-9713.2013.00636.html:text/html},
+}
+
+@article{cleveland_1984,
+	title = {Graphical {Perception}: {Theory}, {Experimentation}, and {Application} to the {Development} of {Graphical} {Methods}},
+	volume = {79},
+	issn = {0162-1459},
+	shorttitle = {Graphical {Perception}},
+	url = {http://www.jstor.org/stable/2288400},
+	doi = {10.2307/2288400},
+	abstract = {The subject of graphical methods for data analysis and for data presentation needs a scientific foundation. In this article we take a few steps in the direction of establishing such a foundation. Our approach is based on graphical perception-the visual decoding of information encoded on graphs-and it includes both theory and experimentation to test the theory. The theory deals with a small but important piece of the whole process of graphical perception. The first part is an identification of a set of elementary perceptual tasks that are carried out when people extract quantitative information from graphs. The second part is an ordering of the tasks on the basis of how accurately people perform them. Elements of the theory are tested by experimentation in which subjects record their judgments of the quantitative information on graphs. The experiments validate these elements but also suggest that the set of elementary tasks should be expanded. The theory provides a guideline for graph construction: Graphs should employ elementary tasks as high in the ordering as possible. This principle is applied to a variety of graphs, including bar charts, divided bar charts, pie charts, and statistical maps with shading. The conclusion is that radical surgery on these popular graphs is needed, and as replacements we offer alternative graphical forms-dot charts, dot charts with grouping, and framed-rectangle charts.},
+	number = {387},
+	urldate = {2022-09-07},
+	journal = {Journal of the American Statistical Association},
+	author = {Cleveland, William S. and McGill, Robert},
+	year = {1984},
+	note = {Publisher: [American Statistical Association, Taylor \& Francis, Ltd.]},
+	pages = {531--554},
+	file = {JSTOR Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\887JJMV9\\Cleveland and McGill - 1984 - Graphical Perception Theory, Experimentation, and.pdf:application/pdf},
+}
+
+@article{pollack_1960,
+	title = {Identification of visual correlational scatterplots},
+	volume = {59},
+	issn = {0022-1015},
+	doi = {10.1037/h0042245},
+	abstract = {Visual correlation scattergrams were obtained by mixing a common noise source with independent noise sources and displaying the mixtures across the coordinates of an oscilloscope. The task of S was to identify whether the reference correlation or a higher correlation was presented. The results were interpreted in terms of the task of S as a tester of alternative statistical hypotheses under conditions of varying reliability of the display information. (PsycINFO Database Record (c) 2016 APA, all rights reserved)},
+	journal = {Journal of Experimental Psychology},
+	author = {Pollack, Irwin},
+	year = {1960},
+	note = {Place: US
+Publisher: American Psychological Association},
+	keywords = {Visual Perception, Oscilloscopes},
+	pages = {351--360},
+	file = {Snapshot:C\:\\Users\\mbch4gs2\\Zotero\\storage\\IIX8PQQS\\1961-01390-001.html:text/html},
+}
+
+@article{healey_2012,
+	title = {Attention and {Visual} {Memory} in {Visualization} and {Computer} {Graphics}},
+	volume = {18},
+	issn = {1941-0506},
+	doi = {10.1109/TVCG.2011.127},
+	abstract = {A fundamental goal of visualization is to produce images of data that support visual analysis, exploration, and discovery of novel insights. An important consideration during visualization design is the role of human visual perception. How we "see” details in an image can directly impact a viewer's efficiency and effectiveness. This paper surveys research on attention and visual perception, with a specific focus on results that have direct relevance to visualization and visual analytics. We discuss theories of low-level visual perception, then show how these findings form a foundation for more recent work on visual memory and visual attention. We conclude with a brief overview of how knowledge of visual attention and visual memory is being applied in visualization and graphics. We also discuss how challenges in visualization are motivating research in psychophysics.},
+	number = {7},
+	journal = {IEEE Transactions on Visualization and Computer Graphics},
+	author = {Healey, Christopher and Enns, James},
+	month = jul,
+	year = {2012},
+	note = {Conference Name: IEEE Transactions on Visualization and Computer Graphics},
+	keywords = {Data visualization, Feature extraction, Humans, visual perception, Visualization, Visual perception, Attention, Bars, color, motion, nonphotorealism, texture, visual memory, visualization.},
+	pages = {1170--1188},
+	file = {IEEE Xplore Abstract Record:C\:\\Users\\mbch4gs2\\Zotero\\storage\\KHZWUVQZ\\5963660.html:text/html},
+}
+
+@article{bates_lme4_2015,
+	title = {Fitting {Linear} {Mixed}-{Effects} {Models} {Using} lme4},
+	volume = {67},
+	copyright = {Copyright (c) 2015 Douglas Bates, Martin Mächler, Ben Bolker, Steve Walker},
+	issn = {1548-7660},
+	url = {https://doi.org/10.18637/jss.v067.i01},
+	doi = {10.18637/jss.v067.i01},
+	abstract = {Maximum likelihood or restricted maximum likelihood (REML) estimates of the parameters in linear mixed-effects models can be determined using the lmer function in the lme4 package for R. As for most model-fitting functions in R, the model is described in an lmer call by a formula, in this case including both fixed- and random-effects terms. The formula and data together determine a numerical representation of the model from which the profiled deviance or the profiled REML criterion can be evaluated as a function of some of the model parameters. The appropriate criterion is optimized, using one of the constrained optimization functions in R, to provide the parameter estimates. We describe the structure of the model, the steps in evaluating the profiled deviance or REML criterion, and the structure of classes or types that represents such a model. Sufficient detail is included to allow specialization of these structures by users who wish to write functions to fit specialized linear mixed models, such as models incorporating pedigrees or smoothing splines, that are not easily expressible in the formula language used by lmer.},
+	language = {en},
+	urldate = {2022-09-14},
+	journal = {Journal of Statistical Software},
+	author = {Bates, Douglas and Mächler, Martin and Bolker, Ben and Walker, Steve},
+	month = oct,
+	year = {2015},
+	keywords = {Cholesky decomposition},
+	pages = {1--48},
+	file = {Full Text:C\:\\Users\\mbch4gs2\\Zotero\\storage\\MSTYA75N\\Bates et al. - 2015 - Fitting Linear Mixed-Effects Models Using lme4.pdf:application/pdf},
+}
+
+@book{hadley_gg2016,
+	title = {ggplot2: {Elegant} {Graphics} for {Data} {Analysis}},
+	isbn = {978-3-319-24277-4},
+	url = {https://ggplot2.tidyverse.org},
+	language = {en},
+	urldate = {2022-09-14},
+	publisher = {Springer-Verlag New York},
+	author = {Wickham, Hadley},
+	year = {2016},
+	file = {Snapshot:C\:\\Users\\mbch4gs2\\Zotero\\storage\\3IA3HC9Z\\978-3-319-24277-4.html:text/html},
+}
+
+@misc{OpticaPublishingGroup,
+	title = {Optica {Publishing} {Group}},
+	url = {https://opg-optica-org.manchester.idm.oclc.org/view_article.cfm?pdfKey=52e0a1d7-2da5-4895-92f14fccbd901f47_1018},
+	urldate = {2023-01-12},
+	file = {Optica Publishing Group:C\:\\Users\\mbch4gs2\\Zotero\\storage\\TSIZ8X5P\\view_article.html:text/html;Optica Publishing Group.pdf:C\:\\Users\\mbch4gs2\\Zotero\\storage\\2ACT5TDP\\Optica Publishing Group.pdf:application/pdf},
+}
+
+@inproceedings{li_2010,
+	address = {New York, NY, USA},
+	series = {{CHI} '10},
+	title = {A model of symbol size discrimination in scatterplots},
+	isbn = {978-1-60558-929-9},
+	url = {https://dl.acm.org/doi/10.1145/1753326.1753714},
+	doi = {10.1145/1753326.1753714},
+	abstract = {Symbols are used in scatterplots to encode data in a way that is appropriate for perception through human visual channels. Symbol size is believed to be the second dominant channel after color. We study symbol size perception in scatterplots in the context of analytic tasks requiring size discrimination. More specifically, we performed an experiment to measure human performance in three visual analytic tasks. Circles are used as the representative symbol, with eight, linearly varying radii; 24 persons, divided across three groups, participated; and both objective and subjective measures were obtained. We propose a model to describe the results. The perception of size is assumed to be an early step in the complex cognitive process to mediate discrimination, and psychophysical laws are used to describe this perceptual mapping. Different mapping schemes are compared by regression on the experimental data. The results show that approximate homogeneity of size perception exists in our complex tasks and can be closely described by a power law transformation with an exponent of 0.4. This yields an optimal scale for symbol size discrimination.},
+	urldate = {2023-04-04},
+	booktitle = {Proceedings of the {SIGCHI} {Conference} on {Human} {Factors} in {Computing} {Systems}},
+	publisher = {Association for Computing Machinery},
+	author = {Li, Jing and Martens, Jean-Bernard and van Wijk, Jarke J.},
+	month = apr,
+	year = {2010},
+	keywords = {scatterplots, graphical encoding, quantitative model, size discrimination, symbol size, user experiment., visual analytic task},
+	pages = {2553--2562},
+	file = {Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\NP4GVNW8\\Li et al. - 2010 - A model of symbol size discrimination in scatterpl.pdf:application/pdf},
+}
+
+@misc{screenscale,
+	title = {{ScreenScale}},
+	url = {https://osf.io/8fhqk/},
+	author = {Morys-Carter, W. L.},
+	month = may,
+	year = {2021},
+	note = {https://doi.org/10.17605/OSF.IO/8FHQK},
+}
+
+@article{strain_2023,
+	title = {The {Effects} of {Contrast} on {Correlation} {Perception} in {Scatterplots}},
+	volume = {176},
+	issn = {1071-5819},
+	url = {https://www.sciencedirect.com/science/article/pii/S1071581923000496},
+	doi = {10.1016/j.ijhcs.2023.103040},
+	abstract = {Scatterplots are common data visualizations that can be used to communicate a range of ideas, the most intensively studied being the correlation between two variables. Despite their ubiquity, people typically do not perceive correlations between variables accurately from scatterplots, tending to underestimate the strength of the relationship displayed. Here we describe a two-experiment study in which we adjust the visual contrast of scatterplot points, and demonstrate a systematic approach to altering the bias. We find evidence that lowering the total visual contrast in a plot leads to increased bias in correlation estimates and show that decreasing the salience of points as a function of their distance from the regression line, by lowering their contrast, can facilitate more accurate correlation perception. We discuss the implications of these findings for visualization design, and provide a framework for online, reproducible, and large-sample-size (N = 150 per experiment) testing of the design parameters of data visualizations.},
+	language = {en},
+	urldate = {2023-04-11},
+	journal = {International Journal of Human-Computer Studies},
+	author = {Strain, Gabriel and Stewart, Andrew J. and Warren, Paul and Jay, Caroline},
+	month = aug,
+	year = {2023},
+	keywords = {Data visualization, Scatterplot, Correlation perception, Crowdsourced},
+	pages = {103040},
+	file = {ScienceDirect Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\TGMNQWN3\\Strain et al. - 2023 - The Effects of Contrast on Correlation Perception .pdf:application/pdf;ScienceDirect Snapshot:C\:\\Users\\mbch4gs2\\Zotero\\storage\\DBRLAN7I\\S1071581923000496.html:text/html},
+}
+
+@article{grice_1983,
+	title = {Forest before trees? {It} depends where you look},
+	volume = {33},
+	issn = {1532-5962},
+	shorttitle = {Forest before trees?},
+	url = {https://doi.org/10.3758/BF03202829},
+	doi = {10.3758/BF03202829},
+	abstract = {Because it may be deduced from the more elementary principles of visual processing, global precedence (Navon, 1977) is not a primary perceptual principle. Subjects were presented with a large letter made out of small ones and asked to make an identification response on the basis of either the large or small letter. When fixation was controlled to provide adequate stimulation from the small letter, there was no difference in reaction time (RT) between the large and small targets. Also, there was no difference in interference due to response incompatibility of the unattended letter based on target size. However, when the stimulus was presented peripherally, unpredictably to the right or left of fixation, RT was faster to the large target and interference was substantially greater for the small target. Functions for the development of associative strength and associative interference are presented. Global precedence is dependent on factors tending to degrade small stimuli more than large ones.},
+	language = {en},
+	number = {2},
+	urldate = {2023-04-17},
+	journal = {Perception \& Psychophysics},
+	author = {Grice, G. Robert and Canham, Lyn and Boroughs, Joseph M.},
+	month = mar,
+	year = {1983},
+	keywords = {Associative Strength, Compatibility Effect, Race Model, Small Target, Target Size},
+	pages = {121--128},
+	file = {Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\6S59WKFP\\Grice et al. - 1983 - Forest before trees It depends where you look.pdf:application/pdf},
+}
+
+@article{alais_2004,
+	title = {The {Ventriloquist} {Effect} {Results} from {Near}-{Optimal} {Bimodal} {Integration}},
+	volume = {14},
+	issn = {0960-9822},
+	url = {https://www.sciencedirect.com/science/article/pii/S0960982204000430},
+	doi = {10.1016/j.cub.2004.01.029},
+	abstract = {Ventriloquism is the ancient art of making one's voice appear to come from elsewhere, an art exploited by the Greek and Roman oracles, and possibly earlier [1]. We regularly experience the effect when watching television and movies, where the voices seem to emanate from the actors' lips rather than from the actual sound source. Originally, ventriloquism was explained by performers projecting sound to their puppets by special techniques [1], but more recently it is assumed that ventriloquism results from vision “capturing” sound 2., 3., 4., 5.. In this study we investigate spatial localization of audio-visual stimuli. When visual localization is good, vision does indeed dominate and capture sound. However, for severely blurred visual stimuli (that are poorly localized), the reverse holds: sound captures vision. For less blurred stimuli, neither sense dominates and perception follows the mean position. Precision of bimodal localization is usually better than either the visual or the auditory unimodal presentation. All the results are well explained not by one sense capturing the other, but by a simple model of optimal combination of visual and auditory information.},
+	language = {en},
+	number = {3},
+	urldate = {2023-04-17},
+	journal = {Current Biology},
+	author = {Alais, David and Burr, David},
+	month = feb,
+	year = {2004},
+	pages = {257--262},
+	file = {ScienceDirect Full Text PDF:C\:\\Users\\mbch4gs2\\Zotero\\storage\\6K77R872\\Alais and Burr - 2004 - The Ventriloquist Effect Results from Near-Optimal.pdf:application/pdf;ScienceDirect Snapshot:C\:\\Users\\mbch4gs2\\Zotero\\storage\\58EAQVPK\\S0960982204000430.html:text/html},
 }
