@@ -446,7 +446,8 @@ design, human-computer interaction, and human perception. In a previous study \c
 we showed that a novel point contrast manipulation, in which the contrast of a certain
 scatterplot point was reduced as the size of the point's residual increased, could be
 used to partially correct for a systematic underestimation bias present in the 
-literature . We suggested that this was due to the narrowing
+literature \cite{strahan_1978, bobko_1979, cleveland_1984, lane_1985, lauer_1989, 
+collyer_1990, meyer_1992}. We suggested that this was due to the narrowing
 of the perceived probability distribution of a particular plot brought
 on by the lower contrast (and therefore higher uncertainty) in those outer
 areas. We tested linear, non-linear, and non-linear inverted functions relating
