@@ -145,50 +145,28 @@
 
 \maketitle
 
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
 Scatterplots, utilised in scientific communication for a variety of tasks,
 are some of the most widely used and widely studied data visualizations. Viewers
 mostly interpret them in similar ways \cite{kay_heer_2015}, and they are simple
 enough to be easily studied while providing important insights into visualization
 design, human-computer interaction, and human perception. In a previous study \cite{strain_2023},
 we showed that a novel point contrast manipulation, in which the contrast of a certain
-scatterplot point was reduced as the size of the point's residual increased, could be
+scatterplot point was reduced as the size of that point's residual increased, could be
 used to partially correct for a systematic underestimation bias present in the
 literature \cite{strahan_1978, bobko_1979, cleveland_1984, lane_1985, lauer_1989, 
-collyer_1990, meyer_1992}. We suggested that this was due to the narrowing
+collyer_1990, meyer_1992}. We suggested that this was due to a narrowing of the width
 of the perceived probability distribution of a particular plot brought
-on by the lower contrast (and therefore higher uncertainty) in those outer
+on by the lower contrast (and therefore lower point-salience) in those outer
 areas. We tested linear, non-linear, and non-linear inverted functions relating
 point contrast to residual size, finding that the non-linear function produced
 the most accurate estimates of correlation, and that the non-linear inverted produced
 the least accurate.
 
-Of course, point contrast is not the only available visual feature that might be used
-to influence viewer's perceptions of the width of a probability distribution. Instead,
-we might use the size of a point. There is evidence in the literature that larger points
-are more salient \cite{healey_2012}, can bias judgements of point position
-\cite{hong_2021}, and can result in faster reaction times \cite{grice_1983} to
-peripherally presented stimuli. In addition, smaller stimuli are associated with
-greater levels of spatial uncertainty \cite{alais_2004}, and if this
-is driving the reduction in error we saw in our previous work \cite{strain_2023},
-we would expect a similar effect when point size is used instead of point contrast.
-We therefore hypothesize that correlation estimation will be most accurate when
-viewers are presented with the non-linear size decay condition, and will be
-least accurate when presented with the non-linear inverted size decay condition.
-
-We present a single experiment study in which we demonstrate that the use of
-a non-linear size decay function relating to the residuals of points on scatterplots
-can be employed to correct for a systematic underestimation of correlation by
-viewers in scatterplots. We find no evidence for an effect of graph literacy (put
-something about training here). The effect we observe here is much stronger, both
-with regards to effect size and in terms of the observed reduction in error, than the
-effect we observed in our previous study \cite{strain_2023}. We suggest that this
-function can be used to facilitate more accurate correlation
-perception in scatterplots, and provide exciting future avenues for the continuation
-and refinement of these techniques. Ethical approval was granted by the University
-of Manchester's Computer Science Departmental Panel (Ref: 2022-14660-24397)
-
-\hypertarget{correlation-perception}{%
-\subsection{Correlation Perception}\label{correlation-perception}}
+\hypertarget{scatterplots-and-correlation}{%
+\subsection{Scatterplots and Correlation}\label{scatterplots-and-correlation}}
 
 Scatterplots have been widely studied, especially as mediums for the communication
 of correlation (see \cite{strain_2023} for a detailed review of this history). Much
@@ -199,15 +177,49 @@ to discriminative judgement, bisection, and staircase tasks. As in our previous 
 we choose to use the direct estimation paradigm owing to its simplicity, and its suitability
 to online experimentation. The use of this paradigm renders the judgements we collect
 comparative by nature, although such work does allow us to inform design guidelines as
-well as perception.
+well as human perception. It is our duty as visualization designers to ensure that the
+messages we are trying to communicate are being interpreted as accurately as possible
+by viewers. To do this, we must understand human perception, apply that understanding
+to design, and test those designs in rigorous empirical studies.
 
 \hypertarget{point-size}{%
 \subsection{Point Size}\label{point-size}}
 
-Hong et al paper will be useful here
+Ppoint contrast is not the only available visual feature that might be used
+to influence viewer's perceptions of the width of a probability distribution. Nor is
+it the only visual feature of a scatterplot that we can exploit. While
+contrast adjustments have been used extensively to solve issues of overplotting and clutter
+in scatterplots \cite{matejka_2015, bertini_2004}, there is no established use for
+varying point size. Common sense dictates that scatterplots visualizing larger
+datasets inherently require their points to be smaller to prevent the obscuring of data,
+but to our knowledge there is little testing of impact of point size on correlation perception.
+Studies have found invariance in in the bias and variability of correlation
+estimation with regards to changing point sizes \cite{rensink_2012, rensink_2014},
+but these have been low-powered. From the wider literature there is evidence that larger points
+are more salient \cite{healey_2012}, can bias judgements of point position
+\cite{hong_2021}, and can result in faster reaction times \cite{grice_1983} to
+peripherally presented stimuli. In addition, smaller stimuli are associated with
+greater levels of spatial uncertainty \cite{alais_2004}, and if this
+is driving the reduction in error we saw in our previous work \cite{strain_2023},
+we would expect a similar effect when point size is used instead of point contrast.
 
-\hypertarget{dot-pitch-and-crowdsourced-experiments}{%
-\subsection{Dot Pitch and Crowdsourced Experiments}\label{dot-pitch-and-crowdsourced-experiments}}
+\hypertarget{hypotheses}{%
+\subsection{Hypotheses}\label{hypotheses}}
+
+We hypothesize that correlation estimation will be most accurate when
+viewers are presented with the non-linear size decay condition, and will be
+least accurate when presented with the non-linear inverted size decay condition.
+We thereby present a single experiment study in which we demonstrate that the use of
+a non-linear size decay function relating to the residuals of points on scatterplots
+can be employed to correct for a systematic underestimation of correlation by
+viewers in scatterplots. We find no evidence for an effect of graph literacy (put
+something about training here). The effect we observe here is much stronger, both
+with regards to effect size and in terms of the observed reduction in error, than the
+effect we observed in our previous study \cite{strain_2023}. We suggest that this
+function can be used to facilitate more accurate correlation
+perception in scatterplots, and provide exciting future avenues for the continuation
+and refinement of these techniques. Ethical approval was granted by the University
+of Manchester's Computer Science Departmental Panel (Ref: 2022-14660-24397).
 
 \hypertarget{methodology}{%
 \section{Methodology}\label{methodology}}
@@ -216,7 +228,7 @@ Hong et al paper will be useful here
 \subsection{Open Research Statement}\label{open-research-statement}}
 
 The experiment was conducted according to the principles of open and reproducible research.
-All data and analysis code are available at \url{https://github.com/gjpstrain/size_contrast_and_scatterplots}.
+All data and analysis code are available at \url{https://github.com/gjpstrain/size_and_scatterplots}.
 This repository contains instructions for building a docker image to fully
 reproduce the computational environment used, allowing for full replications
 of stimulus generation, analyses, and the paper itself. The experiment was
@@ -264,8 +276,8 @@ can be found in the item preparation folder in the repository linked below.
   point-size = 1 - b^R
 \end{equation}
 
-\hypertarget{dot-pitch-and-crowdsourced-experiments-1}{%
-\subsection{Dot Pitch and Crowdsourced Experiments}\label{dot-pitch-and-crowdsourced-experiments-1}}
+\hypertarget{dot-pitch-and-crowdsourced-experiments}{%
+\subsection{Dot Pitch and Crowdsourced Experiments}\label{dot-pitch-and-crowdsourced-experiments}}
 
 In our previous study \cite{strain_2023}, we had no way of obtaining dot pitch
 or participant to monitor distance due to the online, crowdsourced nature of the
@@ -360,11 +372,13 @@ Testing for contrasts between the four levels of the size manipulation condition
 were performed with the \textbf{emmeans} package (version 1.8.5 \cite{emmeans}), and
 of correlation estimates are shown in Figure \ref{fig:dot-plot}. The \textbf{EMAtools} package
 was used to calculate effects sizes in Cohen's d, the results of which can be seen in
-Table \ref{tab:effects-df}.
+Table \ref{tab:effects-df}. The largest effect size we found was 0.61 when comparing
+the non-linear size decay and standard size conditions. This is significantly higher
+than any of the effects sizes we have found in our previous work.
 
 \begin{table}
 
-\caption{\label{tab:contrasts-table}contrasts table}
+\caption{\label{tab:contrasts-table}Contrasts between each of the four levels of the size decay condition.}
 \centering
 \resizebox{\linewidth}{!}{
 \begin{tabular}[t]{lrl}
@@ -399,11 +413,16 @@ Inverted Non-linear Size Decay & -0.11\\
 
 In addition, we find no significant difference between the experimental model
 and another including graph literacy as a fixed effect (\(\chi^2\)(1)
-0.16, \emph{p} = .690).
-These results suggest the effect we found was not driven by difference in graph literacy.
+0.16, \emph{p} = .690),
+suggesting the effect we found was not driven by differences in graph literacy.
 
 \begin{figure*}
-\includegraphics{size_and_scatterplots_files/figure-latex/changes-with-r-size-1} \caption{hello}\label{fig:changes-with-r-size}
+
+{\centering \includegraphics[width=1\linewidth]{size_and_scatterplots_files/figure-latex/changes-with-r-size-1} 
+
+}
+
+\caption{hello}\label{fig:changes-with-r-size}
 \end{figure*}
 
 Figure \ref{fig:changes-with-r-size} shows how participants' mean errors in correlation
@@ -411,8 +430,19 @@ estimates change with the objective Pearson's \emph{r} value, plotted separately
 size decay condition. Note the close-to-zero errors present in the non-linear size
 decay condition.
 
+As discussed previously, in the present study we employed a method fo obtaining
+a measurement of dot pitch from each participant. While \ref{visual-threshold-testing}
+provides evidence that participants had little to no problem perceiving all the dots
+on the scatterplots shown, there may be some other facet of using a larger or smaller
+monitor with a larger or smaller resolution that could have affected the estimates
+our participants gave. To check this, we built a model including the dot pitch
+measurement as a fixed effect, and, comparing it a model
+
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
 %% if specified like this the section will be committed in review mode
-\acknowledgments{lah di dah}
+\acknowledgments{This work was supported by funding from the University of Manchester Department of Computer Science and Division of Psychology, Communication and Human Neuroscience}
 
 %\bibliographystyle{abbrv}
 \bibliographystyle{bib_styles/abbrv-doi}
