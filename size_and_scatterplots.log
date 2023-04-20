@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.18)  19 APR 2023 16:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.18)  20 APR 2023 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -449,36 +449,38 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
 
 ]
-<size_and_scatterplots_files/figure-latex/examples-1.pdf, id=134, 457.71pt x 456.70625pt>
+<size_and_scatterplots_files/figure-latex/examples-1.pdf, id=138, 457.71pt x 456.70625pt>
 File: size_and_scatterplots_files/figure-latex/examples-1.pdf Graphic file (type pdf)
 <use size_and_scatterplots_files/figure-latex/examples-1.pdf>
-Package pdftex.def Info: size_and_scatterplots_files/figure-latex/examples-1.pdf  used on input line 328.
+Package pdftex.def Info: size_and_scatterplots_files/figure-latex/examples-1.pdf  used on input line 330.
 (pdftex.def)             Requested size: 240.94499pt x 240.4155pt.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 328.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 330.
 
-LaTeX Warning: Reference `training' on page 2 undefined on input line 341.
-
-
-LaTeX Warning: Citation `r_core' on page 2 undefined on input line 351.
+LaTeX Warning: Citation `r_core' on page 2 undefined on input line 353.
 
 
-LaTeX Warning: Citation `voeten_buildmer_2022' on page 2 undefined on input line 352.
+LaTeX Warning: Citation `voeten_buildmer_2022' on page 2 undefined on input line 354.
 
-<size_and_scatterplots_files/figure-latex/dot-plot-1.pdf, id=139, 459.7175pt x 312.16624pt>
+<size_and_scatterplots_files/figure-latex/dot-plot-1.pdf, id=144, 459.7175pt x 312.16624pt>
 File: size_and_scatterplots_files/figure-latex/dot-plot-1.pdf Graphic file (type pdf)
 <use size_and_scatterplots_files/figure-latex/dot-plot-1.pdf>
-Package pdftex.def Info: size_and_scatterplots_files/figure-latex/dot-plot-1.pdf  used on input line 357.
+Package pdftex.def Info: size_and_scatterplots_files/figure-latex/dot-plot-1.pdf  used on input line 359.
 (pdftex.def)             Requested size: 240.94499pt x 163.61346pt.
 [2 <./size_and_scatterplots_files/figure-latex/examples-1.pdf>]
 
-LaTeX Warning: Citation `emmeans' on page 3 undefined on input line 372.
+LaTeX Warning: Citation `emmeans' on page 3 undefined on input line 374.
 
-<size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf, id=173, 460.72125pt x 142.5325pt>
+<size_and_scatterplots_files/figure-latex/error-plot-1.pdf, id=176, 459.7175pt x 142.5325pt>
+File: size_and_scatterplots_files/figure-latex/error-plot-1.pdf Graphic file (type pdf)
+<use size_and_scatterplots_files/figure-latex/error-plot-1.pdf>
+Package pdftex.def Info: size_and_scatterplots_files/figure-latex/error-plot-1.pdf  used on input line 408.
+(pdftex.def)             Requested size: 505.89pt x 156.8558pt.
+<size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf, id=177, 459.7175pt x 142.5325pt>
 File: size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf Graphic file (type pdf)
 <use size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf>
-Package pdftex.def Info: size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf  used on input line 421.
-(pdftex.def)             Requested size: 505.89pt x 156.50565pt.
+Package pdftex.def Info: size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf  used on input line 417.
+(pdftex.def)             Requested size: 505.89pt x 156.8558pt.
 (./size_and_scatterplots.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 41--53
 []\T1/ptm/m/n/8 (+20) P. Bobko and R. Kar-ren.  The Per-cep-tion of Pear-
@@ -504,33 +506,33 @@ Underfull \hbox (badness 7925) in paragraph at lines 41--53
 \T1/ptm/m/n/8 (+20) 6570.1979.tb02137.x. doi: 10 . 1111/j . 1744-6570 . 1979 . tb02137 .
  []
 
-[3 <./size_and_scatterplots_files/figure-latex/dot-plot-1.pdf>]
+[3 <./size_and_scatterplots_files/figure-latex/dot-plot-1.pdf>] [4 <./size_and_scatterplots_files/figure-latex/error-plot-1.pdf> <./size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 176--179
 []\T1/ptm/m/n/8 (+20) W. L. Morys-Carter.  Screen-Scale, May 2021.
  []
 
-) [4
+) [5
 
- <./size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf>] (./size_and_scatterplots.aux)
+] (./size_and_scatterplots.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `size_and_scatterplots.out' has not changed.
-(rerunfilecheck)             Checksum: E4CE862AE4BC1BDCA684C59F9A4F1132;1787.
+(rerunfilecheck)             Checksum: 6A16EF9A2046AC746A9BB4E5ECB4DBB0;1884.
  ) 
 Here is how much of TeX's memory you used:
- 12750 strings out of 477957
- 205378 string characters out of 5836259
+ 12771 strings out of 477957
+ 206030 string characters out of 5836259
  1882660 words of memory out of 5000000
- 32333 multiletter control sequences out of 15000+600000
- 597748 words of font info for 342 fonts, out of 8000000 for 9000
+ 32342 multiletter control sequences out of 15000+600000
+ 598258 words of font info for 347 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 76i,13n,76p,1018b,582s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 76i,13n,76p,1018b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on size_and_scatterplots.pdf (4 pages, 191861 bytes).
+Output written on size_and_scatterplots.pdf (5 pages, 215811 bytes).
 PDF statistics:
- 269 PDF objects out of 1000 (max. 8388607)
- 229 compressed objects within 3 object streams
- 63 named destinations out of 1000 (max. 500000)
- 96896 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 293 PDF objects out of 1000 (max. 8388607)
+ 249 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 96909 words of extra memory for PDF output out of 106986 (max. 10000000)
 

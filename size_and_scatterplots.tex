@@ -185,7 +185,7 @@ to design, and test those designs in rigorous empirical studies.
 \hypertarget{point-size}{%
 \subsection{Point Size}\label{point-size}}
 
-Ppoint contrast is not the only available visual feature that might be used
+Point contrast is not the only available visual feature that might be used
 to influence viewer's perceptions of the width of a probability distribution. Nor is
 it the only visual feature of a scatterplot that we can exploit. While
 contrast adjustments have been used extensively to solve issues of overplotting and clutter
@@ -248,7 +248,7 @@ permitted to complete the experiment on a desktop or laptop computer.
 
 Data were collected from 164 participants. 14 failed more than 2 out of 6 attention
 check questions, and, as per pre-registration stipulations, were rejected from the study. Data
-from 150 participants was included in the analysis (48.00\% male, 50.00\% female, and 2.00\% non-binary). Mean age of participants was 29.56
+from 150 participants was included in the analysis (48.00\% male, 50.00\% female, and 2\% non-binary). Mean age of participants was 29.56
 (\emph{SD} = 8.54). Mean graph literacy score was 21.77
 (\emph{SD} = 4.29) out of 30. The average time taken to complete
 the experiment was 39 minutes (SD = 14 minutes).
@@ -266,11 +266,13 @@ for a more detailed discussion of precise point sizes and dot pitch in crowd-sou
 experiments.
 
 As in our previous study \cite{strain_2023}, we used equation 1 to map residuals
-to point sizes. We used a scaling factor of 4 and a constant of 0.2 to achieve a
+to point sizes in three of our conditions. We used a scaling factor of 4 and a constant of 0.2 to achieve a
 minimum point size of 12/13 pixels, which is consistent with the point size on
-a 1920 x 1080 monitor for both experiments in \cite{strain_2023}. Again, see \autoref{dot-pitch-and-crowdsourced-experiments}
-for a discussion of dot pitch. Scripts detailing scatterplot and mask generation
-can be found in the item preparation folder in the repository linked below.
+a 1920 x 1080 monitor for both experiments in \cite{strain_2023}. Again, see \autoref{dot-pitch-and-crowdsourced-experiments} for a discussion of dot pitch.
+In our fourth condition, which we refer to as ``Standard size'', point size was uniformly
+set to be consistent with the point size in our previous studies.
+Scripts detailing scatterplot and mask generation can be found in the item
+preparation folder in the repository linked below.
 
 \begin{equation}
   point-size = 1 - b^R
@@ -354,7 +356,7 @@ built using the \textbf{buildmer} (version 2.8 \cite{voeten_buildmer_2022}) and 
 as the predictor for participants' errors in correlation estimates
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{size_and_scatterplots_files/figure-latex/dot-plot-1} \caption{Mean error in correlation estimates across the four size manipulation conditions, with 95\% confidence intervals shown.}\label{fig:dot-plot}
+\includegraphics[width=1\linewidth]{size_and_scatterplots_files/figure-latex/dot-plot-1} \caption{Mean error in correlation estimates across the four size manipulation conditions, with 95\% confidence intervals shown. Brackets show the effect sizes between standard size and all other conditions in Cohen's d.}\label{fig:dot-plot}
 \end{figure}
 
 Mean errors in correlation estimates for the four size manipulation conditions
@@ -372,7 +374,7 @@ Testing for contrasts between the four levels of the size manipulation condition
 were performed with the \textbf{emmeans} package (version 1.8.5 \cite{emmeans}), and
 of correlation estimates are shown in Figure \ref{fig:dot-plot}. The \textbf{EMAtools} package
 was used to calculate effects sizes in Cohen's d, the results of which can be seen in
-Table \ref{tab:effects-df}. The largest effect size we found was 0.61 when comparing
+\ref{fig:dot-plot}. The largest effect size we found was 0.61 when comparing
 the non-linear size decay and standard size conditions. This is significantly higher
 than any of the effects sizes we have found in our previous work.
 
@@ -396,25 +398,19 @@ Non-linear Decay: Linear Decay & -5.73 & <0.001\\
 \end{tabular}}
 \end{table}
 
-\begin{table}
-
-\caption{\label{tab:effects-df}The effects sizes of our point size manipulations when compared to the standard size condition.}
-\centering
-\begin{tabular}[t]{lr}
-\toprule
-Comparison & Cohen's d\\
-\midrule
-Non-linear Size Decay & -0.61\\
-Linear Size Decay & -0.54\\
-Inverted Non-linear Size Decay & -0.11\\
-\bottomrule
-\end{tabular}
-\end{table}
-
 In addition, we find no significant difference between the experimental model
 and another including graph literacy as a fixed effect (\(\chi^2\)(1)
 0.16, \emph{p} = .690),
 suggesting the effect we found was not driven by differences in graph literacy.
+
+\begin{figure*}
+
+{\centering \includegraphics[width=1\linewidth]{size_and_scatterplots_files/figure-latex/error-plot-1} 
+
+}
+
+\caption{hello2}\label{fig:error-plot}
+\end{figure*}
 
 \begin{figure*}
 
@@ -430,16 +426,30 @@ estimates change with the objective Pearson's \emph{r} value, plotted separately
 size decay condition. Note the close-to-zero errors present in the non-linear size
 decay condition.
 
-As discussed previously, in the present study we employed a method fo obtaining
+As discussed previously, in the present study we employed a method for obtaining
 a measurement of dot pitch from each participant. While \ref{visual-threshold-testing}
 provides evidence that participants had little to no problem perceiving all the dots
 on the scatterplots shown, there may be some other facet of using a larger or smaller
 monitor with a larger or smaller resolution that could have affected the estimates
 our participants gave. To check this, we built a model including the dot pitch
-measurement as a fixed effect, and, comparing it a model
+measurement as a fixed effect. Comparing this to the experimental model revealed
+no significant effect of dot pitch (\(\chi^2\)(1) = 4.65, \emph{p} = .031)
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
+
+We found support for our first hypothesis. As can be seen in \ref{fig:changes-with-r-size},
+participants' errors in correlation estimation were significantly lower when
+they were presented with the non-linear size decay condition (see \ref{fig:examples})
+compared to when they were presented with all other conditions. We found no support
+for our second hypothesis, that participants' estimations would be worse in the
+inverted non-linear size decay condition than all other conditions. We found that
+errors in this condition were indeed significantly higher than for the other
+two size decay conditions, but that this error was similar to, but significantly lower than,
+the error with the standard size.
+
+\hypertarget{training}{%
+\subsection{Training}\label{training}}
 
 %% if specified like this the section will be committed in review mode
 \acknowledgments{This work was supported by funding from the University of Manchester Department of Computer Science and Division of Psychology, Communication and Human Neuroscience}

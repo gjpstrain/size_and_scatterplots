@@ -311,7 +311,7 @@ data <- df %>%
   data %>%
     mutate(size = fct_relevel(size, "A", "B", "C", "D")) %>%
     ggplot(aes(x = size, y = mean)) +
-    geom_point() +
+    geom_point(stat = "identity") +
     #coord_cartesian(ylim = c(0, max_error))
     geom_errorbar(aes(ymin=lci, ymax=hci), colour="black", width=0.025, linewidth =1) +
     theme_ggdist() +
@@ -352,11 +352,14 @@ plot_error_bars_function <- function(df, measure, l){
   geom_errorbar(mapping = aes(ymin = mean + sd, ymax = mean - sd),width = 0.01, size = 0.3) +
   theme_ggdist() +
   scale_y_continuous(breaks = seq(0,1, 0.2)) +
-  theme(strip.text = element_text(size = 6, margin = margin(1,0,1,0, "mm")), aspect.ratio = 1) +
+  theme(strip.text = element_text(size = 6, margin = margin(1,0,1,0, "mm")), aspect.ratio = 1,
+        axis.text = element_text(size = 6.5),
+        axis.title = element_text(size = 8)) +
   facet_wrap(size ~., ncol = 4, labeller = labeller(size = l)) +
     labs(x = "Objective r",
          y = "Mean r estimation") +
-    xlim(0.2,1)
+    xlim(0.2,1) +
+  geom_line(formula= x ~ y)
 }
 
 ```
@@ -463,7 +466,7 @@ to design, and test those designs in rigorous empirical studies.
 
 ## Point Size
 
-Ppoint contrast is not the only available visual feature that might be used
+Point contrast is not the only available visual feature that might be used
 to influence viewer's perceptions of the width of a probability distribution. Nor is
 it the only visual feature of a scatterplot that we can exploit. While
 contrast adjustments have been used extensively to solve issues of overplotting and clutter
@@ -522,8 +525,7 @@ permitted to complete the experiment on a desktop or laptop computer.
 
 Data were collected from 164 participants. 14 failed more than 2 out of 6 attention
 check questions, and, as per pre-registration stipulations, were rejected from the study. Data
-from 150 participants was included in the analysis (`r printnum(gender$M, digits = 2)`% male, `r printnum(gender$F, digits = 2)`% female, and `r printnum(gender$NB, digits = 2)`% non-binary). Mean age of participants was `r printnum(age$mean)`
-(*SD* = `r printnum(age$sd)`). Mean graph literacy score was `r printnum(literacy$mean)`
+from 150 participants was included in the analysis (`r printnum(gender$M, digits = 0)`% male, `r printnum(gender$F, digits = 0)`% female, and `r printnum(gender$NB, digits = 0)`% non-binary). Mean age of participants was `r printnum(age$mean)` (*SD* = `r printnum(age$sd)`). Mean graph literacy score was `r printnum(literacy$mean)`
 (*SD* = `r printnum(literacy$sd)`) out of 30. The average time taken to complete
 the experiment was 39 minutes (SD = 14 minutes).
 
@@ -539,11 +541,13 @@ for a more detailed discussion of precise point sizes and dot pitch in crowd-sou
 experiments.
 
 As in our previous study \cite{strain_2023}, we used equation 1 to map residuals 
-to point sizes. We used a scaling factor of 4 and a constant of 0.2 to achieve a
+to point sizes in three of our conditions. We used a scaling factor of 4 and a constant of 0.2 to achieve a
 minimum point size of 12/13 pixels, which is consistent with the point size on
-a 1920 x 1080 monitor for both experiments in \cite{strain_2023}. Again, see \autoref{dot-pitch-and-crowdsourced-experiments}
-for a discussion of dot pitch. Scripts detailing scatterplot and mask generation
-can be found in the item preparation folder in the repository linked below.
+a 1920 x 1080 monitor for both experiments in \cite{strain_2023}. Again, see \autoref{dot-pitch-and-crowdsourced-experiments} for a discussion of dot pitch.
+In our fourth condition, which we refer to as "Standard size", point size was uniformly
+set to be consistent with the point size in our previous studies. 
+Scripts detailing scatterplot and mask generation can be found in the item
+preparation folder in the repository linked below.
 
 \begin{equation}
   point-size = 1 - b^R
@@ -633,13 +637,41 @@ built using the **buildmer** (version 2.8 \cite{voeten_buildmer_2022}) and **lme
 (version 1.1-32 \cite{bates_lme4_2015}) packages, with size manipulation being set
 as the predictor for participants' errors in correlation estimates
 
-```{r dot-plot, echo=FALSE, fig.show='hold', fig.cap="Mean error in correlation estimates across the four size manipulation conditions, with 95\\% confidence intervals shown.", out.width="100%", crop = TRUE}
+```{r dot-plot, echo=FALSE, fig.show='hold', fig.cap="Mean error in correlation estimates across the four size manipulation conditions, with 95\\% confidence intervals shown. Brackets show the effect sizes between standard size and all other conditions in Cohen's d.", out.width="100%", crop = TRUE}
 dot_plot_function(exp_size_only_tidy) +
   scale_x_discrete(labels = c("Non-linear\nSize Decay",
                               "Linear Size\nDecay",
                               "Inverted Non-linear\nSize Decay",
                               "Standard\nSize")) +
-  ylim(0,0.2)
+  ylim(0,0.2) +
+  geom_bracket(aes(xmin = xmin,
+                   xmax = xmax,
+                   label = label),
+                   alpha = 0.5,
+                   tip.length = c(0.9,0.13),
+               data = data.frame(xmin = 1,
+                                 xmax = 4,
+                                 label = "d = 0.61",
+                                 y.position = 0.2)) +
+  geom_bracket(aes(xmin = xmin,
+                   xmax = xmax,
+                   label = label),
+                   alpha = 0.5,  
+                   tip.length = c(0.7,0),
+               data = data.frame(xmin = 2,
+                                 xmax = 4,
+                                 label = "d = 0.54",
+                                 y.position = 0.18)) +
+  geom_bracket(aes(xmin = xmin,
+                   xmax = xmax,
+                   label = label),
+                   alpha = 0.5,
+                   tip.length = c(-0.05,-0.185),
+               vjust = c(4.65),
+               data = data.frame(xmin = 3,
+                                 xmax = 4,
+                                 label = "d = 0.11",
+                                 y.position = 0.12))
 ```
 
 ```{r model, cache=eval_models, cache.comments=FALSE, eval=eval_models, include=FALSE, cache.path="size_and_scatterplots/latex/"}
@@ -676,7 +708,7 @@ Testing for contrasts between the four levels of the size manipulation condition
 were performed with the **emmeans** package (version 1.8.5 \cite{emmeans}), and
 of correlation estimates are shown in Figure \ref{fig:dot-plot}. The **EMAtools** package
 was used to calculate effects sizes in Cohen's d, the results of which can be seen in 
-Table \ref{tab:effects-df}. The largest effect size we found was 0.61 when comparing
+\ref{fig:dot-plot}. The largest effect size we found was 0.61 when comparing
 the non-linear size decay and standard size conditions. This is significantly higher
 than any of the effects sizes we have found in our previous work.
 
@@ -698,7 +730,7 @@ k <- knitr::kable(contrasts, booktabs = TRUE, digits = c(0,2,3), caption = "Cont
 kable_styling(k, latex_options = "scale_down")
 ```
 
-```{r effects-df, echo=FALSE}
+```{r effects-df, echo=FALSE, include = FALSE}
 effects_sizes <- get_effects_sizes(size_model, exp_size_only_tidy) %>%
   rownames_to_column() %>%
   arrange(rowname) %>%
@@ -728,8 +760,14 @@ and another including graph literacy as a fixed effect ($\chi^2$(`r in_paren(mod
 `r printnum(model_literacy_comparison.Chisq)`, *p* `r printp(model_literacy_comparison.p, add_equals = TRUE)`),
 suggesting the effect we found was not driven by differences in graph literacy.
 
-```{r changes-with-r-size, echo=FALSE, fig.align='center', fig.show='hold', fig.cap="hello", crop = TRUE, fig.env="figure*",crop = TRUE, out.width= "100%"}
-plot_error_bars_function(exp_size_only_tidy, "difference", labels_size) +
+```{r error-plot, echo=FALSE, fig.align='center', fig.show='hold', fig.cap="hello2", fig.env="figure*", crop = TRUE, out.width= "100%", results=FALSE}
+plot_error_bars_function(exp_size_only_tidy, "slider.response", labels_size)
+  xlim(0.1,1)
+```
+
+
+```{r changes-with-r-size, echo=FALSE, fig.align='center', fig.show='hold', fig.cap="hello", fig.env="figure*", crop = TRUE, out.width= "100%", results=FALSE}
+plot_error_bars_function(exp_size_only_tidy, "difference", labels_size)
     labs(y = "Mean r estimation error") +
     theme(title = element_text(size = 8)) +
     geom_hline(yintercept = 0, linetype = 2)
@@ -741,26 +779,45 @@ size decay condition. Note the close-to-zero errors present in the non-linear si
 decay condition.
 
 ```{r dot-pitch-modelling, cache=eval_models, cache.comments=FALSE, eval=eval_models, echo=FALSE, dependson="model", cache.path="size_and_scatterplots/latex/"}
+dot_pitch_model <- lme4::lmer(add.terms(formula(size_model), "dot_pitch"),
+                              data = exp_size_only_tidy)
 
+model_dot_pitch_comparison <- size_model
 ```
 
+```{r dot-pitch-comparison, eval=TRUE, echo=FALSE}
+anova_results(model_dot_pitch_comparison, dot_pitch_model)
+```
 
-As discussed previously, in the present study we employed a method fo obtaining
+As discussed previously, in the present study we employed a method for obtaining
 a measurement of dot pitch from each participant. While \ref{visual-threshold-testing}
 provides evidence that participants had little to no problem perceiving all the dots
 on the scatterplots shown, there may be some other facet of using a larger or smaller
 monitor with a larger or smaller resolution that could have affected the estimates
 our participants gave. To check this, we built a model including the dot pitch
-measurement as a fixed effect. Comparing this to the experimental model
-
-
+measurement as a fixed effect. Comparing this to the experimental model revealed
+no significant effect of dot pitch ($\chi^2$(`r in_paren(model_dot_pitch_comparison.df)`) = `r printnum(model_dot_pitch_comparison.Chisq)`, *p* `r printp(model_dot_pitch_comparison.p, add_equals = TRUE)`)
 
 # Discussion
 
+We found support for our first hypothesis. As can be seen in Figure \ref{fig:changes-with-r-size},
+participants' errors in correlation estimation were significantly lower when 
+they were presented with the non-linear size decay condition (see \ref{fig:examples}) 
+compared to when they were presented with all other conditions. We found no support
+for our second hypothesis, that participants' estimations would be worse in the 
+inverted non-linear size decay condition than all other conditions. We found that
+errors in this condition were indeed significantly higher than for the other
+two size decay conditions, but that this error was similar to, but significantly lower than,
+the error with the standard size.
+
+
+## Training
+
+## Limitations
+
+## Future Work
+
 # References {-}
-
-
-
 
 
 
