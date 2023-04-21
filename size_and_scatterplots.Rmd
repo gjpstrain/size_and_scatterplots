@@ -358,8 +358,9 @@ plot_error_bars_function <- function(df, measure, l){
   facet_wrap(size ~., ncol = 4, labeller = labeller(size = l)) +
     labs(x = "Objective r",
          y = "Mean r estimation") +
-    xlim(0.2,1) +
-  geom_line(formula= x ~ y)
+    geom_line(formula= x ~ y) +
+    geom_hline(yintercept = 0, linetype = 2) +
+    xlim(0.2,1)
 }
 
 ```
@@ -478,8 +479,7 @@ Studies have found invariance in in the bias and variability of correlation
 estimation with regards to changing point sizes \cite{rensink_2012, rensink_2014},
 but these have been low-powered. From the wider literature there is evidence that larger points
 are more salient \cite{healey_2012}, can bias judgements of point position
-\cite{hong_2021}, and can result in faster reaction times \cite{grice_1983} to
-peripherally presented stimuli. In addition, smaller stimuli are associated with
+\cite{hong_2021} more strongly than point contrast can, and can result in faster reaction times \cite{grice_1983} to peripherally presented stimuli. In addition, smaller stimuli are associated with
 greater levels of spatial uncertainty \cite{alais_2004}, and if this 
 is driving the reduction in error we saw in our previous work \cite{strain_2023},
 we would expect a similar effect when point size is used instead of point contrast.
@@ -679,6 +679,8 @@ size_model <- buildmer(difference ~ size +
                          (1 + size | participant) +
                          (1 + size | item),
                        data = exp_size_only_tidy)
+
+model <- size_model@model
 ```
 
 ```{r model-comparison,cache=eval_models, cache.comments=FALSE, eval=eval_models, include=FALSE, cache.path="size_and_scatterplots/latex/"}
@@ -756,21 +758,18 @@ anova_results(model_literacy_comparison, literacy_model)
 ```
 
 In addition, we find no significant difference between the experimental model
-and another including graph literacy as a fixed effect ($\chi^2$(`r in_paren(model_literacy_comparison.df)`)
-`r printnum(model_literacy_comparison.Chisq)`, *p* `r printp(model_literacy_comparison.p, add_equals = TRUE)`),
-suggesting the effect we found was not driven by differences in graph literacy.
+and another including graph literacy as a fixed effect ($\chi^2$(`r in_paren(model_literacy_comparison.df)`) `r printnum(model_literacy_comparison.Chisq)`, *p* `r printp(model_literacy_comparison.p, add_equals = TRUE)`), suggesting the effect 
+we found was not driven by differences in graph literacy.
 
 ```{r error-plot, echo=FALSE, fig.align='center', fig.show='hold', fig.cap="hello2", fig.env="figure*", crop = TRUE, out.width= "100%", results=FALSE}
-plot_error_bars_function(exp_size_only_tidy, "slider.response", labels_size)
+plot_error_bars_function(exp_size_only_tidy, "slider.response", labels_size) +
   xlim(0.1,1)
 ```
 
-
 ```{r changes-with-r-size, echo=FALSE, fig.align='center', fig.show='hold', fig.cap="hello", fig.env="figure*", crop = TRUE, out.width= "100%", results=FALSE}
-plot_error_bars_function(exp_size_only_tidy, "difference", labels_size)
+plot_error_bars_function(exp_size_only_tidy, "difference", labels_size) +
     labs(y = "Mean r estimation error") +
-    theme(title = element_text(size = 8)) +
-    geom_hline(yintercept = 0, linetype = 2)
+    theme(title = element_text(size = 8))
 ```
 
 Figure \ref{fig:changes-with-r-size} shows how participants' mean errors in correlation
@@ -790,7 +789,7 @@ anova_results(model_dot_pitch_comparison, dot_pitch_model)
 ```
 
 As discussed previously, in the present study we employed a method for obtaining
-a measurement of dot pitch from each participant. While \ref{visual-threshold-testing}
+a measurement of dot pitch from each participant. While \autoref{visual-threshold-testing}
 provides evidence that participants had little to no problem perceiving all the dots
 on the scatterplots shown, there may be some other facet of using a larger or smaller
 monitor with a larger or smaller resolution that could have affected the estimates
@@ -802,14 +801,27 @@ no significant effect of dot pitch ($\chi^2$(`r in_paren(model_dot_pitch_compari
 
 We found support for our first hypothesis. As can be seen in Figure \ref{fig:changes-with-r-size},
 participants' errors in correlation estimation were significantly lower when 
-they were presented with the non-linear size decay condition (see \ref{fig:examples}) 
+they were presented with the non-linear size decay condition (see Figure \ref{fig:examples}) 
 compared to when they were presented with all other conditions. We found no support
-for our second hypothesis, that participants' estimations would be worse in the 
+for our second hypothesis, that participants' estimates would be worse in the 
 inverted non-linear size decay condition than all other conditions. We found that
 errors in this condition were indeed significantly higher than for the other
 two size decay conditions, but that this error was similar to, but significantly lower than,
 the error with the standard size.
 
+The mean error in correlation estimation for the non-linear decay parameter used
+in the present study was 0.025, while the equivalent condition in the second experiment
+of our previous work, which used the same equations applied to contrast, resulted 
+in a mean error of 0.086 \cite{strain_2023}. Taken together, this is evidence that point size represents a much stronger channel for the manipulation of perceived correlation 
+in scatterplots than contrast. If the effects we have found here and in our previous work
+are being driven by increased uncertainty in the outer regions of the plots,
+the fact we have found a large effect of size is congruent with previous research
+\cite{hong_2021, grice_1983, alais_2004} showing clear influences of stimulus
+size on perception and uncertainty, both in data visualization and elsewhere. Contrary to this,
+there is little to no (revise) literature linking contrast to perceptual
+uncertainty. Unlike our previous work, in which the standard deviations of errors 
+for most conditions became smaller as the objective *r* value increased, participants' 
+distributions of standard deviations of correlation estimates 
 
 ## Training
 
