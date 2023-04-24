@@ -14,7 +14,7 @@ output:
     keep_tex: yes
     template: template.tex
     citation_package: natbib
-    fig_crop: no
+    extra_dependencies: ["float"]
 title: "Point Size and Correlation Perception in Scatterplots"
 editor_options: 
   markdown: 
@@ -179,7 +179,7 @@ anon_file %>%
   mutate(across(matches(c("item", "size")), as_factor)) %>%
   select(-c("__participant")) %>%
   mutate(difference = my_rs - slider.response) %>%
-  mutate(contrast = fct_relevel(size, c('A', 'B', 'C', 'D'))) %>% 
+  mutate(size = fct_relevel(size, c('A', 'B', 'C', 'D'))) %>% 
   assign(paste0(unique(anon_file$expName), "_tidy"),
            value = ., envir = .GlobalEnv)
 }
@@ -761,15 +761,17 @@ In addition, we find no significant difference between the experimental model
 and another including graph literacy as a fixed effect ($\chi^2$(`r in_paren(model_literacy_comparison.df)`) `r printnum(model_literacy_comparison.Chisq)`, *p* `r printp(model_literacy_comparison.p, add_equals = TRUE)`), suggesting the effect 
 we found was not driven by differences in graph literacy.
 
-```{r error-plot, echo=FALSE, fig.align='center', fig.show='hold', fig.cap="hello2", fig.env="figure*", crop = TRUE, out.width= "100%", results=FALSE}
+```{r error-plot, echo=FALSE, fig.align='center', fig.show='hold', fig.cap="hello2", fig.env="figure*", crop = TRUE, out.width= "100%", results=FALSE, fig.pos="h"}
 plot_error_bars_function(exp_size_only_tidy, "slider.response", labels_size) +
-  xlim(0.1,1)
+  xlim(0.2,1)
 ```
 
 ```{r changes-with-r-size, echo=FALSE, fig.align='center', fig.show='hold', fig.cap="hello", fig.env="figure*", crop = TRUE, out.width= "100%", results=FALSE}
 plot_error_bars_function(exp_size_only_tidy, "difference", labels_size) +
     labs(y = "Mean r estimation error") +
-    theme(title = element_text(size = 8))
+    theme(title = element_text(size = 8)) +
+    ylim(-0.3, 0.5) +
+    xlim(0.2,1)
 ```
 
 Figure \ref{fig:changes-with-r-size} shows how participants' mean errors in correlation
@@ -812,8 +814,8 @@ the error with the standard size.
 The mean error in correlation estimation for the non-linear decay parameter used
 in the present study was 0.025, while the equivalent condition in the second experiment
 of our previous work, which used the same equations applied to contrast, resulted 
-in a mean error of 0.086 \cite{strain_2023}. Taken together, this is evidence that point size represents a much stronger channel for the manipulation of perceived correlation 
-in scatterplots than contrast. If the effects we have found here and in our previous work
+in a mean error of 0.086 \cite{strain_2023}. Taken together, this is evidence that point size represents a much stronger channel for the manipulation of perceived correlation in scatterplots than contrast. If the effects
+we have found here and in our previous work
 are being driven by increased uncertainty in the outer regions of the plots,
 the fact we have found a large effect of size is congruent with previous research
 \cite{hong_2021, grice_1983, alais_2004} showing clear influences of stimulus
@@ -821,7 +823,35 @@ size on perception and uncertainty, both in data visualization and elsewhere. Co
 there is little to no (revise) literature linking contrast to perceptual
 uncertainty. Unlike our previous work, in which the standard deviations of errors 
 for most conditions became smaller as the objective *r* value increased, participants' 
-distributions of standard deviations of correlation estimates 
+distributions of standard deviations of correlation estimates remained mostly constant. This
+is unexpected, as previous work, including our own, finds precision
+in *r* estimation to increase as the objective *r* value increases. Given that we found
+this in our previous work \cite{strain_2023} manipulating point contrast, and 
+its robustness in the literature, this result is surprising. We suggest that this
+is due to the nature of the stimuli. At high values of *r* there is a large amount
+of clumping and overlap with the non-linear, non-linear inverted,(REVISE?) and linear size decay conditions (see examples
+in the item preparation folder in the repository linked above). It may be that this
+clumping is itself producing greater uncertainty and causing an absence of the increased
+precision we would expect to see at higher *r* values. While the visual character
+of the scatterplots in the aforementioned conditions can account for the absence
+of higher precision with higher *r* values, the same cannot be said for the standard size
+condition. Aside from the inverted non-linear decay condition in experiment two of
+our prior work \cite{strain_2023}, the finding that precision increased with *r*
+was robust. Its absence here is curious given that the standard size condition in
+the present study is identical to the full contrast conditions in our prior work.
+Taken together, this suggests that there is something particular about the scatterplots
+in the present study that is causing this. Relying on relative judgements as we are,
+the interplay between scatterplots with different visual features must be accounted for.
+Here this interplay seems to have resulted in the absence of this effect, although
+further testing would be required for a more concrete explanation.
+
+The lack of support for our second hypothesis was, again, surprising, although it should be noted that
+the difference between the inverted non-linear condition and the standard size
+condition was small (see Figure \ref{fig:dot-plot}). The shape of the errors
+in correlation estimates (see Figure \ref{fig:changes-with-r-size}) is also
+very similar to that of the standard size condition
+
+
 
 ## Training
 
