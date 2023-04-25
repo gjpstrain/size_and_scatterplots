@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.24)  24 APR 2023 14:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.25)  25 APR 2023 17:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -7,13 +7,13 @@ entering extended mode
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-04-20> (./vgtc.cls
 Document Class: vgtc 2006/05/21 IEEE VGTC
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
-)) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
+)) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
@@ -35,27 +35,27 @@ File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \teaserspace=\skip52
 \abstxtspace=\skip53
 \vgtc@copyrightlength=\skip54
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen143
 \Gin@req@width=\dimen144
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count193
 )
@@ -70,18 +70,18 @@ LaTeX Info: Redefining \textls on input line 1368.
 \MT@outer@kern=\dimen145
 LaTeX Info: Redefining \textmicrotypecontext on input line 1988.
 \MT@listname@count=\count195
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2023/03/13 v3.1a Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 902.
 LaTeX Info: Redefining \lslig on input line 902.
 \MT@outer@space=\skip55
 )
 Package microtype Info: Loading configuration file microtype.cfg.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2023/03/13 v3.1a microtype main configuration file (RS)
-)) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
+)) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/mathptmx.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/mathptmx.sty
 Package: mathptmx 2020/03/25 PSNFSS-v9.3 Times w/ Math, improved (SPQR, WaS) 
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -116,20 +116,20 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
 LaTeX Info: Redefining \hbar on input line 50.
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/times.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+ptm on input line 112.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/t1ptm.fd
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-)) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/cite/cite.sty
+)) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
 Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
 Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen146
 \ar@mcellbox=\box52
@@ -138,7 +138,7 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \extratabsurround=\skip56
 \backup@length=\skip57
 \ar@cellbox=\box53
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box54
 \sift@deathcycles=\count196
@@ -167,7 +167,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \tabu@hleads=\box57
 \tabu@vleads=\box58
 \tabu@cellskip=\skip58
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen159
 \lightrulewidth=\dimen160
@@ -186,37 +186,37 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count271
 \@lastruleclass=\count272
 \@thisrulewidth=\dimen171
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2023-04-22 v7.00x Hypertext links for LaTeX
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
 \c@section@level=\count273
@@ -224,15 +224,15 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 \@linkdim=\dimen172
 \Hy@linkcounter=\count274
 \Hy@pagecounter=\count275
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2023-04-22 v7.00x Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count276
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2023-04-22 v7.00x Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -245,15 +245,15 @@ Package hyperref Info: Backreferencing OFF on input line 4202.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4449.
 \c@Hy@tempcnt=\count277
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4787.
 \XeTeXLinkMargin=\dimen173
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count278
@@ -266,7 +266,7 @@ Package hyperref Info: backreferencing OFF on input line 6081.
 Package hyperref Info: Link coloring OFF on input line 6086.
 Package hyperref Info: Link coloring with OCG OFF on input line 6091.
 Package hyperref Info: PDF/A mode OFF on input line 6096.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
@@ -275,29 +275,29 @@ package with kernel methods
 \c@Hfootnote=\count281
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2023-04-22 v7.00x Hyperref driver for pdfTeX
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
 \Fld@listcount=\count282
 \c@bookmark@seq@number=\count283
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip59
-) (c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+) (c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 227.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
 Package xcolor Info: Model `RGB' extended on input line 1369.
@@ -329,7 +329,7 @@ Package hyperref Info: Option `breaklinks' set `true' on input line 74.
 Package hyperref Info: Option `colorlinks' set `false' on input line 74.
 Package hyperref Info: Option `nesting' set `true' on input line 74.
 Package hyperref Info: Option `linktocpage' set `true' on input line 74.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count284
 \l__pdf_internal_box=\box59
@@ -354,10 +354,10 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 138.
 LaTeX Font Info:    ... okay on input line 138.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 138.
 LaTeX Font Info:    ... okay on input line 138.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 LaTeX Info: Redefining \microtypecontext on input line 138.
@@ -376,7 +376,7 @@ LaTeX Info: Redefining \showhyphens on input line 138.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-ptm.cfg
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 \big@size=\dimen176
@@ -386,7 +386,7 @@ Package hyperref Info: Link coloring OFF on input line 138.
 \openout3 = `size_and_scatterplots.out'.
 
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 147.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/t1phv.fd
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -394,7 +394,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 147.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -402,19 +402,19 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 147.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 147.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 147.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 147.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
@@ -424,7 +424,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 147.
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 147.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
@@ -432,7 +432,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 147.
 LaTeX Font Info:    Trying to load font information for T1+txtt on input line 147.
-(c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/txfonts/t1txtt.fd
+(c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -443,7 +443,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 230.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 230.
-[1{c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}
+[1{c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
 ]
@@ -454,35 +454,26 @@ Package pdftex.def Info: size_and_scatterplots_files/figure-latex/examples-1.pdf
 (pdftex.def)             Requested size: 240.94499pt x 240.4155pt.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 328.
-
-LaTeX Warning: Citation `r_core' on page 2 undefined on input line 351.
-
-
-LaTeX Warning: Citation `voeten_buildmer_2022' on page 2 undefined on input line 352.
-
-<size_and_scatterplots_files/figure-latex/dot-plot-1.pdf, id=152, 459.7175pt x 312.16624pt>
+<size_and_scatterplots_files/figure-latex/dot-plot-1.pdf, id=154, 459.7175pt x 312.16624pt>
 File: size_and_scatterplots_files/figure-latex/dot-plot-1.pdf Graphic file (type pdf)
 <use size_and_scatterplots_files/figure-latex/dot-plot-1.pdf>
 Package pdftex.def Info: size_and_scatterplots_files/figure-latex/dot-plot-1.pdf  used on input line 357.
 (pdftex.def)             Requested size: 240.94499pt x 163.61346pt.
 [2 <./size_and_scatterplots_files/figure-latex/examples-1.pdf>]
-
-LaTeX Warning: Citation `emmeans' on page 3 undefined on input line 372.
-
-<size_and_scatterplots_files/figure-latex/error-plot-1.pdf, id=184, 459.7175pt x 142.5325pt>
+<size_and_scatterplots_files/figure-latex/error-plot-1.pdf, id=190, 459.7175pt x 142.5325pt>
 File: size_and_scatterplots_files/figure-latex/error-plot-1.pdf Graphic file (type pdf)
 <use size_and_scatterplots_files/figure-latex/error-plot-1.pdf>
-Package pdftex.def Info: size_and_scatterplots_files/figure-latex/error-plot-1.pdf  used on input line 405.
+Package pdftex.def Info: size_and_scatterplots_files/figure-latex/error-plot-1.pdf  used on input line 406.
 (pdftex.def)             Requested size: 505.89pt x 156.8558pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf, id=185, 459.7175pt x 140.525pt>
+<size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf, id=191, 459.7175pt x 140.525pt>
 File: size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf Graphic file (type pdf)
 <use size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf>
-Package pdftex.def Info: size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf  used on input line 414.
+Package pdftex.def Info: size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf  used on input line 415.
 (pdftex.def)             Requested size: 505.89pt x 154.64658pt.
-[3 <./size_and_scatterplots_files/figure-latex/dot-plot-1.pdf>] (./size_and_scatterplots.bbl
+[3 <./size_and_scatterplots_files/figure-latex/dot-plot-1.pdf>] (./size_and_scatterplots.bbl [4 <./size_and_scatterplots_files/figure-latex/error-plot-1.pdf> <./size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 41--53
 []\T1/ptm/m/n/8 (+20) P. Bobko and R. Kar-ren.  The Per-cep-tion of Pear-
  []
@@ -508,35 +499,30 @@ Underfull \hbox (badness 7925) in paragraph at lines 41--53
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[4 <./size_and_scatterplots_files/figure-latex/error-plot-1.pdf> <./size_and_scatterplots_files/figure-latex/changes-with-r-size-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 176--179
+Underfull \hbox (badness 10000) in paragraph at lines 186--189
 []\T1/ptm/m/n/8 (+20) W. L. Morys-Carter.  Screen-Scale, May 2021.
  []
 
-) [5
 
-] (./size_and_scatterplots.aux)
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: There were undefined references.
-
+) [5] (./size_and_scatterplots.aux)
 Package rerunfilecheck Info: File `size_and_scatterplots.out' has not changed.
 (rerunfilecheck)             Checksum: 607489BE2EDF9FB471EB6E7084C4BAD9;2111.
  ) 
 Here is how much of TeX's memory you used:
- 12756 strings out of 477941
- 206274 string characters out of 5835122
- 1883068 words of memory out of 5000000
- 32331 multiletter control sequences out of 15000+600000
- 598873 words of font info for 355 fonts, out of 8000000 for 9000
+ 12774 strings out of 477941
+ 205389 string characters out of 5835690
+ 1882068 words of memory out of 5000000
+ 32332 multiletter control sequences out of 15000+600000
+ 599745 words of font info for 363 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 76i,13n,76p,1018b,586s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb><c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/Gabriel Strain/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on size_and_scatterplots.pdf (5 pages, 218917 bytes).
+ 76i,13n,76p,1018b,584s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on size_and_scatterplots.pdf (5 pages, 221798 bytes).
 PDF statistics:
- 312 PDF objects out of 1000 (max. 8388607)
- 268 compressed objects within 3 object streams
- 70 named destinations out of 1000 (max. 500000)
+ 324 PDF objects out of 1000 (max. 8388607)
+ 280 compressed objects within 3 object streams
+ 76 named destinations out of 1000 (max. 500000)
  96925 words of extra memory for PDF output out of 106986 (max. 10000000)
 
