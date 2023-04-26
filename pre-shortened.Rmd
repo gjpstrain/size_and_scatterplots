@@ -21,12 +21,13 @@ editor_options:
     wrap: 72
 bibliography: size-and-scatterplots
 abstract: |
-  Viewers consistently underestimate correlation in positively correlated scatterplots.
-  We use a novel point size manipulation to correct for this bias. In a high-powered and
-  fully reproducible study, we demonstrate that decreasing the size of a point in a scatterplot
-  as a function of its distance from the regression line is able to correct for a systematic
-  bias long present in the literature. We suggest the implementation of our technique
-  when designing scatterplots with correlation perception in mind.
+  In a fully open and reproducible single-experiment study, we expand on previous
+  findings that manipulating contrast as a function of point residuals in scatterplots 
+  can facilitate more accurate correlation perception.  We find that encoding point
+  residual distance in the size of a point such that they become smaller as they move
+  further away from the regression line can correct for the systematic underestimation of
+  correlation in scatterplots present in the literature. We discuss the implications of these          findings for visualization design and suggest work to further optimize the medium.
+
 introduction: |
 ---
 ```{r setup, include=FALSE}
@@ -186,7 +187,7 @@ anon_file %>%
   mutate(across(matches(c("item", "size")), as_factor)) %>%
   select(-c("__participant")) %>%
   mutate(difference = my_rs - slider.response) %>%
-  mutate(size = fct_relevel(size, c('D', 'C', 'B', 'A'))) %>% 
+  mutate(size = fct_relevel(size, c('A', 'B', 'C', 'D'))) %>% 
   assign(paste0(unique(anon_file$expName), "_tidy"),
            value = ., envir = .GlobalEnv)
 }
@@ -316,7 +317,7 @@ data <- df %>%
   )
 
   data %>%
-    mutate(size = fct_relevel(size, "D", "C", "B", "A")) %>%
+    mutate(size = fct_relevel(size, "A", "B", "C", "D")) %>%
     ggplot(aes(x = size, y = mean)) +
     geom_point(stat = "identity") +
     #coord_cartesian(ylim = c(0, max_error))
@@ -440,8 +441,8 @@ return(plots)
 # Introduction
 
 Scatterplots, utilized in scientific communication for a variety of tasks,
-are some of the most widely used and studied data visualizations. Viewers
-interpret them in similar ways \cite{kay_heer_2015}, and they are simple
+are some of the most widely used and widely studied data visualizations. Viewers
+mostly interpret them in similar ways \cite{kay_heer_2015}, and they are simple
 enough to be easily studied while providing important insights into visualization
 design, human-computer interaction, and human perception. In a previous study \cite{strain_2023},
 we showed that a novel point contrast manipulation, in which the contrast of a certain
@@ -450,7 +451,7 @@ used to partially correct for a systematic correlation underestimation bias pres
 literature \cite{strahan_1978, bobko_1979, cleveland_1984, lane_1985, lauer_1989, 
 collyer_1990, meyer_1992}. We suggested that this was due to a narrowing of the width
 of the perceived probability distribution of a particular plot brought
-on by the lower contrast (and therefore lower point-salience and higher spatial uncertainty) in those outer
+on by the lower contrast (and therefore lower point-salience) in those outer
 areas. We tested linear, non-linear, and non-linear inverted functions relating
 point contrast to residual size, finding that the non-linear function produced
 the most accurate estimates of correlation, and that the non-linear inverted produced 
@@ -459,12 +460,12 @@ the least accurate.
 ## Scatterplots and Correlation
 
 Scatterplots have been widely studied, especially as mediums for the communication
-of correlation (see \cite{strain_2023} for a review of the history of this work).
+of correlation (see \cite{strain_2023} for a detailed review of the history of this work).
 Previous literature has found evidence for a pronounced underestimation in judgements
-of correlation in positively correlated scatterplots, especially between 0.2 < *r* < 0.6. The
+of correlation in positively correlated plots, especially between 0.2 < *r* < 0.6. The
 nature of this investigation has varied, ranging from direct estimation,
 to discriminative judgement, bisection, and staircase tasks. As in our previous work,
-we use the direct estimation paradigm owing to its simplicity and its suitability
+we choose to use the direct estimation paradigm owing to its simplicity and its suitability
 to online experimentation. The use of this paradigm renders the judgements we collect
 comparative by nature, although such work does allow us to inform design guidelines as
 well as human perception. It is our duty as visualization designers to ensure that the
@@ -499,7 +500,7 @@ least accurate when presented with the non-linear inverted size decay condition.
 We thereby present a single experiment study in which we demonstrate that the use of 
 a non-linear size decay function relating to the residuals of points on scatterplots
 can be employed to correct for a systematic underestimation of correlation by 
-viewers in scatterplots. We find no evidence for effects of graph literacy or training.
+viewers in scatterplots. We find no evidence for an effect of graph literacy or training.
 The effect we observe here is much stronger, both
 with regards to effect size and in terms of the observed reduction in error, than the
 effect we observed in our previous study \cite{strain_2023}. We suggest that this 
@@ -509,6 +510,8 @@ and refinement of these techniques. Ethical approval was granted by the Universi
 of Manchester's Computer Science Departmental Panel (Ref: 2022-14660-24397).
 
 # Methodology
+
+## Open Research Statement
 
 The experiment was conducted according to the principles of open and reproducible research.
 All data and analysis code are available at https://github.com/gjpstrain/size_and_scatterplots.
@@ -530,7 +533,7 @@ permitted to complete the experiment on a desktop or laptop computer.
 
 Data were collected from 164 participants. 14 failed more than 2 out of 6 attention
 check questions, and, as per pre-registration stipulations, were rejected from the study. Data
-from 150 participants was included in the analysis (`r printnum(gender$M, digits = 1)`% male, `r printnum(gender$F, digits = 1)`% female, and `r printnum(gender$NB, digits = 1)`% non-binary). Mean age of participants was `r printnum(age$mean)` (*SD* = `r printnum(age$sd)`). Mean graph literacy score was `r printnum(literacy$mean)`
+from 150 participants was included in the analysis (`r printnum(gender$M, digits = 0)`% male, `r printnum(gender$F, digits = 0)`% female, and `r printnum(gender$NB, digits = 0)`% non-binary). Mean age of participants was `r printnum(age$mean)` (*SD* = `r printnum(age$sd)`). Mean graph literacy score was `r printnum(literacy$mean)`
 (*SD* = `r printnum(literacy$sd)`) out of 30. The average time taken to complete
 the experiment was 39 minutes (SD = 14 minutes).
 
@@ -546,15 +549,16 @@ for a more detailed discussion of precise point sizes and dot pitch in crowd-sou
 experiments.
 
 As in our previous study \cite{strain_2023}, we used equation 1 to map residuals 
-to point sizes in three of our conditions. We additionally used a scaling factor of 4 and a constant of 0.2 to achieve a
+to point sizes in three of our conditions. We used a scaling factor of 4 and a constant of 0.2 to achieve a
 minimum on-screen point size of 12 pixels, which is consistent with the point size on
-a 1920 x 1080 monitor for both experiments in \cite{strain_2023}. Again, see \autoref{dot-pitch-and-crowdsourced-experiments} for a discussion of dot pitch. In our fourth condition, which we refer to as *standard size*, point size was uniformly
+a 1920 x 1080 monitor for both experiments in \cite{strain_2023}. Again, see \autoref{dot-pitch-and-crowdsourced-experiments} for a discussion of dot pitch.
+In our fourth condition, which we refer to as *standard size*, point size was uniformly
 set to be consistent with the point size in our previous studies. 
 Scripts detailing scatterplot and mask generation can be found in the item
 preparation folder in the repository linked below.
 
 \begin{equation}
-  size_{point} = 1 - b^{Residual}
+  size_{point} = 1 - b^R
 \end{equation}
 
 ## Dot Pitch and Crowdsourced Experiments
@@ -573,7 +577,13 @@ monitor resolution fetched from Psychopy and assuming a widescreen 16:9 aspect r
 allows us to infer dot pitch and therefore the physical size of the points in our
 experiment. Mean dot pitch was `r printnum(mean_dot_pitch)`mm, ($SD = `r printnum(sd_dot_pitch)`$),
 corresponding to a physical size on the screen of `r printnum(mean_dot_pitch*13)`mm
-for the smallest points displayed. See \autoref{results} for analyses including dot pitch as a predictor.
+for the smallest points displayed. While dot pitch is not necessary information for the present study, as we are only
+interested in the relative differences in correlation estimates between point size
+conditions, the fact that we can collect it at all is indicative of the gap
+being narrowed with regards to psychophysical testing between in-person and online
+experiments. Given that the latter are cheaper, easier, and immeasurably quicker,
+anything that can be done be done to narrow this gap in capability is a boon.
+See \autoref{results} for analyses including dot pitch as a predictor.
 
 ## Visual Threshold Testing
 
@@ -583,18 +593,18 @@ vis_df <- exp_size_only_tidy %>%
   count()
 ```
 
-It is key that our manipulation does not remove data from the scatterplot,
+It is key that our manipulation does not functionally remove data from the scatterplot,
 thus, in order to test that all our points were visible across a range of viewing
 contexts and on a range of apparatus, we included visual threshold testing prior
 to the experimental items in the study. Participants were shown six scatterplots
-with a number of points, and were asked to enter in a text box how many points
+with a number of points, and were asked to enter in a textbox how many points
 were being displayed. The points were the same size as the smallest points used
 in the experimental materials. `r printnum(vis_df$n[1]/270, digits = 0)`% of 
 participants were correct on `r printnum(vis_df$VT_no_correct[1])` out of 6 visual
 threshold questions, while `r printnum(vis_df$n[2]/270, digits = 0)`% were correct
 on `r printnum(vis_df$VT_no_correct[2])` out of 6. It should be noted that those 
-participants scoring 5/6 did not answer incorrectly, rather they did not answer
-at all for a particular question, which is more suggestive of either
+participants scoring 5/6 did not answer incorrectly, rather did not answer
+at all for this particular questions, which is more suggestive of either
 a mis-click or an initial misunderstanding of the task they were asked to complete.
 Regardless, we consider these results to be indicative of a sufficient level of 
 point visibility for the current experiment.
@@ -614,7 +624,7 @@ example_plots()
 
 ## Procedure
 
-Each participant was shown the participant information sheet (PIS) and provided
+Each participants was shown the participants information sheet (PIS) and provided
 consent through key presses in response to consent statements. They were asked
 to provide their age in a free text box, and their gender identity. Participants
 then completed the 5-item Subjective Graph Literacy (SGL) test \cite{garcia_2016}, 
@@ -637,16 +647,16 @@ as the predictor for participants' errors in correlation estimates.
 
 ```{r dot-plot, echo=FALSE, fig.show='hold', fig.cap="Mean error in correlation estimates across the four size decay conditions, with 95\\% confidence intervals shown. Brackets show the effect sizes between standard size and all other conditions in Cohen's d.", out.width="100%", crop = TRUE}
 dot_plot_function(exp_size_only_tidy) +
-  scale_x_discrete(labels = c("Standard\nSize",
-                              "Inverted Non-linear\nSize Decay",
+  scale_x_discrete(labels = c("Non-linear\nSize Decay",
                               "Linear Size\nDecay",
-                              "Non-linear\nSize Decay")) +
+                              "Inverted Non-linear\nSize Decay",
+                              "Standard\nSize")) +
   ylim(0,0.2) +
   geom_bracket(aes(xmin = xmin,
                    xmax = xmax,
                    label = label),
                    alpha = 0.5,
-                   tip.length = c(0.13,0.11),
+                   tip.length = c(0.9,0.13),
                data = data.frame(xmin = 1,
                                  xmax = 4,
                                  label = "d = 0.61",
@@ -655,7 +665,7 @@ dot_plot_function(exp_size_only_tidy) +
                    xmax = xmax,
                    label = label),
                    alpha = 0.5,  
-                   tip.length = c(0.17,0.8),
+                   tip.length = c(0.7,0),
                data = data.frame(xmin = 2,
                                  xmax = 4,
                                  label = "d = 0.54",
@@ -664,11 +674,12 @@ dot_plot_function(exp_size_only_tidy) +
                    xmax = xmax,
                    label = label),
                    alpha = 0.5,
-                   tip.length = c(0.1,0),
+                   tip.length = c(-0.05,-0.185),
+               vjust = c(4.65),
                data = data.frame(xmin = 3,
                                  xmax = 4,
                                  label = "d = 0.11",
-                                 y.position = 0.07))
+                                 y.position = 0.12))
 ```
 
 ```{r model, cache=eval_models, cache.comments=FALSE, eval=eval_models, include=FALSE, cache.path="size_and_scatterplots/latex/"}
@@ -693,7 +704,7 @@ effects_df <- get_effects_sizes(size_model, exp_size_only_tidy)
 ```
 
 Mean errors in correlation estimates for the four size decay conditions
-can be seen in Figure \ref{fig:dot-plot}. A likelihood ratio test revealed that the
+can be seen in figure \ref{fig:dot-plot}. A likelihood ratio test revealed that the
 model including size decay condition as a predictor explained significantly more
 variance than a null model ($\chi^2$(`r in_paren(size_model.df)`) = `r printnum(size_model.Chisq)`,
 *p* `r printp(size_model.p, add_equals = TRUE)`). This model has random intercepts for
@@ -707,10 +718,10 @@ Testing for contrasts between the four levels of the size decay condition
 were performed with the **emmeans** package (version 1.8.5 \cite{emmeans}), and
 of correlation estimates are shown in Figure \ref{fig:dot-plot}. The **EMAtools** (version
 0.1.4 \cite{ematools}) package
-was used to calculate effects sizes in Cohen's d, the results of which can be seen in Figure
+was used to calculate effects sizes in Cohen's d, the results of which can be seen in 
 \ref{fig:dot-plot}. The largest effect size we found was 0.61 when comparing
 the non-linear size decay and standard size decay conditions. This is significantly higher
-than any of the effects sizes we found in our previous work.
+than any of the effects sizes we have found in our previous work.
 
 ```{r contrasts-table, echo=FALSE}
 # outputs summary statistics
@@ -756,7 +767,8 @@ anova_results(model_literacy_comparison, literacy_model)
 ```
 
 In addition, we find no significant difference between the experimental model
-and another including graph literacy as a fixed effect ($\chi^2$(`r in_paren(model_literacy_comparison.df)`) `r printnum(model_literacy_comparison.Chisq)`, *p* `r printp(model_literacy_comparison.p, add_equals = TRUE)`), suggesting the effect we found was not driven by differences in graph literacy.
+and another including graph literacy as a fixed effect ($\chi^2$(`r in_paren(model_literacy_comparison.df)`) `r printnum(model_literacy_comparison.Chisq)`, *p* `r printp(model_literacy_comparison.p, add_equals = TRUE)`), suggesting the effect 
+we found was not driven by differences in graph literacy.
 
 ```{r error-plot, echo=FALSE, fig.align='center', fig.show='hold', fig.cap="Participants' mean \\textit{r} estimates plotted against the objective \\textit{r} value separately for each size decay condition.", fig.env="figure*", crop = TRUE, out.width= "100%", results=FALSE, fig.pos="h"}
 plot_error_bars_function(exp_size_only_tidy, "slider.response", labels_size) +
@@ -773,7 +785,7 @@ plot_error_bars_function(exp_size_only_tidy, "difference", labels_size) +
 
 Figure \ref{fig:changes-with-r-size} shows how participants' mean errors in correlation
 estimates change with the objective Pearson's *r* value, plotted separately for each
-size decay condition. Note the close-to-zero average errors present in the non-linear size
+size decay condition. Note the close-to-zero errors present in the non-linear size
 decay condition.
 
 ```{r dot-pitch-modelling, cache=eval_models, cache.comments=FALSE, eval=eval_models, echo=FALSE, dependson="model", cache.path="size_and_scatterplots/latex/"}
@@ -794,9 +806,7 @@ on the scatterplots shown, there may be some other facet of using a larger or sm
 monitor with a larger or smaller resolution that could have affected the estimates
 our participants gave. To check this, we built a model including the dot pitch
 measurement as a fixed effect. Comparing this to the experimental model revealed
-a significant effect of dot pitch ($\chi^2$(`r in_paren(model_dot_pitch_comparison.df)`) = `r printnum(model_dot_pitch_comparison.Chisq)`, *p* `r printp(model_dot_pitch_comparison.p, add_equals = TRUE)`).
-There was no interaction between size decay condition and dot pitch, with a decrease
-in dot pitch of 0.1 resulting in a decrease of estimated correlation of .03.
+no significant effect of dot pitch ($\chi^2$(`r in_paren(model_dot_pitch_comparison.df)`) = `r printnum(model_dot_pitch_comparison.Chisq)`, *p* `r printp(model_dot_pitch_comparison.p, add_equals = TRUE)`)
 
 # Discussion
 
@@ -804,8 +814,8 @@ We found support for our first hypothesis. As can be seen in Figure \ref{fig:cha
 participants' errors in correlation estimates were significantly lower when 
 they were presented with the non-linear size decay condition (see Figure \ref{fig:examples}) 
 compared to when they were presented with all other conditions. We found no support
-for our second hypothesis, that participants' estimates would be least accurate in the 
-inverted non-linear size decay condition. We found that
+for our second hypothesis, that participants' estimates would be less accurate in the 
+inverted non-linear size decay condition than all other conditions. We found that
 errors in this condition were indeed significantly higher than for the other
 two size decay conditions, but that this error was similar to, but significantly lower than,
 the error with the standard size condition.
@@ -832,14 +842,14 @@ of clumping and overlap with the non-linear, non-linear inverted, and linear siz
 clumping is itself producing greater uncertainty and causing an absence of the increased
 precision we would expect to see at higher *r* values. While the visual character
 of the scatterplots in the aforementioned conditions can account for the absence
-of higher precision at higher *r* values, the same cannot be said for the standard size
+of higher precision with higher *r* values, the same cannot be said for the standard size
 condition. Aside from the inverted non-linear decay condition in experiment two of
 our prior work \cite{strain_2023}, the finding that precision increased with *r*
 was robust. Its absence here is curious given that the standard size decay condition in
-the present study is identical to the full contrast conditions in our previous work.
+the present study is identical to the full contrast conditions in our prior work.
 Taken together, this suggests that there is something particular about the scatterplots
 in the present study that is causing this. Relying on relative judgements as we are,
-the interplay between scatterplots with different visual features must be accounted for within a particular experiment.
+the interplay between scatterplots with different visual features must be accounted for.
 Here this interplay seems to have resulted in the absence of this effect, although
 further testing would be required for a more concrete explanation.
 
@@ -854,8 +864,8 @@ manipulations could be used to correct for the *overestimation* of the correlati
 of negatively correlated scatterplots; we would not suggest the use of the size
 channel for this given the results here.
 
-To conclude, we would recommend the use of the non-linear size decay condition described
-here when designing scatterplots optimzed for correlation perception.
+To conlude, we would recommend the use of the non-linear size decay condition described
+here when designing scatterplots with correlation perception in mind.
 
 ## Training
 
@@ -878,22 +888,18 @@ would argue is acceptable given it leads to more generalisable and broadly
 applicable findings. To test whether this training had an effect on correlation estimation,
 we built a model including session half as a predictor. Comparing this
 to the original model revealed no significant effect ($\chi^2$(`r in_paren(training_comparison.df)`)
-= `r printnum(training_comparison.Chisq)`, *p* `r printnum(training_comparison.p, add_equals = TRUE)`),
-suggesting that having more recently viewed the example plots did not have an effect
-on participants' estimates of correlation.
+= `r printnum(training_comparison.Chisq)`, *p* `r printnum(training_comparison.p, add_equals = TRUE)`), suggesting that training having more recently viewed the example plots 
+did not have an effect on participants' estimates of correlation.
 
 ## Limitations
 
-The data we have gathered on correlation estimation is inherently comparative.
-Despite confirming a method of obtaining dot pitch for each 
+The data we have gathered on correlation estimation is inherently comparative 
+in nature. Despite confirming a method of calculating dot pitch for each 
 participant, we still have no method of obtaining head-to-monitor distances,
 nor does it seem there is one on the horizon. Taken together, these aspects 
-of our experiment prevent us from making concrete psychophysical conclusions,
+of our experiment prevent us from making rigorous psychophysical conclusions,
 but instead allow for findings that are rigorous to different viewing contexts
-that we argue are of particular importance for the HCI and design audiences. It
-may be that a high level perceptual phenomenon is responsible for the effects
-we have seen here; investigating this is beyond the scope of the current study and
-regardless does not negate our findings.
+that we argue are of particular importance for the HCI and design audiences.
 
 ## Future Work
 
@@ -907,6 +913,7 @@ parameter to control the strength of this family of manipulations according to t
 objective *r* value itself.
 
 # References {-}
+
 
 
 
