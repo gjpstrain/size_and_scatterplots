@@ -58,7 +58,6 @@ library(lmerTest)
 library(ggdist)
 library(ggpubr)
 library(pwr)
-library(geomtextpath)
 library(conflicted)
 library(EMAtools)
 

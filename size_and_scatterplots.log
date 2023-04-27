@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.25)  27 APR 2023 10:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.25)  27 APR 2023 12:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -511,15 +511,15 @@ Package rerunfilecheck Info: File `size_and_scatterplots.out' has not changed.
 (rerunfilecheck)             Checksum: F248673D0B0FF34D350204EB89BE8699;1935.
  ) 
 Here is how much of TeX's memory you used:
- 12762 strings out of 477941
- 205249 string characters out of 5835690
+ 12765 strings out of 477941
+ 205276 string characters out of 5835690
  1882068 words of memory out of 5000000
  32330 multiletter control sequences out of 15000+600000
- 599390 words of font info for 359 fonts, out of 8000000 for 9000
+ 599520 words of font info for 361 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  76i,13n,76p,1018b,586s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/mbch4gs2/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on size_and_scatterplots.pdf (5 pages, 221684 bytes).
+Output written on size_and_scatterplots.pdf (5 pages, 221706 bytes).
 PDF statistics:
  315 PDF objects out of 1000 (max. 8388607)
  271 compressed objects within 3 object streams
