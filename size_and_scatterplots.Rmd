@@ -25,7 +25,7 @@ abstract: |
   We use a novel point size manipulation to correct for this bias. In a high-powered and
   fully reproducible study, we demonstrate that decreasing the size of a point in a scatterplot
   as a function of its distance from the regression line is able to correct for a systematic
-  bias long present in the literature. We suggest the implementation of our technique
+  perceptual bias long present in the literature. We suggest the implementation of our technique
   when designing scatterplots with correlation perception in mind.
 introduction: |
 ---
@@ -55,7 +55,6 @@ library(broom.mixed)
 library(insight)
 library(qwraps2)
 library(lmerTest)
-library(tinylabels)
 library(ggdist)
 library(ggpubr)
 library(pwr)
@@ -536,7 +535,7 @@ the experiment was 39 minutes (SD = 14 minutes).
 
 ## Stimuli
 
-The data used to generated the scatterplots in the current study was identical to that
+The data used to generated the scatterplots in the current study were identical to that
 used previously \cite{strain_2023}. Scatterplots were generated based on 45 uniformly distributed *r* values
 between 0.2 and 0.99. Scatterplot points were generated based on bivariate normal 
 distributions with standard deviations of 1 in each direction. Each scatterplot
@@ -855,7 +854,7 @@ of negatively correlated scatterplots; we would not suggest the use of the size
 channel for this given the results here.
 
 To conclude, we would recommend the use of the non-linear size decay condition described
-here when designing scatterplots optimzed for correlation perception.
+here when designing scatterplots optimized for correlation perception.
 
 ## Training
 
