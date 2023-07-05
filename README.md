@@ -8,6 +8,8 @@ Raw data (.csv format) is located in the `data` folder. The R script `data_proce
 
 Once participants have been paid or excluded, use the `anonymisation.R` script to remove identifiable prolific IDs.
 
+NB: Aside from anonymisation, data are provided *as-is*. The **wrangle** function *must* be run to make the dataset usable.
+
 ### Analysis Within a Fully-Reproducible Computational Environment
 
 Resources are provided for the full reproduction of the computational environment (R, Rstudio, and package versions) that was used for data wrangling, visualization, statistical modelling, and reporting.
