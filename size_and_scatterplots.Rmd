@@ -59,7 +59,7 @@ library(pwr)
 library(conflicted)
 library(EMAtools)
 
-# tell R to use dplyr::select() instead of MASS::select()
+# fix conflicts now using the conflicted package
 
 conflicts_prefer(dplyr::select(), dplyr::filter(), lme4::lmer())
 
@@ -565,6 +565,8 @@ preparation folder in the repository linked above.
 ## Dot Pitch and Crowdsourced Experiments
 
 ```{r dot-pitch, include = FALSE}
+# extract mean and SD of dot pitch
+
 mean_dot_pitch <- mean(exp_size_only_tidy$dot_pitch)
 
 sd_dot_pitch <- sd(exp_size_only_tidy$dot_pitch)
@@ -587,6 +589,8 @@ for the smallest points displayed. See \autoref{results} for analyses including 
 ## Visual Threshold Testing
 
 ```{r threshold-values, include=FALSE}
+# extract perceptage correct on visual thresholds
+
 vis_df <- exp_size_only_tidy %>%
   group_by(VT_no_correct) %>%
   count()
@@ -618,6 +622,8 @@ Everything needed to run the experiment, including code, materials, instructions
 hosted at https://gitlab.pavlovia.org/Strain/exp_size_only.
 
 ```{r examples, echo=FALSE, fig.asp=1, fig.show='hold', fig.cap="Four levels of the point size decay condition, demonstrated with an \\textit{r} value of 0.6", out.width="100%", crop = TRUE}
+# plot examples
+
 example_plots()
 ```
 
@@ -640,6 +646,9 @@ check trials which explicitly asked participants to set the slider to 1 or 0 and
 # Results
 
 ```{r dot-plot, echo=FALSE, fig.show='hold', fig.cap="Mean error in correlation estimates across the four conditions, with 95\\% confidence intervals. Effect sizes between standard size and other conditions in Cohen's d are also displayed.", out.width="100%", crop = TRUE}
+# average errors in r estimation for the four experimental conditions
+# use geom_bracket() to add brackets for effects sizes between conditions
+
 dot_plot_function(exp_size_only_tidy) +
   scale_x_discrete(labels = c("Standard\nSize",
                               "Inverted Non-linear\nSize Decay",
@@ -676,19 +685,28 @@ dot_plot_function(exp_size_only_tidy) +
 ```
 
 ```{r model, cache=eval_models, cache.comments=FALSE, eval=eval_models, include=FALSE, cache.path="size_and_scatterplots/latex/"}
+# build model with error being predicted by size condition
+
 size_model <- buildmer(difference ~ size +
                          (1 + size | participant) +
                          (1 + size | item),
                        data = exp_size_only_tidy)
 
-model <- size_model@model
+# assign this to 'model' object
+# makes it an lmer object instead of buildmer
+
+size_model <- size_model@model
 ```
 
 ```{r model-comparison,cache=eval_models, cache.comments=FALSE, eval=eval_models, include=FALSE, cache.path="size_and_scatterplots/latex/"}
+# use comparisonm function to create null model
+
 model_comparison <- comparison(size_model)
 ```
 
 ```{r anova, eval=TRUE, echo=FALSE}
+# run anova on exp and null models
+
 anova_results(size_model, model_comparison)
 ```
 
@@ -709,12 +727,19 @@ contrasts <- contrasts_extract(size_model) %>%
                            "B - D" = "Linear Decay : Standard Size",
                            "C - D" = "Inverted Non-linear Decay : Standard Size"))
 
+# create df for table
+
 k <- knitr::kable(contrasts, booktabs = TRUE, digits = c(0,2,3), caption = "Contrasts between the four levels of the size decay condition.", escape = FALSE)
+
+# produce table
 
 kable_styling(k, latex_options = "scale_down")
 ```
 
 ```{r effects-df, echo=FALSE, include = FALSE}
+# create table for effects sizes
+# not included in final manuscript
+
 effects_sizes <- get_effects_sizes(size_model, exp_size_only_tidy) %>%
   rownames_to_column() %>%
   arrange(rowname) %>%
@@ -729,24 +754,35 @@ knitr::kable(effects_sizes, digits = c(0,2), booktabs = TRUE, caption = "The eff
 ```
 
 ```{r literacy, cache=eval_models, cache.comments=FALSE, eval=eval_models, echo=FALSE, dependson="model", cache.path="size_and_scatterplots/latex/"}
-literacy_model <- lme4::lmer(add.terms(formula(size_model), "literacy"),
+# build model including graph literacy as fixed effect
+
+literacy_model <- lmer(add.terms(formula(size_model), "literacy"),
                        data = exp_size_only_tidy)
+
+# build null model for graph literacy
 
 model_literacy_comparison <- size_model
 ```
 
 ```{r literacy-comparison, eval=TRUE,echo=FALSE}
+# anova on graph literacy models
+
 anova_results(model_literacy_comparison, literacy_model)
 ```
 
 ```{r error-plot, eval=FALSE, fig.align='center', fig.cap="Participants' mean \\textit{r} estimates plotted against the objective \\textit{r} value separately for each size decay condition.", fig.env="figure*", fig.pos="h", fig.show='hold', crop=TRUE, include=FALSE, out.width="100%", results=FALSE}
+# plots r estimates against objective r value
+# chunk not included in final manuscript 
+
 plot_error_bars_function(exp_size_only_tidy, "slider.response", labels_size) +
   xlim(0.2,1)
 
-# chunk not included in final manuscript
+
 ```
 
 ```{r changes-with-r-size, echo=FALSE, fig.show='hold', fig.cap="Participants' mean errors in \\textit{r} estimates plotted against the objective \\textit{r} value separately for each size decay condition. The dotted horizontal line represents accurate estimation.", fig.env="figure*", out.width= "100%", crop = TRUE}
+# plots r estimations errors against objective r value, separately for each condition
+
 plot_error_bars_function(exp_size_only_tidy, "difference", labels_size) +
     labs(y = "Mean r estimation error") +
     theme(title = element_text(size = 8)) +
@@ -787,13 +823,20 @@ size decay condition. Note the close-to-zero average errors present in the non-l
 decay condition.
 
 ```{r dot-pitch-modelling, cache=eval_models, cache.comments=FALSE, eval=eval_models, echo=FALSE, dependson="model", cache.path="size_and_scatterplots/latex/"}
-dot_pitch_model <- lme4::lmer(add.terms(formula(size_model), "dot_pitch"),
+# build model with dot pitch included as fixed effect
+
+dot_pitch_model <- lmer(add.terms(formula(size_model), "dot_pitch"),
                               data = exp_size_only_tidy)
+
+# build dot pitch null model
+# just use the standard model without dot pitch as fixed effect
 
 model_dot_pitch_comparison <- size_model
 ```
 
 ```{r dot-pitch-comparison, eval=TRUE, echo=FALSE}
+# anova on dot pitch modelling
+
 anova_results(model_dot_pitch_comparison, dot_pitch_model)
 ```
 
@@ -893,13 +936,20 @@ lesser degree), while not impeding other tasks.
 ## Training
 
 ```{r training-model, cache=eval_models, cache.comments=FALSE, eval=eval_models, echo=FALSE, dependson="model", cache.path="size_and_scatterplots/latex/"}
+# build model including session half as fixed effect
+
 training_model <- lmer(add.terms(formula(size_model), "half"),
                        data = exp_size_only_tidy)
+
+# build session half null model
+# just use the standard model without session half as fixed effect
 
 training_comparison <- size_model
 ```
 
 ```{r training-comparison, eval = TRUE, echo = FALSE, message=FALSE}
+# anova on session half model
+
 anova_results(training_comparison, training_model)
 ```
 
