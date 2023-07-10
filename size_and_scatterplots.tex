@@ -112,7 +112,7 @@ We use a novel point size manipulation to correct for this bias. In a high-power
 fully reproducible study, we demonstrate that decreasing the size of a point in a scatterplot
 as a function of its distance from the regression line is able to correct for a systematic
 perceptual bias long present in the literature. We suggest the implementation of our technique
-when designing scatterplots that aim to communicate correlation.}
+when designing scatterplots that aim to communicate positive correlations.}
 
 %% ACM Computing Classification System (CCS). 
 %% See <http://www.acm.org/about/class> for details.
@@ -200,7 +200,7 @@ Point contrast is not the only available visual feature that might be used
 to influence viewers' perceptions of the width of a probability distribution, nor is
 it the only visual feature of a scatterplot that we can exploit. While
 contrast adjustments have been used extensively to solve issues of overplotting and clutter
-in scatterplots \cite{matejka_2015, bertini_2004}, there is no established use for
+in scatterplots \cite{matejka_2015, bertini_2004}, there is no established use of
 varying point size. Common sense dictates that scatterplots visualizing larger
 datasets inherently require their points to be smaller to prevent obfuscation of the data,
 but there is little testing of the impact of point size on correlation perception.
@@ -273,8 +273,7 @@ of people's perceptions of correlations than previous work using fewer values,
 in addition to affording us a more objective method of comparing people's judgements
 beyond semantic labels such as `weak' or `strong' correlation as response measures.
 Previous work, including our own, used only positive \emph{r} values, and as we are building on this
-here, we do the same. \autoref{future-work} discusses the testing of negative
-correlations in future work. Scatterplot points were generated based on bivariate normal distributions with
+here, we do the same. Scatterplot points were generated based on bivariate normal distributions with
 standard deviations of 1 in each direction. Each scatterplot had a 1:1 aspect ratio,
 was generated as a 1200 x 1200 pixel .png image, and was
 scaled up or down according to the participant's monitor. See
@@ -439,9 +438,6 @@ enough to warrant further discussion.
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
-\hypertarget{increased-correlation-estimation-accuracy}{%
-\subsection{Increased Correlation Estimation Accuracy}\label{increased-correlation-estimation-accuracy}}
-
 As can be seen in Figure \ref{fig:changes-with-r-size},
 participants' errors in correlation estimates were significantly lower when
 they were presented with the non-linear size decay condition (see Figure \ref{fig:examples})
@@ -451,6 +447,9 @@ estimates would be least accurate in the inverted non-linear size decay conditio
 Errors in this condition were indeed significantly higher than for the other two
 size decay conditions, but were significantly lower than
 the error with the standard size condition.
+
+\hypertarget{increased-correlation-estimation-accuracy}{%
+\subsection{Increased Correlation Estimation Accuracy}\label{increased-correlation-estimation-accuracy}}
 
 The mean error in correlation estimation for the non-linear size decay condition used
 in the present study was 0.025, while the equivalent condition in the second experiment
@@ -468,6 +467,18 @@ by the perception of the width of a probability distribution; our lower salience
 and higher uncertainty exterior points have successfully reduced the perceived width
 of this probability distribution, which has resulted in more accurate estimates
 of correlation.
+
+The lack of support for our second hypothesis was surprising, although it should
+be noted that the difference between the inverted non-linear condition and the standard size
+condition was small (see Figure \ref{fig:dot-plot}). The shape of the errors
+in correlation estimates (see Figure \ref{fig:changes-with-r-size}) is also
+very similar to that of the standard size decay condition. Despite the size channel
+being more powerful than contrast with regards to correcting
+for the underestimation of correlation, our results suggest it is weaker than the at
+producing the opposing effect. In our previous work we suggested that contrast
+manipulations could be used to correct for the \emph{overestimation} of the correlation
+of negatively correlated scatterplots; we would not suggest the use of the size
+channel for this given the results here.
 
 \hypertarget{precision-in-correlation-estimation-is-constant}{%
 \subsection{Precision in Correlation Estimation is Constant}\label{precision-in-correlation-estimation-is-constant}}
@@ -495,21 +506,6 @@ for within a particular experiment. The stimuli as \emph{r} approaches 1 in the 
 study exhibit greater levels of visual variance than the stimuli in our previous work \cite{strain_2023},
 which may explain the lack of increased precision here. Further testing is required
 for a more concrete explanation.
-
-\hypertarget{conclusion}{%
-\subsection{Conclusion}\label{conclusion}}
-
-The lack of support for our second hypothesis was surprising, although it should
-be noted that the difference between the inverted non-linear condition and the standard size
-condition was small (see Figure \ref{fig:dot-plot}). The shape of the errors
-in correlation estimates (see Figure \ref{fig:changes-with-r-size}) is also
-very similar to that of the standard size decay condition. Despite the size channel
-being more powerful than contrast with regards to correcting
-for the underestimation of correlation, our results suggest it is weaker than the at
-producing the opposing effect. In our previous work we suggested that contrast
-manipulations could be used to correct for the \emph{overestimation} of the correlation
-of negatively correlated scatterplots; we would not suggest the use of the size
-channel for this given the results here.
 
 Ultimately we aim to provide tools that can be used to design visualizations more suited for the task
 they are intended to support. When that task is the perception of positive correlation, we would
@@ -559,7 +555,9 @@ each to varying degrees. It is also clear that these manipulations are not neces
 and may even be making perception worse, at very low and high values of \emph{r}. We will therefore
 investigate the effect of manipulating \emph{both} point size and contrast on correlation estimation, and we will introduce a
 parameter to control the strength of this family of manipulations according to the
-objective \emph{r} value itself.
+objective \emph{r} value itself. There is also the potential for manipulations
+such as the ones described here to be applied to negatively correlated scatterplots,
+which suffer from an overestimation bias \cite{sher_2017}.
 
 %% if specified like this the section will be committed in review mode
 \acknowledgments{This work was supported by funding from the University of Manchester Department of Computer Science and Division of Psychology, Communication and Human Neuroscience.}
