@@ -148,7 +148,7 @@ wrangle <- function(anon_file) {
                           "age_textbox.text",
                           "gender_slider.response")))
 
-# split plots_with_labels column into item and contrast condition columns 
+# split images column into item and condition columns 
 
 anon_file <- anon_file %>%
   mutate(images = str_replace(images, pattern = "A", replacement = "-A")) %>%
@@ -191,7 +191,7 @@ anon_file %>%
            value = ., envir = .GlobalEnv)
 }
 
-# use wrangle function on anonmyised data files 
+# use wrangle function on anonmyised data file 
 
 wrangle(size_anon)
 
