@@ -22,7 +22,7 @@ editor_options:
 bibliography: size-and-scatterplots
 abstract: |
   Viewers consistently underestimate correlation in positively correlated scatterplots.
-  We use a novel point size manipulation to correct for this bias. In a high-powered and
+  We use a novel data point size manipulation to correct for this bias. In a high-powered and
   fully reproducible study, we demonstrate that decreasing the size of a point in a scatterplot
   as a function of its distance from the regression line is able to correct for a systematic
   perceptual bias long present in the literature. We suggest the implementation of our technique
@@ -401,7 +401,7 @@ slopes <- data_with_resid %>%
   
 plot_example_function <- function (d, x, t) {
   
-  set.seed(1234)
+set.seed(1234)
   
   ggplot(d, aes(x = V1, y = V2)) +
   scale_size_identity() +
