@@ -23,7 +23,7 @@ bibliography: size-and-scatterplots
 abstract: |
   Viewers consistently underestimate correlation in positively correlated scatterplots.
   We use a novel data point size manipulation to correct for this bias. In a high-powered and
-  fully reproducible study, we demonstrate that decreasing the size of a point in a scatterplot
+  fully reproducible study, we demonstrate that decreasing the size of a point on a scatterplot
   as a function of its distance from the regression line is able to correct for a systematic
   perceptual bias long present in the literature. We suggest the implementation of our technique
   when designing scatterplots that aim to communicate positive correlations.
@@ -469,10 +469,7 @@ to design, and test those designs in rigorous empirical studies.
 
 ## Point Size
 
-Point contrast is not the only available visual feature that might be used
-to influence viewers' perceptions of the width of a probability distribution, nor is
-it the only visual feature of a scatterplot that we can exploit. While
-contrast adjustments have been used extensively to solve issues of overplotting and clutter
+While contrast adjustments have been used extensively to solve issues of overplotting and clutter
 in scatterplots \cite{matejka_2015, bertini_2004}, there is no established use of
 varying point size. Common sense dictates that scatterplots visualizing larger
 datasets inherently require their points to be smaller to prevent obfuscation of the data,
@@ -492,7 +489,7 @@ we would expect a similar effect when point size is used instead of point contra
 We hypothesized that correlation estimates would be most accurate when
 viewers are presented with the non-linear size decay condition, and would be 
 least accurate when presented with the non-linear inverted size decay condition.
-We thereby present a single experiment study in which we demonstrate that the use of 
+We therefore present a single experiment study in which we demonstrate that the use of 
 a non-linear size decay function relating to the residuals of points on scatterplots
 can be employed to correct for a systematic underestimation of correlation by 
 viewers. We find no evidence for effects of graph literacy or training.
@@ -500,7 +497,7 @@ The effect we observe here is much stronger, both
 with regards to effect size and in terms of the observed reduction in error, than that
 observed in our previous study \cite{strain_2023}. We suggest that this 
 function can be used to facilitate more accurate correlation
-perception in scatterplots, and provide exciting future avenues for the continuation
+perception in scatterplots, and provides exciting future avenues for the continuation
 and refinement of these techniques. Ethical approval was granted by the University
 of Manchester's Computer Science Departmental Panel (Ref: 2022-14660-24397).
 
@@ -553,13 +550,13 @@ As in our previous study \cite{strain_2023} we used equation 1 to map residuals
 to point sizes in three of our conditions. We additionally used a scaling factor 
 of 4 and a constant of 0.2 to achieve a minimum on-screen point size of 12 pixels,
 which is consistent with the point size on a 1920 x 1080 monitor for both experiments
-in \cite{strain_2023}. In our fourth condition, which we henceforth refer to as *standard size*,
+in our previous study \cite{strain_2023}. In our fourth condition, which we henceforth refer to as *standard size*,
 point size was uniformly set to be consistent with the point size in our previous 
 studies. Scripts detailing scatterplot and mask generation can be found in the item
 preparation folder in the repository linked above.
 
 \begin{equation}
-  point_{size} = 1 - b^{Residual}
+  point_{size} = 1 - b^{residual}
 \end{equation}
 
 ## Dot Pitch and Crowdsourced Experiments
@@ -776,8 +773,6 @@ anova_results(model_literacy_comparison, literacy_model)
 
 plot_error_bars_function(exp_size_only_tidy, "slider.response", labels_size) +
   xlim(0.2,1)
-
-
 ```
 
 ```{r changes-with-r-size, echo=FALSE, fig.show='hold', fig.cap="Participants' mean errors in \\textit{r} estimates plotted against the objective \\textit{r} value separately for each size decay condition. The dotted horizontal line represents accurate estimation.", fig.env="figure*", out.width= "100%", crop = TRUE}
@@ -868,9 +863,9 @@ the error with the standard size condition.
 ## Increased Correlation Estimation Accuracy
 
 The mean error in correlation estimation for the non-linear size decay condition used
-in the present study was 0.025, while the equivalent condition in the second experiment
+in the present study was .025, while the equivalent condition in the second experiment
 of our previous study, which used the same equations applied to contrast, resulted 
-in a mean error of 0.086 \cite{strain_2023}. Taken together, this is evidence that point
+in a mean error of .086 \cite{strain_2023}. Taken together, this is evidence that point
 size is a much stronger channel for the manipulation of perceived correlation in
 scatterplots than point contrast. If the effects we have found here and in our
 previous work are being driven by increased uncertainty in the outer regions of the plots,
@@ -890,7 +885,7 @@ condition was small (see Figure \ref{fig:dot-plot}). The shape of the errors
 in correlation estimates (see Figure \ref{fig:changes-with-r-size}) is also
 very similar to that of the standard size decay condition. Despite the size channel
 being more powerful than contrast with regards to correcting
-for the underestimation of correlation, our results suggest it is weaker than the at
+for the underestimation of correlation, our results suggest it is weaker at
 producing the opposing effect. In our previous work we suggested that contrast
 manipulations could be used to correct for the *overestimation* of the correlation
 of negatively correlated scatterplots; we would not suggest the use of the size
@@ -971,8 +966,8 @@ The data we have gathered is inherently comparative.
 Despite confirming a method of obtaining dot pitch, we still have no method of obtaining
 head-to-monitor distances. Taken together, these aspects of our experiment prevent us 
 from making concrete psychophysical conclusions,
-but instead allow for findings that are rigorous to different viewing contexts
-that we argue are of particular importance for the HCI and visualization design audiences. It
+but instead allow for findings that are rigorous to different viewing contexts and
+are of particular importance for the HCI and visualization design audiences. It
 may be that a high level perceptual phenomenon is responsible for the effects
 we have seen here; investigating this is beyond the scope of the current study and
 does not negate our findings.
