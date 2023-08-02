@@ -550,8 +550,8 @@ scaled up or down according to the participant's monitor. See
 precise point sizes and dot pitch in crowd-sourced experiments.
 
 As in our previous study \cite{strain_2023} we used equation 1 to map residuals 
-to point sizes in three of our conditions. We additionally used a scaling factor 
-of 4 and a constant of 0.2 to achieve a minimum on-screen point size of 12 pixels,
+to point sizes in three of our conditions. We additionally adjusted the residual values
+using a scaling factor of 4 and a constant of 0.2 to achieve a minimum on-screen point size of 12 pixels,
 which is consistent with the point size on a 1920 x 1080 monitor for both experiments
 in our previous study \cite{strain_2023}. In our fourth condition, which we henceforth refer to as *standard size*,
 point size was uniformly set to be consistent with the point size in our previous 
@@ -559,7 +559,7 @@ studies. Scripts detailing scatterplot and mask generation can be found in the i
 preparation folder in the repository linked above.
 
 \begin{equation}
-  point_{size} = 1 - b^{residual}
+  point_{size} = 1 - 0.25^{residual}
 \end{equation}
 
 ## Dot Pitch and Crowdsourced Experiments
@@ -909,7 +909,7 @@ precision we would expect to see at higher *r* values. While the visual characte
 of the scatterplots in the aforementioned conditions can account for the absence
 of higher precision at higher *r* values, the same cannot be said for the standard size
 condition. Aside from the inverted non-linear decay condition in experiment two of
-our prior work \cite{strain_2023}, the finding that precision increased with *r*
+our previous work \cite{strain_2023}, the finding that precision increased with *r*
 was robust. Its absence here is curious given that the standard size decay condition in
 the present study is identical to the full contrast conditions in our previous work.
 Relying on relative judgements means
@@ -919,7 +919,7 @@ study exhibit greater levels of visual variance than the stimuli in our previous
 which may explain the lack of increased precision here. Further testing is required
 for a more concrete explanation.
 
-Ultimately we aim to provide tools that can be used to design visualizations more suited for the task
+Ultimately we aim to provide tools that can be used to design visualizations more suited for the tasks
 they are intended to support. When that task is the perception of positive correlation, we would
 recommend the use of the non-linear size decay condition described here over the contrast
 decay conditions we have previously tested \cite{strain_2023}. We acknowledge that 
@@ -954,7 +954,7 @@ Before the experiment, participants viewed plots for a minimum of
 eight seconds with examples of *r* = 0.2, 0.5, 0.8, and 0.95. This was to account
 for any potential unfamiliarity with scatterplots present in the samples
 that we recruited; this risk is inherent in recruiting from lay populations, but we
-would argue is acceptable given it leads to more generalisable and broadly
+would argue is acceptable given it leads to more generalizable and broadly
 applicable findings. To test whether this training had an effect on correlation estimation,
 we built a model including session half as a predictor. Comparing this
 to the original model revealed no significant effect ($\chi^2$(`r in_paren(training_comparison.df)`)
