@@ -165,16 +165,13 @@ literature \cite{strahan_1978, bobko_1979, cleveland_1982, lane_1985, lauer_1989
 collyer_1990, meyer_1992}. We suggested that this was due to a narrowing of the width
 of the perceived probability distribution of a plot brought
 about by the lower contrast (and therefore lower point-salience and potentially higher spatial uncertainty)
-in those outer areas. We tested linear and non-linear functions relating point contrast to
-residual magnitude, together with an inverted non-linear function condition. As
-anticipated, we found that the non-linear function produced
+in those outer areas. We tested linear and non-linear, and inverted non-linear functions relating point contrast to
+residual magnitude. As anticipated, we found that the non-linear function produced
 the most accurate estimates of correlation, and that the non-linear inverted produced
-the least accurate. In the present study we use the same equations to manipulate
-point size.
+the least accurate.
 
-In this paper we present a single experiment study in which we demonstrate that the use of
-a non-linear size decay function relating to the residuals of points on scatterplots
-can be employed to correct for a systematic underestimation of correlation by
+In this paper we utilize the same functions applied to point-size and demonstrate that the use of
+a non-linear decay function can be employed to correct for a systematic underestimation of correlation by
 viewers. We find no evidence for effects of graph literacy or training.
 The effect we observe here is stronger, both with regards to effect size
 and in terms of the observed reduction in error, than that
@@ -187,7 +184,7 @@ and refinement of these techniques.
 \subsection{Scatterplots and Correlation}\label{scatterplots-and-correlation}}
 
 Scatterplots have been widely studied, especially as mediums for the communication
-of correlation (\cite{strain_2023}\footnote{Contains a full review of this work.}). Previous literature has found evidence for a pronounced underestimation in judgements
+of correlation (\cite{strain_2023}\footnote{Contains a full review of the history and contemporary issues regarding this work.}). Previous literature has found evidence for a pronounced underestimation in judgements
 of correlation in positively correlated scatterplots, especially between 0.2 \textless{} \emph{r} \textless{} 0.6. This
 has held true for both direct estimation \cite{meyer_1992, collyer_1990} and estimation
 via bisection tasks \cite{rensink_2017}. In addition to work exploring how we
@@ -211,17 +208,20 @@ Contrast adjustments have been used extensively to solve issues of overplotting 
 in scatterplots \cite{matejka_2015, bertini_2004}. Common sense dictates that
 scatterplots visualizing larger datasets inherently require their points to be
 smaller to prevent obfuscation of the data, and point size changes (e.g bubble charts)
-have been used to represent trivariate data. There has been little testing of the
+have been used to represent trivariate data. There has, however, been little testing of the
 impact of point size on correlation perception. Studies have found
 invariance in the bias and variability of correlation
 perception with regards to changing point sizes, but these have been low-powered
-\cite{rensink_2012, rensink_2014}. From the wider literature there is evidence
-that larger points are more salient \cite{healey_2012}, can bias judgements of
+\cite{rensink_2012, rensink_2014}. Our motivation is to extend our previous work
+\cite{strain_2023} to further improve correlation perception in scatterplots, while
+providing visualization designers with tools to design better scatterplots.
+From the wider literature there is evidence that larger points are more salient \cite{healey_2012}, can bias judgements of
 mean point position more strongly than point contrast can \cite{hong_2021}, and can
 result in faster reaction times to peripherally presented stimuli \cite{grice_1983}.
 In addition, smaller stimuli are associated with greater levels of spatial uncertainty
-\cite{alais_2004}, and if this uncertainty is driving the reduction in bias we saw in our previous work \cite{strain_2023},
-we would expect a similar effect when point size is used instead of point contrast.
+\cite{alais_2004}, and if this uncertainty is driving the reduction in bias we saw
+in our previous work \cite{strain_2023}, we would expect a similar effect when
+point size is used instead of point contrast.
 
 \hypertarget{hypotheses}{%
 \subsection{Hypotheses}\label{hypotheses}}
@@ -394,7 +394,7 @@ Inverted Non-linear Decay : Standard Size & -3.63 & 0.002\\
 \end{table}
 
 \begin{figure*}
-\includegraphics[width=1\linewidth]{size_and_scatterplots_files/figure-latex/changes-with-r-size-1} \caption{Participants' mean errors in \textit{r} estimates plotted against the objective \textit{r} value separately for each size decay condition. The dotted horizontal line represents accurate estimation.}\label{fig:changes-with-r-size}
+\includegraphics[width=1\linewidth]{size_and_scatterplots_files/figure-latex/differences-plot-1} \caption{Participants' mean errors in \textit{r} estimates plotted against the objective \textit{r} value separately for each size decay condition. Error bars represent standard deviations. The dotted horizontal line represents accurate estimation. Means of errors by condition are also displayed next to plot titles.}\label{fig:differences-plot}
 \end{figure*}
 
 All analyses were conducted using R (version 4.3.1 \cite{r_core}). Linear mixed effects models were
@@ -403,8 +403,9 @@ built using the \textbf{buildmer} (version 2.9 \cite{voeten_buildmer}) and \text
 as the predictor for participants' errors in correlation estimates. The experimental
 model has random intercepts for items and participants.
 
-Mean errors in correlation estimates for the four size decay conditions
-can be seen in Figure \ref{fig:dot-plot}. A likelihood ratio test revealed that the
+Mean errors in correlation estimates and 95\% confidence intervals
+for the four size decay conditions can be seen in Figure \ref{fig:dot-plot}.
+A likelihood ratio test revealed that the
 model including size decay condition as a predictor explained significantly more
 variance than a null model (\(\chi^2\)(3) = 205.35,
 \emph{p} \textless{} .001). The effect here is driven by participants' errors being lower
@@ -412,10 +413,10 @@ for scatterplots with the non-linear size decay manipulation than for all other 
 for error being lower for scatterplots with linear size decay than for plots with
 inverted non-linear decay or standard size, and for errors being higher for scatterplots
 with standard size than for plots with inverted non-linear decay. Figure
-\ref{fig:changes-with-r-size} shows how participants' mean errors in correlation
+\ref{fig:differences-plot} shows how participants' mean errors in correlation
 estimates change with the objective \emph{r} value, plotted separately for each
-size decay condition. Note the close-to-zero average errors present in the non-linear size
-decay condition.
+size decay condition. Overall condition means are also shown in the plot titles.
+Note the close-to-zero average errors present in the non-linear size decay condition.
 
 Testing for contrasts between the four levels of the size decay condition
 was performed with the \textbf{emmeans} package (version 1.8.7 \cite{emmeans}), and
@@ -423,10 +424,15 @@ are shown in Table \ref{tab:contrasts-table}. The \textbf{EMAtools} (version
 0.1.4 \cite{ematools}) package was used to calculate effect sizes in Cohen's d,
 the results of which can be seen in Figure \ref{fig:dot-plot}.
 The largest effect size we found was 0.61 when comparing
-the non-linear size decay and standard size decay conditions.
+the non-linear size decay and standard size decay conditions, compared to
+0.19 for the equivalent comparison in our previous work \cite{strain_2023}.
 
 We find no significant difference between the experimental model
-and another including graph literacy as a fixed effect (\(\chi^2\)(1) = 0.45, \emph{p} = .502), suggesting the effect we found was not driven by differences in graph literacy.
+and another including graph literacy as a fixed effect
+(\(\chi^2\)(1) =
+0.45, \emph{p}
+= .502),
+suggesting the effect we found was not driven by differences in graph literacy.
 
 We employed a method for obtaining a measurement of dot pitch from each participant.
 While participants performed well on a point , there may be some other facet of using a larger or smaller
@@ -442,7 +448,7 @@ enough to warrant further discussion.
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
-As can be seen in Figure \ref{fig:changes-with-r-size},
+As can be seen in Figure \ref{fig:differences-plot},
 participants' errors in correlation estimates were significantly lower when
 they were presented with the non-linear size decay condition (see Figure \ref{fig:examples})
 compared to when they were presented with all other conditions, providing support for our
@@ -475,11 +481,11 @@ of correlation.
 The lack of support for our second hypothesis was surprising, although it should
 be noted that the difference between the inverted non-linear condition and the standard size
 condition was small (see Figure \ref{fig:dot-plot}). The shape of the errors
-in correlation estimates (see Figure \ref{fig:changes-with-r-size}) is also
+in correlation estimates (see Figure \ref{fig:differences-plot}) is also
 very similar to that of the standard size decay condition. Despite the size channel
 being more powerful than contrast with regards to correcting
 for the underestimation of correlation, our results suggest it is weaker at
-producing the opposing effect. In our previous work we suggested that contrast
+producing the opposing effect. In our previous work we suggested that inverted contrast
 manipulations could be used to correct for the \emph{overestimation} of the correlation
 of negatively correlated scatterplots; we would not suggest the use of the size
 channel for this given the results here.
