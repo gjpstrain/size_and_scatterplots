@@ -51,8 +51,6 @@ library(lme4)
 library(kableExtra)
 library(afex)
 library(papaja)
-library(broom.mixed)
-library(insight)
 library(qwraps2)
 library(lmerTest)
 library(ggdist)
@@ -433,7 +431,7 @@ Scatterplots, utilized in scientific communication for a variety of tasks,
 are some of the most widely used and studied data visualizations. Viewers
 interpret them in similar ways \cite{kay_heer_2015}, and they are simple
 to study while providing important insights into visualization
-design, human-computer interaction, and perception. Previous \cite{strain_2023}
+design, human-computer interaction, and perception. Previously \cite{strain_2023}
 we showed that a novel point contrast manipulation, in which the contrast of a certain
 scatterplot point was reduced as the size of that point's residual increased, could be
 used to partially correct for a systematic correlation underestimation bias present in the 
@@ -446,7 +444,7 @@ residual magnitude. As anticipated, we found that the non-linear function produc
 the most accurate estimates of correlation, and that the non-linear inverted produced 
 the least accurate.
 
-In this paper we utilize the same functions applied to point-size to demonstrate that 
+In this paper we utilize the same functions applied to point size to demonstrate that 
 a non-linear decay function can be employed to correct for a systematic underestimation of correlation.
 We find no evidence for effects of graph literacy or training.
 The effect we observe here is stronger, both with regards to effect size
@@ -459,16 +457,15 @@ and refinement of these techniques.
 ## Scatterplots and Correlation
 
 Scatterplots have been widely studied, especially as mediums for the communication
-of correlation. Our previous work contains a review of the history and contemporary
-issues regarding this work \cite{strain_2023}. Previous work has found evidence for a 
+of correlation. Our previous work contains a review of the history of
+this work \cite{strain_2023}. Previous work has found evidence for a 
 pronounced underestimation in judgements of correlation in positively correlated
 scatterplots, especially between 0.2 < *r* < 0.6. This
 is true for both direct estimation \cite{meyer_1992, collyer_1990} and estimation
 via bisection tasks \cite{rensink_2017}. Additionally, methods from psychophysics
 have been employed to explore how we discriminate between different correlations
-\cite{rensink_2014, rensink_2017}. We use the direct estimation paradigm owing to its simplicity and its suitability
-to online experimentation. The judgements we collect are therefore
-comparative by nature, as we analyse the difference in correlation estimation performance
+\cite{rensink_2014, rensink_2017}. Presently, we use the direct estimation paradigm owing to its simplicity and its suitability to online experimentation. The judgements we collect are therefore
+comparative by nature, as we analyse the differences in correlation estimation performance
 between data-identical scatterplots with different point size manipulations (see Figure \ref{fig:examples}).
 Such work allows us to inform design guidelines and affords us insights into perception.
 It is our duty as visualization designers to ensure that the
@@ -488,7 +485,7 @@ invariance in the bias and variability of correlation
 perception with regards to changing point sizes, but these have been low-powered
 \cite{rensink_2012, rensink_2014}. Our motivation is to extend our previous work
 \cite{strain_2023} to further improve correlation perception in scatterplots, while
-providing visualization designers with tools to design better scatterplots.
+providing visualization designers with tools for more effective design.
 From the wider literature there is evidence that larger points are more salient
 \cite{healey_2012}, can bias judgements of 
 mean point position more strongly than point contrast can \cite{hong_2021}, and can 
@@ -516,7 +513,7 @@ Hypotheses and analysis plans were pre-registered with the OSF (https://osf.io/k
 
 ## Stimuli
 
-45 *r* uniformly distributed *r* values were generated between 0.2 and 0.99. 
+45 uniformly distributed *r* values were generated between 0.2 and 0.99. 
 For each of these values, a scatterplot consisting of a series of 128 data points
 was generated based on a normal distribution. The random seed used was the same
 as that used in our previous work \cite{strain_2023}, meaning the datasets were
@@ -540,7 +537,7 @@ in previous literature \cite{rensink_2017}. We acknowledge that more suitable va
 *b* may exist, but extensive testing of this is outside the scope of the current study.
 We adjusted residual values using a scaling factor of 4 and a
 constant of 0.2 to achieve a minimum on-screen point size of 12 pixels, which 
-is consistent with the point size on a 1920 x 1080 monitor for our previous study
+is consistent with the point size on a 1920 x 1080 pixel monitor in our previous study
 \cite{strain_2023}. In our fourth condition,
 which we refer to as *standard size*, point size was uniformly
 set to be consistent with that in our previous 
@@ -730,12 +727,12 @@ effects_df <- get_effect_sizes(size_model, exp_size_only_tidy)
 contrasts <- contrasts_extract(size_model) %>%
   mutate(p.value = scales::pvalue(p.value)) %>%
   mutate(Contrast = recode(Contrast,
-                           "A - C" = "Non-linear Decay : Inverted Non-linear Decay",
-                           "A - D" = "Non-linear Decay : Standard Size",
-                           "A - B" = "Non-linear Decay: Linear Decay",
-                           "B - C" = "Linear Decay : Inverted Non-linear Decay",
-                           "B - D" = "Linear Decay : Standard Size",
-                           "C - D" = "Inverted Non-linear Decay : Standard Size"))      # change letters into condition names
+                           "D - C" = "Standard Size : Inverted Non-linear Decay",
+                           "D - B" = "Standard Size : Linear Decay",
+                           "D - A" = "Standard Size : Non-Linear Decay",
+                           "C - B" = "Inverted Non-linear Decay : Linear Decay",
+                           "C - A" = "Inverted Non-linear Decay : Non-Linear Decay",
+                           "B - A" = "Linear Decay : Non-Linear Decay"))
 
 # create df for table
 
@@ -818,7 +815,7 @@ size decay condition. Overall condition means are also shown in the plot titles.
 Note the close-to-zero average errors present in the non-linear size decay condition.  
 
 Testing for contrasts between was performed with the **emmeans** package
-(version 1.8.7 \cite{emmeans}), and are shown in Table \ref{tab:contrasts-table}. 
+(version 1.8.8 \cite{emmeans}), and are shown in Table \ref{tab:contrasts-table}. 
 The **EMAtools** (version 0.1.4 \cite{ematools}) package was used to calculate effect sizes in Cohen's d,
 the results of which can be seen in Figure \ref{fig:dot-plot}. 
 The largest effect size we found was 0.61 when comparing
