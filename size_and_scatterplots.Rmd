@@ -57,15 +57,11 @@ library(ggdist)
 library(ggpubr)
 library(conflicted)
 library(EMAtools)
+library(knitr) #needed for docker container to render paper correctly
 
 # fix conflicts now using the conflicted package
 
 conflicts_prefer(dplyr::select(), dplyr::filter(), lme4::lmer())
-
-# Comment out the following line if additional tinytex packages are already installed
-# If building this in dockerised Rstudio instance, run this command the first time
-
-# tinytex:::install_yihui_pkgs()
 ```
 
 ```{r eval-models, include=FALSE}
@@ -982,7 +978,7 @@ on participants' peformance.
 
 Despite confirming a method of obtaining dot pitch, we still have no method of obtaining
 head-to-monitor distances. This, along with the comparative judgements we collect, prevents us 
-from drawing concrete psychophysical conclusions.Instead, our paradigms allows
+from drawing concrete psychophysical conclusions. Instead, our paradigm allows
 for findings that are rigorous to different viewing contexts and
 are of particular importance for the HCI and visualization design audiences. It
 may be that a high level perceptual phenomenon is responsible for the effects
