@@ -25,7 +25,7 @@ abstract: |
   We use a novel data point size manipulation to correct for this bias. In a high-powered and
   fully reproducible study, we demonstrate that decreasing the size of a point on a scatterplot
   as a function of its distance from the regression line is able to correct for a systematic
-  perceptual bias long present in the literature. We suggest the implementation of our technique
+  perceptual bias long present in the literature. We recommend the implementation of our technique
   when designing scatterplots that aim to communicate positive correlations.
 introduction: |
 ---
@@ -528,8 +528,8 @@ precise point sizes and dot pitch in crowd-sourced experiments.
 We used equation 1 to map residuals 
 to point sizes in the two non-linear decay conditions. 0.25 was chosen as the 
 value for *b* due to both its prior use with contrast decay \cite{strain_2023} and its
-production of a curve approximating the inverse of the underestimation curve reported
-in previous literature \cite{rensink_2017}. We acknowledge that more suitable values of
+production of a curve approximating the inverse arodun the identity line of the
+underestimation curve reported in previous literature \cite{rensink_2017}. We acknowledge that more suitable values of
 *b* may exist, but extensive testing of this is outside the scope of the current study.
 We adjusted residual values using a scaling factor of 4 and a
 constant of 0.2 to achieve a minimum on-screen point size of 12 pixels, which 
@@ -557,7 +557,7 @@ range_dot_pitch <- range(exp_size_only_tidy$dot_pitch)
 ```
 
 Previously \cite{strain_2023}, we had no way of obtaining dot pitch
-or participant to monitor distance due to the online, crowdsourced nature of the 
+or participant-to-monitor distance due to the online, crowdsourced nature of the 
 experiments. We have since adopted a method for obtaining the height of a 
 participant's monitor in inches \cite{screenscale}; participants are asked to hold up a standard size
 credit/debit/ID card up to the monitor, and then to resize a corresponding image until
@@ -972,7 +972,7 @@ applicable findings. Comparing a model including session half as a predictor wit
 original model revealed no significant effect ($\chi^2$(`r in_paren(training_comparison.df)`)
 = `r printnum(training_comparison.Chisq)`, *p* `r printnum(training_comparison.p, add_equals = TRUE)`),
 suggesting that having more recently viewed the example plots did not have an effect
-on participants' peformance.
+on participants' performance.
 
 ## Limitations
 
