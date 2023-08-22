@@ -163,9 +163,10 @@ scatterplot point was reduced as the size of that point's residual increased, co
 used to partially correct for a systematic correlation underestimation bias present in the
 literature \cite{strahan_1978, bobko_1979, cleveland_1982, lane_1985, lauer_1989, 
 collyer_1990, meyer_1992}. We suggested that this was due to a narrowing of the width
-of the perceived probability distribution of a plot brought
-about by the lower contrast (and therefore lower point-salience and potentially higher spatial uncertainty)
-in those outer areas. We tested linear, non-linear, and inverted non-linear functions relating point contrast to
+of the perceived probability distribution of the data in a plot relative to the regression line,
+presumably driven by a reduction in the salience of, or weight given to, the lower
+contrast points in those outer areas. We tested linear, non-linear,
+and inverted non-linear decay functions relating point contrast to
 residual magnitude. As anticipated, we found that the non-linear function produced
 the most accurate estimates of correlation, and that the non-linear inverted produced
 the least accurate.
@@ -176,7 +177,7 @@ We find no evidence for effects of graph literacy or training.
 The effect we observe here is stronger, both with regards to effect size
 and in terms of the observed reduction in error, than that
 observed in our previous study \cite{strain_2023}. We suggest that this
-function can be used to facilitate more accurate correlation
+approach can be used to facilitate more accurate correlation
 perception in scatterplots while providing exciting future avenues for the continuation
 and refinement of these techniques.
 
@@ -185,13 +186,14 @@ and refinement of these techniques.
 
 Scatterplots have been widely studied, especially as mediums for the communication
 of correlation. Our previous work contains a review of the history of
-this work \cite{strain_2023}. Previous work has found evidence for a
+this literature \cite{strain_2023}. Previous studies have found evidence for a
 pronounced underestimation in judgements of correlation in positively correlated
 scatterplots, especially between 0.2 \textless{} \emph{r} \textless{} 0.6. This
 is true for both direct estimation \cite{meyer_1992, collyer_1990} and estimation
 via bisection tasks \cite{rensink_2017}. Additionally, methods from psychophysics
 have been employed to explore how we discriminate between different correlations
-\cite{rensink_2014, rensink_2017}. Presently, we use the direct estimation paradigm owing to its simplicity and its suitability to online experimentation. The judgements we collect are therefore
+\cite{rensink_2014, rensink_2017}. Presently, we use the direct estimation paradigm
+owing to its simplicity and its suitability to online experimentation. The judgements we collect are therefore
 comparative by nature, as we analyse the differences in correlation estimation performance
 between data-identical scatterplots with different point size manipulations (see Figure \ref{fig:examples}).
 Such work allows us to inform design guidelines and affords us insights into perception.
@@ -214,14 +216,15 @@ perception with regards to changing point sizes, but these have been low-powered
 \cite{rensink_2012, rensink_2014}. Our motivation is to extend our previous work
 \cite{strain_2023} to further improve correlation perception in scatterplots, while
 providing visualization designers with tools for more effective design.
-From the wider literature there is evidence that larger points are more salient
-\cite{healey_2012}, can bias judgements of
-mean point position more strongly than point contrast can \cite{hong_2021}, and can
+From the wider literature there is evidence that larger points can bias judgements of
+mean point position more strongly than point contrast \cite{hong_2021} and can
 result in faster reaction times to peripherally presented stimuli \cite{grice_1983}.
-Smaller stimuli are also associated with greater levels of spatial uncertainty
-\cite{alais_2004}. If this uncertainty is driving the reduction in bias we previously
-observed \cite{strain_2023}, we would expect a similar effect when
-point size is used instead of point contrast.
+There is some evidence that larger stimuli are associated with lower levels of
+spatial certainty \cite{alais_2004} but higher levels of salience \cite{healey_2012}.
+The current experiment should therefore allow us to distinguish between these
+candidate drivers of the effects observed in a way that was not possible
+when manipulating contrast, as in that case effects of salience or spatial
+certainty would operate in the same direction.
 
 \hypertarget{hypotheses}{%
 \subsection{Hypotheses}\label{hypotheses}}
@@ -264,8 +267,9 @@ We used equation 1 to map residuals
 to point sizes in the two non-linear decay conditions. 0.25 was chosen as the
 value for \emph{b} due to both its prior use with contrast decay \cite{strain_2023} and its
 production of a curve approximating the inverse arodun the identity line of the
-underestimation curve reported in previous literature \cite{rensink_2017}. We acknowledge that more suitable values of
-\emph{b} may exist, but extensive testing of this is outside the scope of the current study.
+underestimation curve reported in previous literature \cite{rensink_2017}.
+We acknowledge that more suitable values of \emph{b} may exist, but extensive
+testing of this is outside the scope of the current study.
 We adjusted residual values using a scaling factor of 4 and a
 constant of 0.2 to achieve a minimum on-screen point size of 12 pixels, which
 is consistent with the point size on a 1920 x 1080 pixel monitor in our previous study
@@ -465,35 +469,37 @@ in the present study was .025, while the equivalent condition in the second expe
 of our previous study, which used the same equations applied to contrast, resulted
 in a mean error of .086 \cite{strain_2023}. This provides evidence that point
 size is a stronger encoding channel for the manipulation of perceived correlation in
-scatterplots than point contrast. If these effects
-are driven by increased uncertainty in the outer regions of the plots,
+scatterplots than point contrast. If these effects are driven by the lower salience of
+points in the outer regions of the plots,
 that we have found a larger effect of point size manipulations is congruent
-with research showing clear influences of stimulus size on perception and uncertainty
-\cite{hong_2021, grice_1983, alais_2004}. Contrary to this, the literature linking
-lower contrast to perceptual uncertainty is sparse. With evidence that lowering
-size can increase spatial uncertainty \cite{alais_2004}, our results provide further
-support for the idea that the width of the probability distribution represented by
-a scatterplot point cloud is a driver of correlation perception \cite{meyer_1997, rensink_2017}.
-Lower salience and higher uncertainty exterior points have reduced the perceived width
-of this probability distribution, which has resulted in more accurate estimates
-of correlation. Simultaneously we acknowledge that other candidate
-mechanisms exist; similar results would be expected if a feature-based attentional
-bias was at play \cite{hong_2021, sun_2016}. It may be that both attention and
-perceived probability distribution width are responsible for the effects we see,
-however with our current methodology we are unable to comment as to the extent of each.
+with research showing clear influences of stimulus size on object salience and
+perceptual weighting \cite{grice_1983, healey_2012, hong_2021}. Our results
+therefore provide support for point salience/weight being the key driver
+the effects observed. Lower point salience in the outer regions of the plots
+then reduces the perceived width of the distribution of data points about
+the regression line \cite{meyer_1997, rensink_2017}, leading in this case to more
+more accurate estimates. Simultaneously we acknowledge
+that other candidate mechanisms exist; similar results would be expected if a
+feature-based attentional bias was at play \cite{hong_2021, sun_2016}.
+It may be that both attention and perceived probability distribution width
+are responsible for the effects we see, however with our current methodology
+we are unable to comment as to the extent of each.
 
-The lack of support for our second hypothesis was surprising, although
-the difference between the inverted non-linear condition and the standard size
-condition was small (see Figure \ref{fig:dot-plot}). The shape of the errors
-in correlation estimates (see Figure \ref{fig:differences-plot}) is also
-very similar. Despite the size channel
-being more powerful with regards to correcting
-for correlation underestimation, our results suggest it is weaker at
-producing the opposing effect. In our previous work we suggested that inverted contrast
+The lack of support for our second hypothesis, while surprising, suggests that
+point salience or perceived distribution width do not form the whole story. There is
+evidence that larger stimuli exhibit higher spatial uncertainty \cite{alais_2004},
+and it is possible that this uncertainty causes the perceptual system to downweight
+the contribution of these points during correlation estimation. This is consistent
+with previous \cite{warren_2002, warren_2004} work suggesting the brain may make
+robust statistical use of visuo-spatial information. These mechanisms act to
+downweight the influence of more unreliable information (in this case the higher
+spatial uncertainty of larger exterior points) on subsequent perceptual estimates.
+Despite the size channel being
+more powerful with regards to correcting for correlation underestimation, it appears
+unable to produce the opposing effect. In our previous work we suggested that inverted contrast
 manipulations could be used to correct for the \emph{overestimation} of the correlation
-of negatively correlated scatterplots; we would not suggest the use of the size
-channel for this given the results here, although further work would be required
-to explain the reason for this discrepancy between inverted contrast and size adjustments.
+of negatively correlated scatterplots; in light of our findings we would not
+suggest the use of the size channel for this given the results here.
 
 \hypertarget{precision-in-correlation-estimation-is-constant}{%
 \subsection{Precision in Correlation Estimation is Constant}\label{precision-in-correlation-estimation-is-constant}}
