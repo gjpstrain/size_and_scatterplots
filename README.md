@@ -1,4 +1,4 @@
-# A Novel Point Size Manipulation to Address the Underestimation Bias in Scatterplots
+# Adjusting Point Size to Facilitate More Accurate Correlation Perception in Scatterplots
 
 Files, data, and scripts required to fully recreate our study investigating how manipulating point size in scatterplots can influence viewers' performance in a correlation estimation task.
 
