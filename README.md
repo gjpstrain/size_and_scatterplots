@@ -45,7 +45,7 @@ Knitting the manuscript may take some time depending on the performance of your 
 
 ### Other Files
 
- - `item_preparation`: folder containing scripts to generate all experimental items, practice items, and visual masks for each experiment
+ - `item_preparation`: folder containing scripts to generate all experimental items, practice items, and visual masks.
 
 ## Experiment Code and Materials
 
