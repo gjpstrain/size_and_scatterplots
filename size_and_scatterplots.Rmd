@@ -8,7 +8,7 @@ author_2_email: "Andrew.J.Stewart@manchester.ac.uk"
 author_3_email: "Paul.Warren@manchester.ac.uk"
 author_4_email: "Caroline.Jay@manchester.ac.uk"
 affiliation: "The University of Manchester"
-acknowledgements: "This work was supported by funding from the University of Manchester Department of Computer Science and Division of Psychology, Communication and Human Neuroscience."
+acknowledgements: "This work was supported by funding from the University of Manchester Department of Computer Science and Division of Psychology, Communication and Human Neuroscience. Gabriel Strain is supported by funding from the UKRI EPSRC DTP."
 output:
   bookdown::pdf_book: # for automatic figure-numbering (https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html)
     keep_tex: yes
@@ -422,6 +422,8 @@ return(plots)
 ```
 
 # Introduction
+
+\blfootnote{\textbf{Funding Statement}: This work was supported by funding from the University of Manchester Department of Computer Science and Division of Psychology, Communication and Human Neuroscience. Gabriel Strain is supported by funding from the UKRI EPSRC DTP.}
 
 Scatterplots, utilized in scientific communication for a variety of tasks,
 are some of the most widely used and studied data visualizations. Viewers
