@@ -2,6 +2,8 @@
 
 Files, data, and scripts required to fully recreate our study investigating how manipulating point size in scatterplots can influence viewers' performance in a correlation estimation task.
 
+This paper can be accessed here: [Figshare](https://figshare.manchester.ac.uk/articles/conference_contribution/Adjusting_Point_Size_to_Facilitate_More_Accurate_Correlation_Perception_in_Scatterplots/24117987)
+
 ## Data
 
 Raw data (.csv format) is located in the `data` folder. The R script `data_processing_for_payment.R` takes raw data straight from pavlovia.org, and writes a .csv file with a list of passed and failed participants to the `data` folder.
