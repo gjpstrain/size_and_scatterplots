@@ -26,7 +26,7 @@ If you're using a machine with an ARM processor, such as Apple Silicon, use the 
 
 Then, type:
 
-```docker run --rm -p 8787:8787 -e PASSWORD=password size_and_scatterplots```
+```docker run --rm -p 8787:8787 -e PASSWORD=password size_and_scatterplots .```
 
 Once the container is running, open a web browser and type `localhost:8787` in the address bar. Enter the username `rstudio` and the password `password`. This will generate a fully functioning Rstudio session running from the docker container.
 
