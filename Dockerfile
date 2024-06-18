@@ -39,3 +39,4 @@ RUN R -e "devtools::install_version('EMAtools', version = '0.1.4', dependencies 
 RUN R -e "devtools::install_version('ggdist', version = '3.3.0', dependencies = T)"
 RUN R -e "devtools::install_version('ggpubr', version = '0.6.0', dependencies = T)"
 RUN R -e "devtools::install_version('conflicted', version = '1.2.0', dependencies = T)"
+RUN R -e "devtools::install_version('sjmisc', version = '2.8.9', dependencies = T)"
